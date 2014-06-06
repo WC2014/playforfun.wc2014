@@ -147,7 +147,7 @@ padding: 0px 5px 0px 5px;
  var id;
   for (var i = 0; i < 48; i++) {
    id = i+1;
-$("#game"+id+"h").append("<div align='left'><table><tr><td>"+gamesSheet[i].time.split("|")[0]+"</td><td width='80px' align='right'>"+gamesSheet[i].home.name+"</td><td width='20px'><img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+gamesSheet[i].home.flag+"'/></td><td width='10' style='text-align:center;'>"+gamesSheet[i].home.score+"</td><td> - </td><td width='10' style='text-align:center;'>"+gamesSheet[i].away.score+"</td><td width='20px'><img style='width:20px; height:12px; padding:0px 5px 0px 5px' src='"+gamesSheet[i].away.flag+"'/></td><td width='80px'>"+gamesSheet[i].away.name+"</td></tr></table><div>");
+$("#game"+id+"h").append("<div align='left'><table><tr><td>"+gamesSheet[i].time.split("|")[0]+"</td><td width='30%' align='right'>"+gamesSheet[i].home.name+"</td><td width='20%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+gamesSheet[i].home.flag+"'/></td><td width='10%' style='text-align:center;'>"+gamesSheet[i].home.score+"</td><td> - </td><td width='10%' style='text-align:center;'>"+gamesSheet[i].away.score+"</td><td width='20%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px' src='"+gamesSheet[i].away.flag+"'/></td><td width='30%'>"+gamesSheet[i].away.name+"</td></tr></table><div>");
 }
   var gd;
    var group;
