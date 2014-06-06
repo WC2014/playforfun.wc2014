@@ -1,0 +1,699 @@
+<html>
+
+  <head>
+
+ <title>World Cup 2014</title>
+  <style>
+  
+  html { 
+
+}
+
+
+  .main {
+width: 98%;
+margin:0 auto;
+font-size:50%;
+opacity:0.9;
+
+  }
+  
+  .page {
+
+
+  }
+
+  .header {
+#opacity:0.95;
+
+}
+
+.group_table td {
+padding: 0px 10px 0px 10px;
+}
+
+
+  .games td {
+  
+  #padding: 0px 10px 0px 10px;
+  }
+.games .score {
+  
+  #padding: 0px 5px 0px 5px;
+  
+  }
+  
+   .games .name {
+  
+  #width: 100px;
+  
+  }
+  
+   .group_table .name {
+  
+  width: 100px;
+  
+  }
+  
+  .games {
+  
+   font-size:60%;
+  
+  }
+
+  .group_table{
+    font-size:60%;
+
+  }
+  
+ .special td {
+  
+  #padding: 0px 7px 0px 7px;
+  
+  }
+
+    @media only screen and (min-width: 480px) { .ui-page { width: 480px !important; margin: 0 auto !important; position: relative !important; } }
+
+  </style>
+  
+  <meta name=viewport content="user-scalable=no,width=device-width" />
+
+ 
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+  
+  
+
+<script>
+  
+  var sheet = {user: null, games:{}, tables:{}, winner:null, scoring_team:null, aggressive:null, fairest:null, top_scorer:null, top_assister:null, tournament_surprise:null, tournament_disappointment:null, total:0};
+  
+  var groups=[];
+  var teams;
+
+  var originalGroups=[];
+  
+  
+
+   $.ajax({
+   url : "teams.json",
+   dataType : "text",
+   success : function (data) {
+   var json = $.parseJSON(data);
+teams = json;
+var winner = $('#winner');
+
+
+   for (var k = 0; k < 32; k++) {
+winner.append("<input type='radio' data-mini='true' name='winner' id='"+json.teams[k].id+"' value='"+json.teams[k].id+"' /><label for='"+json.teams[k].id+"'>"+json.teams[k].name+"<img align='right' src='"+json.teams[k].flag+"'/></label>");
+
+}
+ 
+
+
+
+var scoring_team = $('#scoring_team');
+
+   for (var k = 0; k < 32; k++) {
+scoring_team.append("<input type='radio' data-mini='true' name='scoring_team' id='"+json.teams[k].id+"' value='"+json.teams[k].id+"' /><label for='"+json.teams[k].id+"'>"+json.teams[k].name+"<img align='right' src='"+json.teams[k].flag+"'/></label>");
+
+}
+
+var aggressive = $('#aggressive');
+k = 0;
+   for (var i = 0; i < 8; i++) {
+for (var j = 0; j < 4; j++) {
+aggressive.append("<input type='radio' data-mini='true' name='aggressive' id='"+json.teams[k].id+"' value='"+json.teams[k].id+"' /><label for='"+json.teams[k].id+"'>"+json.teams[k].name+"<img align='right' src='"+json.teams[k].flag+"'/></label>");
+k++;
+}
+}
+
+var fairest = $('#fairest');
+   for (var k = 0; k < 32; k++) {
+fairest.append("<input type='radio' data-mini='true' name='fairest' id='"+json.teams[k].id+"' value='"+json.teams[k].id+"' /><label for='"+json.teams[k].id+"'>"+json.teams[k].name+"<img align='right' src='"+json.teams[k].flag+"'/></label>");
+
+}
+ $("#main").trigger("create");
+   }
+   });
+
+   $.ajax({
+   url : "top_scorer.json",
+   dataType : "text",
+   success : function (data) {
+   var json = $.parseJSON(data);
+var top_scorer = $('#top_scorer');
+   for (var k = 0; k < 61; k++) {
+top_scorer.append("<input type='radio' data-mini='true' name='top_scorer' id='"+json.players[k].id+"' value='"+json.players[k].id+"' /><label for='"+json.players[k].id+"'>" + json.players[k].name + " ("+json.players[k].nationality+")<img width='30px' height='30px' align='right' src='"+json.players[k].photo+"'/></label>");
+
+
+
+}
+  $("#main").trigger("create");
+
+}
+
+   });
+
+$.ajax({
+   url : "top_assister.json",
+   dataType : "text",
+   success : function (data) {
+   var json = $.parseJSON(data);
+
+var top_assister = $('#top_assister');
+   for (var k = 0; k < 61; k++) {
+top_assister.append("<input type='radio' data-mini='true' name='top_assister' id='"+json.players[k].id+"' value='"+json.players[k].id+"' /><label for='"+json.players[k].id+"'>" + json.players[k].name + " ("+json.players[k].nationality+")<img width='30px' height='30px' align='right' src='"+json.players[k].photo+"'/></label>");
+}
+  $("#main").trigger("create");
+   }
+   });
+
+
+$.ajax({
+   url : "surprise.json",
+   dataType : "text",
+   success : function (data) {
+   var json = $.parseJSON(data);
+
+var tournament_surprise = $('#tournament_surprise');
+
+for (var k = 0; k < 18; k++) {
+tournament_surprise.append("<input type='radio' data-mini='true' name='tournament_surprise' id='"+json.teams[k].id+"' value='"+json.teams[k].id+"' /><label for='"+json.teams[k].id+"'>"+json.teams[k].name+"<img align='right' src='"+json.teams[k].flag+"'/></label>");
+}
+
+  $("#main").trigger("create");
+
+   }
+    
+   });
+
+
+$.ajax({
+   url : "disappointment.json",
+   dataType : "text",
+   success : function (data) {
+   var json = $.parseJSON(data);
+
+var tournament_disappointment = $('#tournament_disappointment');
+
+for (var k = 0; k < 14; k++) {
+tournament_disappointment.append("<input type='radio' data-mini='true' name='tournament_disappointment' id='"+json.teams[k].id+"' value='"+json.teams[k].id+"' /><label for='"+json.teams[k].id+"'>"+json.teams[k].name+"<img align='right' src='"+json.teams[k].flag+"'/></label>");
+
+}
+
+  $("#main").trigger("create");
+
+      }
+   });
+$("#main").trigger("create");
+createGames(0,"a", "#groupA", "groupA.json");
+createGames(1,"b", "#groupB", "groupB.json");
+createGames(2,"c", "#groupC", "groupC.json");
+createGames(3,"d", "#groupD", "groupD.json");
+createGames(4,"e", "#groupE", "groupE.json");
+createGames(5,"f", "#groupF", "groupF.json");
+createGames(6,"g", "#groupG", "groupG.json");
+createGames(7,"h", "#groupH", "groupH.json");
+
+
+
+
+  
+  
+  function createGames(g, g_id, group, file){
+$.ajax({
+   url : file,
+   dataType : "text",
+   success : function (data) {
+   var json = $.parseJSON(data);
+groups[g]=json;
+originalGroups[g] = groups[g];
+   for (var i = 0; i < 6; i++) {
+   $(group).append(
+"<tr>"+
+"<td>"+json.games[i].time+"</td>"+
+"<td class='name' align='right'>"+json.games[i].home.name+"</td>"+
+"<td><img src='"+json.games[i].home.flag+"'/></td>"+
+"<td class='score'><select id='"+g_id+json.games[i].id+"h' maxlength='1' size='1' data-mini='true' data-enhance='false' data-iconpos='noicon' data-role='none'>"+
+"<option value='-1'></option>"+
+"<option value='0'>0</option>"+
+"<option value='1'>1</option>"+
+"<option value='2'>2</option>"+
+"<option value='3'>3</option>"+
+"<option value='4'>4</option>"+
+"<option value='5'>5</option>"+
+"<option value='6'>6</option>"+
+"<option value='7'>7</option>"+
+"<option value='8'>8</option>"+
+"<option value='9'>9</option>"+
+"</select></td>"+
+"<td class='score'>-</td>"+
+"<td class='score'><select id='"+g_id+json.games[i].id+"a' maxlength='1' size='1' data-mini='true' data-enhance='false' data-iconpos='noicon' data-role='none'>"+
+"<option value='-1'></option>"+
+"<option value='0'>0</option>"+
+"<option value='1'>1</option>"+
+"<option value='2'>2</option>"+
+"<option value='3'>3</option>"+
+"<option value='4'>4</option>"+
+"<option value='5'>5</option>"+
+"<option value='6'>6</option>"+
+"<option value='7'>7</option>"+
+"<option value='8'>8</option>"+
+"<option value='9'>9</option>"+
+"</select></td>"+
+"<td><img src='"+json.games[i].away.flag+"'/></td>"+
+"<td class='name'>"+json.games[i].away.name+"</td>"+
+"</tr>"+
+"<tr><td colspan='8'><hr/></td></tr>"
+
+                );
+   
+   }
+   }
+   
+   });
+  $("#main").trigger("create");
+}
+  
+ 
+  
+  function saveGroupScores(table,group, h1,a1,h2,a2,h3,a3,h4,a4,h5,a5,h6,a6, id) {
+  
+
+clearPoints(group,0, id);
+clearPoints(group,1, id);
+clearPoints(group,2, id);
+clearPoints(group,3, id);
+clearPoints(group,4, id);
+clearPoints(group,5, id);
+
+calcPoints(group,0,h1,a1, id);
+calcPoints(group,1,h2,a2, id);
+calcPoints(group,2,h3,a3, id);
+calcPoints(group,3,h4,a4, id);
+calcPoints(group,4,h5,a5, id);
+calcPoints(group,5,h6,a6, id);
+
+calcGroupScores(table,group,id);
+
+  }
+  
+   function clearPoints(group,i, id) {
+   groups[group].table[groups[group].games[i].home.id-id].gf = 0;
+groups[group].table[groups[group].games[i].away.id-id].gf = 0;
+
+groups[group].table[groups[group].games[i].away.id-id].ga = 0;
+groups[group].table[groups[group].games[i].home.id-id].ga = 0;
+
+groups[group].table[groups[group].games[i].away.id-id].gd = 0;
+groups[group].table[groups[group].games[i].home.id-id].gd = 0;
+
+groups[group].table[groups[group].games[i].home.id-id].pts = 0;
+groups[group].table[groups[group].games[i].away.id-id].pts = 0;
+
+groups[group].table[groups[group].games[i].home.id-id].p = 0;
+groups[group].table[groups[group].games[i].away.id-id].p = 0;
+
+
+   }
+   
+  function calcPoints(group,i,h,a, id) {
+  
+if($(h).val()!=-1 && $(a).val()!=-1) {
+groups[group].games[i].home.score = $(h).val();
+groups[group].games[i].away.score = $(a).val();
+
+groups[group].table[groups[group].games[i].home.id-id].p = groups[group].table[groups[group].games[i].home.id-id].p + 1;
+
+groups[group].table[groups[group].games[i].away.id-id].p = groups[group].table[groups[group].games[i].away.id-id].p + 1;
+
+groups[group].table[groups[group].games[i].home.id-id].gf = parseInt(groups[group].table[groups[group].games[i].home.id-id].gf) + parseInt(groups[group].games[i].home.score);
+groups[group].table[groups[group].games[i].away.id-id].gf = parseInt(groups[group].table[groups[group].games[i].away.id-id].gf) + parseInt(groups[group].games[i].away.score);
+
+groups[group].table[groups[group].games[i].away.id-id].ga = parseInt(groups[group].table[groups[group].games[i].away.id-id].ga) + parseInt(groups[group].games[i].home.score);
+groups[group].table[groups[group].games[i].home.id-id].ga = parseInt(groups[group].table[groups[group].games[i].home.id-id].ga) + parseInt(groups[group].games[i].away.score);
+
+
+if(groups[group].games[i].home.score == groups[group].games[i].away.score) {
+groups[group].table[groups[group].games[i].home.id-id].pts = parseInt(groups[group].table[groups[group].games[i].home.id-id].pts) + 1;
+groups[group].table[groups[group].games[i].away.id-id].pts = parseInt(groups[group].table[groups[group].games[i].away.id-id].pts) + 1;
+
+} else if(groups[group].games[i].home.score > groups[group].games[i].away.score) {
+groups[group].table[groups[group].games[i].home.id-id].pts = parseInt(groups[group].table[groups[group].games[i].home.id-id].pts) + 3;
+groups[group].table[groups[group].games[i].away.id-id].pts = parseInt(groups[group].table[groups[group].games[i].away.id-id].pts) + 0;
+
+}else {
+groups[group].table[groups[group].games[i].home.id-id].pts = parseInt(groups[group].table[groups[group].games[i].home.id-id].pts) + 0;
+groups[group].table[groups[group].games[i].away.id-id].pts = parseInt(groups[group].table[groups[group].games[i].away.id-id].pts) + 3;
+
+}	
+
+}
+  }
+  
+  function calcGroupScores(table, group, id) {
+
+  var isReady = true;
+
+  
+  if(isReady) {
+   $(table).find("tr").remove();
+var sorted=groups[group].table;
+    sorted[0].team = teams.teams[0+id-1];
+    sorted[1].team = teams.teams[1+id-1];
+    sorted[2].team = teams.teams[2+id-1];
+    sorted[3].team = teams.teams[3+id-1];
+   for(var i=3; i>=0; i--) {
+groups[group].table[i].gd = parseInt(groups[group].table[i].gf) - parseInt(groups[group].table[i].ga);
+}
+   var swapped;
+    do {
+        swapped = false;
+        for (var i=0; i < sorted.length-1; i++) {
+            if (sorted[i].pts > sorted[i+1].pts) {
+                var temp = sorted[i];
+                sorted[i] = sorted[i+1];
+                sorted[i+1] = temp;
+                swapped = true;
+            }
+			else if(sorted[i].pts == sorted[i+1].pts) {
+				if(sorted[i].gd > sorted[i+1].gd) {
+					var temp = sorted[i];
+					sorted[i] = sorted[i+1];
+					sorted[i+1] = temp;
+					swapped = true;
+				}
+				else if(sorted[i].gd == sorted[i+1].gd) {
+					if(sorted[i].gf > sorted[i+1].gf) {
+					var temp = sorted[i];
+					sorted[i] = sorted[i+1];
+					sorted[i+1] = temp;
+					swapped = true;
+					}
+				}
+			}
+        }
+    } while (swapped);
+   
+   
+   
+   groups[group].table = sorted;
+   var gd;
+$(table).append("<tr><td colspan='2'>Team</td><td>P</td><td>GF</td><td>GA</td><td>GD</td><td>Pts</td></tr>");
+for(var i=3; i>=0; i--) {
+gd=groups[group].table[i].gd;
+if(gd>0) gd="+"+gd;
+$(table).append("<tr><td colspan='7'><hr/></td></tr>");
+$(table).append(
+"<tr><td><img src='"+groups[group].table[i].team.flag+"'/></td><td class='name'>"+groups[group].table[i].team.name+"</td><td>"+groups[group].table[i].p+"</td><td>"+groups[group].table[i].gf+"</td><td>"+groups[group].table[i].ga+"</td><td>"+gd+"</td><td><font color='red'>"+groups[group].table[i].pts+"</font></td></tr>"
+
+                );
+}
+
+  }
+    $("#main").trigger("create");
+ }
+ 
+ function send() {
+ 
+ sheet.user = $('#user').val();
+ //sheet.games = [groups[0].games, groups[1].games, groups[2].games, groups[3].games, groups[4].games, groups[5].games, groups[6].games, groups[7].games];
+ sheet.games = [48];
+ for(var i=0; i<6; i++){
+	sheet.games[groups[0].games[i].index]=groups[0].games[i];
+ } for(var i=0; i<6; i++){
+	sheet.games[groups[1].games[i].index]=groups[1].games[i];
+ } for(var i=0; i<6; i++){
+	sheet.games[groups[2].games[i].index]=groups[2].games[i];
+ } for(var i=0; i<6; i++){
+	sheet.games[groups[3].games[i].index]=groups[3].games[i];
+ } for(var i=0; i<6; i++){
+	sheet.games[groups[4].games[i].index]=groups[4].games[i];
+ } for(var i=0; i<6; i++){
+	sheet.games[groups[5].games[i].index]=groups[5].games[i];
+ } for(var i=0; i<6; i++){
+	sheet.games[groups[6].games[i].index]=groups[6].games[i];
+ } for(var i=0; i<6; i++){
+	sheet.games[groups[7].games[i].index]=groups[7].games[i];
+ } 
+
+
+ sheet.tables = [groups[0].table, groups[1].table, groups[2].table, groups[3].table, groups[4].table, groups[5].table, groups[6].table, groups[7].table];
+
+sheet.winner = $('input[name=winner]:checked', '#sheet').val();
+ sheet.scoring_team = $('input[name=scoring_team]:checked', '#sheet').val();
+ sheet.aggressive = $('input[name=aggressive]:checked', '#sheet').val();
+ sheet.fairest = $('input[name=fairest]:checked', '#sheet').val();
+ sheet.top_scorer = $('input[name=top_scorer]:checked', '#sheet').val();
+ sheet.top_assister = $('input[name=top_assister]:checked', '#sheet').val();
+ sheet.tournament_surprise = $('input[name=tournament_surprise]:checked', '#sheet').val();
+ sheet.tournament_disappointment = $('input[name=tournament_disappointment]:checked', '#sheet').val();
+ //var myWindow = window.open();
+//myWindow.document.write("<textarea rows='100%' cols='100%'>"+JSON.stringify(sheet)+"</textarea>");
+ //window.open('mailto:kfir.ivi@gmail.com?subject='+$("#name").val()+'&body='+JSON.stringify(sheet)+'');
+
+ xmlhttp=new XMLHttpRequest();
+ xmlhttp.open("POST","http://213.57.150.5:8080/wc2014",true);
+xmlhttp.send(JSON.stringify(sheet));
+
+ }
+ 
+$(document).ready(function() {
+saveGroupScores('#tableA',0,'#a1h','#a1a','#a2h','#a2a','#a3h','#a3a','#a4h','#a4a','#a5h','#a5a','#a6h','#a6a',1);
+saveGroupScores('#tableB',1,'#b7h','#b7a','#b8h','#b8a','#b9h','#b9a','#b10h','#b10a','#b11h','#b11a','#b12h','#b12a',5);
+saveGroupScores('#tableC',2,'#c13h','#c13a','#c14h','#c14a','#c15h','#c15a','#c16h','#c16a','#c17h','#c17a','#c18h','#c18a',9);
+saveGroupScores('#tableD',3,'#d19h','#d19a','#d20h','#d20a','#d21h','#d21a','#d22h','#d22a','#d23h','#d23a','#d24h','#d24a',13);
+saveGroupScores('#tableE',4,'#e25h','#e25a','#e26h','#e26a','#e27h','#e27a','#e28h','#e28a','#e29h','#e29a','#e30h','#e30a',17);
+saveGroupScores('#tableF',5,'#f31h','#f31a','#f32h','#f32a','#f33h','#f33a','#f34h','#f34a','#f35h','#f35a','#f36h','#f36a',21);
+saveGroupScores('#tableG',6,'#g37h','#g37a','#g38h','#g38a','#g39h','#g39a','#g40h','#g40a','#g41h','#g41a','#g42h','#g42a',25);
+saveGroupScores('#tableH',7,'#h43h','#h43a','#h44h','#h44a','#h45h','#h45a','#h46h','#h46a','#h47h','#h47a','#h48h','#h48a',29);
+
+
+});
+
+  </script>
+  
+  </head>
+  <body>
+
+<div class="page" data-role="page" data-theme="a" data-content-theme="a" data-mini="true">
+ 
+<div class="header" data-role="header" data-position="fixed" data-theme="b">
+	
+	<img width="100px" height="40px" align="left" src="header.png"/>
+	<a href="#" class="ui-btn-right" data-icon="home" data-iconpos="notext" onclick="$.mobile.silentScroll(0)" data-role="button"></a>
+</div>
+<div class="main" id="main">
+<!--textarea id="s" rows="8"></textarea-->
+</br><div align="center" data-role="fieldcontain"><input type="text" id="user" name="user" value="Your Name..." maxlength="20" size="20" data-mini="true"/></div>
+
+ </br><div data-role="collapsible"   data-collapsed="false" data-theme="b" data-content-theme="a" data-mini="true"><h3>Specials</h3>
+<form id="sheet">
+
+    </br><div data-role="collapsible"   data-theme="b" data-content-theme="a" data-mini="true"><h3>Champions</h3><div><fieldset id="winner" data-role="controlgroup"></fieldset></div></div>
+
+       </br><div data-role="collapsible"   data-theme="b" data-content-theme="a" data-mini="true"><h3>Best Scoring Team</h3><div><fieldset id="scoring_team" data-role="controlgroup"></fieldset></div></div>
+	    </br><div data-role="collapsible"   data-theme="b" data-content-theme="a" data-mini="true"><h3>Most Aggressive Team</h3><div><fieldset id="aggressive" data-role="controlgroup"></fieldset></div></div>
+	    </br><div data-role="collapsible"   data-theme="b" data-content-theme="a" data-mini="true"><h3>Fairest Team</h3><div><fieldset id="fairest" data-role="controlgroup"></fieldset></div></div>
+
+	
+    </br><div data-role="collapsible"   data-theme="b" data-content-theme="a" data-mini="true"><h3>Top Scorer</h3><div><fieldset id="top_scorer" data-role="controlgroup"></fieldset></div></div>
+
+</br><div data-role="collapsible"   data-theme="b" data-content-theme="a" data-mini="true"><h3>Top Assister</h3><div><fieldset id="top_assister" data-role="controlgroup"></fieldset></div></div>
+
+</br><div data-role="collapsible"   data-theme="b" data-content-theme="a" data-mini="true"><h3>Tournament Surprise</h3><div><fieldset id="tournament_surprise" data-role="controlgroup"></fieldset></div></div>
+
+</br><div data-role="collapsible"   data-theme="b" data-content-theme="a" data-mini="true"><h3>Tournament Disappointment</h3><div><fieldset id="tournament_disappointment" data-role="controlgroup"></fieldset></div></div>
+
+</form>
+</br>
+</div>
+</br><div data-role="collapsible"   data-collapsed="false" data-theme="b" data-content-theme="a" data-mini="true"><h3>Groups</h3>
+
+</br><div data-role="collapsible"   data-theme="b" data-content-theme="a" data-mini="true"><h3>Group A</h3>
+  <table align="center">
+<tr>
+<td>
+<table class="games" id="groupA"></table>
+</td>
+</tr>
+<tr align="center">
+<td>
+<a href="#groupA" data-role="button" data-icon="arrow-d" data-iconpos="notext" onclick="saveGroupScores('#tableA',0,'#a1h','#a1a','#a2h','#a2a','#a3h','#a3a','#a4h','#a4a','#a5h','#a5a','#a6h','#a6a',1);">
+
+</td>
+</tr>
+<tr>
+<td>
+<table class="group_table" id="tableA"></table>
+
+</td>
+</tr>
+
+  </table>
+  </div>
+  
+   </br><div data-role="collapsible"   data-theme="b" data-content-theme="a" data-mini="true"><h3>Group B</h3>
+  <table align="center">
+<tr>
+<td>
+<table class="games" id="groupB"></table>
+</td>
+</tr>
+<tr align="center">
+<td>
+<a href="#groupB" data-role="button" data-icon="arrow-d" data-iconpos="notext" onclick="saveGroupScores('#tableB',1,'#b7h','#b7a','#b8h','#b8a','#b9h','#b9a','#b10h','#b10a','#b11h','#b11a','#b12h','#b12a',5);">
+</td>
+</tr>
+<tr>
+<td>
+<table class="group_table" id="tableB"></table>
+
+</td>
+</tr>
+
+  </table>
+  </div>
+  
+   </br><div data-role="collapsible"   data-theme="b" data-content-theme="a" data-mini="true"><h3>Group C</h3>
+  <table align="center">
+<tr>
+<td>
+<table class="games" id="groupC"></table>
+</td>
+</tr>
+<tr align="center">
+<td>
+<a href="#groupC" data-role="button" data-icon="arrow-d" data-iconpos="notext" onclick="saveGroupScores('#tableC',2,'#c13h','#c13a','#c14h','#c14a','#c15h','#c15a','#c16h','#c16a','#c17h','#c17a','#c18h','#c18a',9);">
+</td>
+</tr>
+<tr>
+<td>
+<table class="group_table" id="tableC"></table>
+</td>
+</tr>
+
+  </table>
+ </div>
+ 
+ 
+ 
+   </br><div data-role="collapsible"   data-theme="b" data-content-theme="a" data-mini="true"><h3>Group D</h3>
+  <table align="center">
+<tr>
+<td>
+<table class="games" id="groupD"></table>
+</td>
+</tr>
+<tr align="center">
+<td>
+<a href="#groupD" data-role="button" data-icon="arrow-d" data-iconpos="notext" onclick="saveGroupScores('#tableD',3,'#d19h','#d19a','#d20h','#d20a','#d21h','#d21a','#d22h','#d22a','#d23h','#d23a','#d24h','#d24a',13);">
+</td>
+</tr>
+<tr>
+<td>
+<table class="group_table" id="tableD"></table>
+</td>
+</tr>
+
+  </table>
+ </div>
+  
+   </br><div data-role="collapsible"   data-theme="b" data-content-theme="a" data-mini="true"><h3>Group E</h3>
+  <table align="center">
+<tr>
+<td>
+<table class="games" id="groupE"></table>
+</td>
+</tr>
+<tr align="center">
+<td>
+<a href="#groupE" data-role="button" data-icon="arrow-d" data-iconpos="notext" onclick="saveGroupScores('#tableE',4,'#e25h','#e25a','#e26h','#e26a','#e27h','#e27a','#e28h','#e28a','#e29h','#e29a','#e30h','#e30a',17);">
+</td>
+</tr>
+<tr>
+<td>
+<table class="group_table" id="tableE"></table>
+</td>
+</tr>
+
+  </table>
+ </div>
+ 
+ </br><div data-role="collapsible"   data-theme="b" data-content-theme="a" data-mini="true"><h3>Group F</h3>
+  <table align="center">
+<tr>
+<td>
+<table class="games" id="groupF"></table>
+</td>
+</tr>
+<tr align="center">
+<td>
+<a href="#groupF" data-role="button" data-icon="arrow-d" data-iconpos="notext" onclick="saveGroupScores('#tableF',5,'#f31h','#f31a','#f32h','#f32a','#f33h','#f33a','#f34h','#f34a','#f35h','#f35a','#f36h','#f36a',21);">
+</td>
+</tr>
+<tr>
+<td>
+<table class="group_table" id="tableF"></table>
+</td>
+</tr>
+
+  </table>
+ </div>
+ 
+  </br><div data-role="collapsible"   data-theme="b" data-content-theme="a" data-mini="true"><h3>Group G</h3>
+  <table align="center">
+<tr>
+<td>
+<table class="games" id="groupG"></table>
+</td>
+</tr>
+<tr align="center">
+<td>
+<a href="#groupF" data-role="button" data-icon="arrow-d" data-iconpos="notext" onclick="saveGroupScores('#tableG',6,'#g37h','#g37a','#g38h','#g38a','#g39h','#g39a','#g40h','#g40a','#g41h','#g41a','#g42h','#g42a',25);">
+</td>
+</tr>
+<tr>
+<td>
+<table class="group_table" id="tableG"></table>
+</td>
+</tr>
+
+  </table>
+ </div>
+ 
+  </br><div data-role="collapsible"   data-theme="b" data-content-theme="a" data-mini="true"><h3>Group H</h3>
+  <table align="center">
+<tr>
+<td>
+<table class="games" id="groupH"></table>
+</td>
+</tr>
+<tr align="center">
+<td>
+<a href="#groupH" data-role="button" data-icon="arrow-d" data-iconpos="notext" onclick="saveGroupScores('#tableH',7,'#h43h','#h43a','#h44h','#h44a','#h45h','#h45a','#h46h','#h46a','#h47h','#h47a','#h48h','#h48a',29);">
+</td>
+</tr>
+<tr>
+<td>
+<table class="group_table" id="tableH"></table>
+</td>
+</tr>
+
+  </table>
+ </div>
+
+
+</div>
+<div align="center">
+   <a data-role="button" data-inline="true" data-theme="b" data-icon="check" onclick="send()">Send</a>
+   </div>
+  </div>
+</div>
+
+
+  </body>
+
+</html>
