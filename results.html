@@ -241,7 +241,7 @@ leaderboard.append(user);
  tournament_surprise.append("<div><table><tr><td width='55%'>"+kfir.user+"</td><td align='left' width='40%'>"+teams[parseInt(kfir.tournament_surprise)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(kfir.tournament_surprise)-1].flag+"'/></td></tr></table></div><hr/>");
  var tournament_disappointment = $("#tournament_disappointment");
  tournament_disappointment.append("<div><table><tr><td width='55%'>"+kfir.user+"</td><td align='left' width='40%'>"+teams[parseInt(kfir.tournament_disappointment)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(kfir.tournament_disappointment)-1].flag+"'/></td></tr></table></div><hr/>");
- 
+  $("#main").trigger("create");
 }
 
    });
