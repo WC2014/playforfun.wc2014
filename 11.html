@@ -188,7 +188,7 @@ var color;
 points = calcGameScore(gamesSheet[i].home.score, gamesSheet[i].away.score, kfir.games[i].home.score, kfir.games[i].away.score) ;
 kfir.games_total = kfir.games_total + points;
 color = getGameColor(points, gamesSheet[i].home.score, gamesSheet[i].away.score);
-$("#game"+id+"c").append("<div style='background-color:"+color+";' align='left'><table><tr><td width='50%'>"+kfir.user+"</td><td width='30%' align='left'><td width='10%' style='text-align:center;'>"+kfir.games[i].home.score+"</td><td>-</td><td width='10%' style='text-align:center;'>"+kfir.games[i].away.score+"</td></td></tr></table><div><hr/>");
+$("#game"+id+"c").append("<div align='left'><table><tr><td width='50%'><font color='"+color+"'>"+kfir.user+"</font></td><td width='30%' align='left'><td width='10%' style='text-align:center;'><font color='"+color+"'>"+kfir.games[i].home.score+"</font></td><td><font color='"+color+"'> - </font></td><td width='10%' style='text-align:center;'><font color='"+color+"'>"+kfir.games[i].away.score+"</font></td></td></tr></table><div><hr/>");
 
 
 
@@ -256,9 +256,9 @@ function getGameColor(points, h, a) {
 if(h=='') return '';
 if(a=='') return '';
 
-if(points==0) return '#CD3333';
-if(points==2) return '#EEAD0E';
-if(points==5) return '#008B45';
+if(points==0) return '#EE2C2C';
+if(points==2) return '#FFFF00';
+if(points==5) return '#00FF00';
 }
 
 function calcGameScore(rh, ra, uh, ua) 
