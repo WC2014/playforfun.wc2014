@@ -457,6 +457,7 @@ sheet.winner = $('input[name=winner]:checked', '#sheet').val();
  xmlhttp=new XMLHttpRequest();
  xmlhttp.open("POST","http://213.57.150.5:8080/wc2014",true);
 xmlhttp.send(JSON.stringify(sheet));
+alert("Form sent");
 
  }
  

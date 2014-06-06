@@ -93,8 +93,8 @@ padding: 0px 5px 0px 5px;
   
   var groups=[];
   var teams;
-  var top_scorer;
-  var top_assister;
+  var scorer;
+  var assister;
 
   var originalGroups=[];
   var gamesSheet;
@@ -108,7 +108,7 @@ padding: 0px 5px 0px 5px;
    dataType : "text",
    success : function (data) {
    var json = $.parseJSON(data);
-   teams = json;
+   teams = json.teams;
 
 }
 });
@@ -118,7 +118,7 @@ padding: 0px 5px 0px 5px;
    dataType : "text",
    success : function (data) {
    var json = $.parseJSON(data);
-   top_scorer = json;
+   scorer = json.players;
 
 }
 });
@@ -129,10 +129,12 @@ padding: 0px 5px 0px 5px;
    dataType : "text",
    success : function (data) {
    var json = $.parseJSON(data);
-   top_scorer = json;
+   assister = json.players;
 
 }
 });
+
+
 
 
   
@@ -147,7 +149,7 @@ padding: 0px 5px 0px 5px;
  var id;
   for (var i = 0; i < 48; i++) {
    id = i+1;
-$("#game"+id+"h").append("<div align='center'><table><tr><td>"+gamesSheet[i].time.split("|")[0]+"</td><td width='80px' align='right'>"+gamesSheet[i].home.name+"</td><td><img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+gamesSheet[i].home.flag+"'/></td><td width='10' style='text-align:center;'>"+gamesSheet[i].home.score+"</td><td> - </td><td width='10' style='text-align:center;'>"+gamesSheet[i].away.score+"</td><td><img style='width:20px; height:12px; padding:0px 5px 0px 5px' src='"+gamesSheet[i].away.flag+"'/></td><td width='80px'>"+gamesSheet[i].away.name+"</td></tr></table><div>");
+$("#game"+id+"h").append("<div align='left'><table><tr><td>"+gamesSheet[i].time.split("|")[0]+"</td><td width='30%' align='right'>"+gamesSheet[i].home.name+"</td><td align='right' width='20%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+gamesSheet[i].home.flag+"'/></td><td width='10%' style='text-align:center;'>"+gamesSheet[i].home.score+"</td><td> - </td><td width='10%' style='text-align:center;'>"+gamesSheet[i].away.score+"</td><td width='20%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px' src='"+gamesSheet[i].away.flag+"'/></td><td width='30%'>"+gamesSheet[i].away.name+"</td></tr></table><div>");
 }
   var gd;
    var group;
@@ -186,7 +188,7 @@ var color;
 points = calcGameScore(gamesSheet[i].home.score, gamesSheet[i].away.score, kfir.games[i].home.score, kfir.games[i].away.score) ;
 kfir.games_total = kfir.games_total + points;
 color = getGameColor(points, gamesSheet[i].home.score, gamesSheet[i].away.score);
-$("#game"+id+"c").append("<div style='background-color:"+color+";' align='center'><table><tr><td>"+kfir.user+"</td><td width='80px' align='right'>"+kfir.games[i].home.name+"</td><td><img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+kfir.games[i].home.flag+"'/></td><td width='10' style='text-align:center;'>"+kfir.games[i].home.score+"</td><td> - </td><td width='10' style='text-align:center;'>"+kfir.games[i].away.score+"</td><td><img style='width:20px; height:12px; padding:0px 5px 0px 5px' src='"+kfir.games[i].away.flag+"'/></td><td width='80px'>"+kfir.games[i].away.name+"</td></tr></table><div>");
+$("#game"+id+"c").append("<div style='background-color:"+color+";' align='left'><table><tr><td width='175px'>"+kfir.user+"</td><td width='10' style='text-align:center;'>"+kfir.games[i].home.score+"</td><td> - </td><td width='10' style='text-align:center;'>"+kfir.games[i].away.score+"</td></tr></table><div>");
 
 
 
@@ -227,7 +229,21 @@ leaderboard.append(user);
  
  
  var winner = $("#winner");
- winner.append("<div>"+kfir.user+" "+teams[kfir.winner-1].name+"<img align='right' src='"+teams[kfir.winner-1].flag+"'/></div>");
+ winner.append("<div><table><tr><td width='50%'>"+kfir.user+"</td><td align='right' width='50%'>"+teams[parseInt(kfir.winner)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(kfir.winner)-1].flag+"'/></td></tr></table></div><hr/>");
+ var scoring_team = $("#scoring_team");
+ scoring_team.append("<div><table><tr><td width='50%'>"+kfir.user+"</td><td align='right' width='50%'>"+teams[parseInt(kfir.scoring_team)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(kfir.scoring_team)-1].flag+"'/></td></tr></table></div><hr/>");
+ var aggressive = $("#aggressive");
+ aggressive.append("<div><table><tr><td width='50%'>"+kfir.user+"</td><td align='right' width='50%'>"+teams[parseInt(kfir.aggressive)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(kfir.aggressive)-1].flag+"'/></td></tr></table></div><hr/>");
+ var fairest = $("#fairest");
+ fairest.append("<div><table><tr><td width='50%'>"+kfir.user+"</td><td align='right' width='50%'>"+teams[parseInt(kfir.fairest)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(kfir.fairest)-1].flag+"'/></td></tr></table></div><hr/>");
+ var top_scorer = $("#top_scorer");
+ top_scorer.append("<div><table><tr><td width='50%'>"+kfir.user+"</td><td align='right' width='50%'>"+scorer[parseInt(kfir.top_scorer)-1].name+"&nbsp;<img width='20px' height='20px'  align='right' src='"+scorer[parseInt(kfir.top_scorer)-1].photo+"'/></td></tr></table></div><hr/>");
+ var top_assister = $("#top_assister");
+ top_assister.append("<div><table><tr><td width='50%'>"+kfir.user+"</td><td align='right' width='50%'>"+assister[parseInt(kfir.top_assister)-1].name+"&nbsp;<img width='20px' height='20px'  align='right' src='"+assister[parseInt(kfir.top_assister)-1].photo+"'/></td></tr></table></div><hr/>");
+ var tournament_surprise = $("#tournament_surprise");
+ tournament_surprise.append("<div><table><tr><td width='50%'>"+kfir.user+"</td><td align='right' width='50%'>"+teams[parseInt(kfir.tournament_surprise)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(kfir.tournament_surprise)-1].flag+"'/></td></tr></table></div><hr/>");
+ var tournament_disappointment = $("#tournament_disappointment");
+ tournament_disappointment.append("<div><table><tr><td width='50%'>"+kfir.user+"</td><td align='right' width='50%'>"+teams[parseInt(kfir.tournament_disappointment)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(kfir.tournament_disappointment)-1].flag+"'/></td></tr></table></div><hr/>");
  
 }
 
@@ -363,23 +379,19 @@ return points;
  </br><div data-role="collapsible"    data-theme="b" data-content-theme="a" data-mini="true"><h3>Specials</h3>
 <form id="sheet">
 
-    </br><div data-role="collapsible"   data-theme="a" data-content-theme="a" data-mini="true"><h3>Champions</h3><div id="winner"></div></div>
-
-    </br><div data-role="collapsible"   data-theme="a" data-content-theme="a" data-mini="true"><h3>2nd Place</h3><div><fieldset id="runner_up" data-role="controlgroup"></fieldset></div></div>
-
-	    </br><div data-role="collapsible"   data-theme="a" data-content-theme="a" data-mini="true"><h3>3rd Place</h3><div><fieldset id="bronze" data-role="controlgroup"></fieldset></div></div>
-	    </br><div data-role="collapsible"   data-theme="a" data-content-theme="a" data-mini="true"><h3>Best Scoring Team</h3><div><fieldset id="scoring_team" data-role="controlgroup"></fieldset></div></div>
-	    </br><div data-role="collapsible"   data-theme="a" data-content-theme="a" data-mini="true"><h3>Most Aggressive Team</h3><div><fieldset id="aggressive" data-role="controlgroup"></fieldset></div></div>
-	    </br><div data-role="collapsible"   data-theme="a" data-content-theme="a" data-mini="true"><h3>Fairest Team</h3><div><fieldset id="fairest" data-role="controlgroup"></fieldset></div></div>
+    </br><div data-role="collapsible" class='game'  data-theme="b" data-content-theme="a" data-mini="true"><h3>Champions</h3><div id="winner"></div></div>
+      </br><div data-role="collapsible"  class='game' data-theme="b" data-content-theme="a" data-mini="true"><h3>Best Scoring Team</h3><div><fieldset id="scoring_team" data-role="controlgroup"></fieldset></div></div>
+	    </br><div data-role="collapsible"  class='game' data-theme="b" data-content-theme="a" data-mini="true"><h3>Most Aggressive Team</h3><div><fieldset id="aggressive" data-role="controlgroup"></fieldset></div></div>
+	    </br><div data-role="collapsible"  class='game' data-theme="b" data-content-theme="a" data-mini="true"><h3>Fairest Team</h3><div><fieldset id="fairest" data-role="controlgroup"></fieldset></div></div>
 
 	
-    </br><div data-role="collapsible"   data-theme="a" data-content-theme="a" data-mini="true"><h3>Top Scorer</h3><div><fieldset id="top_scorer" data-role="controlgroup"></fieldset></div></div>
+    </br><div data-role="collapsible" class='game'  data-theme="b" data-content-theme="a" data-mini="true"><h3>Top Scorer</h3><div><fieldset id="top_scorer" data-role="controlgroup"></fieldset></div></div>
 
-</br><div data-role="collapsible"   data-theme="a" data-content-theme="a" data-mini="true"><h3>Top Assister</h3><div><fieldset id="top_assister" data-role="controlgroup"></fieldset></div></div>
+</br><div data-role="collapsible" class='game'  data-theme="b" data-content-theme="a" data-mini="true"><h3>Top Assister</h3><div><fieldset id="top_assister" data-role="controlgroup"></fieldset></div></div>
 
-</br><div data-role="collapsible"   data-theme="a" data-content-theme="a" data-mini="true"><h3>Tournament Surprise</h3><div><fieldset id="tournament_surprise" data-role="controlgroup"></fieldset></div></div>
+</br><div data-role="collapsible" class='game'  data-theme="b" data-content-theme="a" data-mini="true"><h3>Tournament Surprise</h3><div><fieldset id="tournament_surprise" data-role="controlgroup"></fieldset></div></div>
 
-</br><div data-role="collapsible"   data-theme="a" data-content-theme="a" data-mini="true"><h3>Tournament Disappointment</h3><div><fieldset id="tournament_disappointment" data-role="controlgroup"></fieldset></div></div>
+</br><div data-role="collapsible" class='game'  data-theme="b" data-content-theme="a" data-mini="true"><h3>Tournament Disappointment</h3><div><fieldset id="tournament_disappointment" data-role="controlgroup"></fieldset></div></div>
 
 </form>
 </br>
