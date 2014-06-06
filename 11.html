@@ -188,7 +188,7 @@ var color;
 points = calcGameScore(gamesSheet[i].home.score, gamesSheet[i].away.score, kfir.games[i].home.score, kfir.games[i].away.score) ;
 kfir.games_total = kfir.games_total + points;
 color = getGameColor(points, gamesSheet[i].home.score, gamesSheet[i].away.score);
-$("#game"+id+"c").append("<div style='background-color:"+color+";' align='left'><table><tr><td width='50%'>"+kfir.user+"</td><td width='10%' style='text-align:center;'>"+kfir.games[i].home.score+"</td><td>-</td><td width='10%' style='text-align:center;'>"+kfir.games[i].away.score+"</td></tr></table><div><hr/>");
+$("#game"+id+"c").append("<div style='background-color:"+color+";' align='left'><table><tr><td width='50%'>"+kfir.user+"</td><td width='30%' align='left'><td width='10%' style='text-align:center;'>"+kfir.games[i].home.score+"</td><td>-</td><td width='10%' style='text-align:center;'>"+kfir.games[i].away.score+"</td></td></tr></table><div><hr/>");
 
 
 
