@@ -455,10 +455,17 @@ sheet.winner = $('input[name=winner]:checked', '#sheet').val();
  //window.open('mailto:kfir.ivi@gmail.com?subject='+$("#name").val()+'&body='+JSON.stringify(sheet)+'');
 
  xmlhttp=new XMLHttpRequest();
- xmlhttp.open("POST","http://213.57.150.5:8080/wc2014",true);
+ xmlhttp.open("POST","http://213.57.150.5:8080/wc2014",false);
+ 
+xmlhttp.setRequestHeader("Content-length", JSON.stringify(sheet).length);
+xmlhttp.setRequestHeader("Connection", "close");
+xmlhttp.onreadystatechange = function() {//Call a function when the state changes.
+    if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        alert(xmlhttp.responseText);
+    }
+}
 xmlhttp.send(JSON.stringify(sheet));
-
- }
+}
  
 $(document).ready(function() {
 saveGroupScores('#tableA',0,'#a1h','#a1a','#a2h','#a2a','#a3h','#a3a','#a4h','#a4a','#a5h','#a5a','#a6h','#a6a',1);
