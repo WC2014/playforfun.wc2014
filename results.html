@@ -212,7 +212,7 @@ if(kfir.tables[j][i].team.id == tablesSheet[j][i].team.id) {kfir.groups_total = 
 gd=kfir.tables[j][i].gd;
 if(gd>0) gd="+"+gd;
 $(group).find('tbody').append("<tr><td colspan='7'><hr/></td></tr>");
-$(group).find('tbody').append("<tr><td><img src='"+kfir.tables[j][i].team.flag+"'/></td><td class='name'>"+kfir.tables[j][i].team.name+"</td><td>"+kfir.tables[j][i].p+"</td><td>"+kfir.tables[j][i].gf+"</td><td>"+kfir.tables[j][i].ga+"</td><td>"+gd+"</td><td><font color='red'>"+kfir.tables[j][i].pts+"</font></td></tr>");
+$(group).find('tbody').append("<tr><td><img src='"+kfir.tables[j][i].team.flag+"'/></td><td class='name'><font color='"+getGroupColor(tablesSheet[j][i], kfir.tables[j][i])+"'>"+kfir.tables[j][i].team.name+"</font></td><td>"+kfir.tables[j][i].p+"</td><td>"+kfir.tables[j][i].gf+"</td><td>"+kfir.tables[j][i].ga+"</td><td>"+gd+"</td><td>"+kfir.tables[j][i].pts+"</td></tr>");
 }
 $(group).append("<hr/>");
 }
@@ -259,6 +259,15 @@ if(a=='') return '';
 if(points==0) return '#FF2400';
 if(points==2) return '#FFFF00';
 if(points==5) return '#00FF00';
+}
+
+
+function getGroupColor(r, u) {
+
+if(u.team.id == r.team.id) return '#00FF00';
+
+return '#FF2400';
+
 }
 
 function calcGameScore(rh, ra, uh, ua) 
