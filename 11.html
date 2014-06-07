@@ -216,7 +216,8 @@ for(x=0; x<users.length; x++) {
 points = calcGameScore(gamesSheet[i].home.score, gamesSheet[i].away.score, users[x].games[i].home.score, users[x].games[i].away.score) ;
 users[x].games_total = users[x].games_total + points;
 color = getGameColor(points, gamesSheet[i].home.score, gamesSheet[i].away.score);
-$("#game"+id+"c").append("<div align='left'><table><tr><td width='50%'><font color='"+color+"'>"+users[x].user+"</font></td><td width='30%' align='left'><td width='10%' style='text-align:center;'><font color='"+color+"'>"+users[x].games[i].home.score+"</font></td><td><font color='"+color+"'> - </font></td><td width='10%' style='text-align:center;'><font color='"+color+"'>"+users[x].games[i].away.score+"</font></td></td></tr></table><div><hr/>");
+if(x%2==0) bg ="#292929" ; else bg="#383838" ;
+$("#game"+id+"c").append("<div style='background-color:"+bg+"' align='left'><table  width='100%'><tr><td width='50%'><font color='"+color+"'>"+users[x].user+"</font></td><td width='30%' align='left'><td width='10%' style='text-align:center;'><font color='"+color+"'>"+users[x].games[i].home.score+"</font></td><td><font color='"+color+"'> - </font></td><td width='10%' style='text-align:center;'><font color='"+color+"'>"+users[x].games[i].away.score+"</font></td></td></tr></table><div>");
 
 
 
@@ -228,12 +229,15 @@ $("#game"+id+"c").append("<div align='left'><table><tr><td width='50%'><font col
 var gd;
    var group;
    var table_id;
+   var bg;
  for (var j = 0; j < 8; j++) {
    id = j+1;
    gd;
    table_id = "group"+id+"c"+x;
    group = $("#group"+id+"c");
-group.append("<table class='group_table'><tbody id="+table_id+"><tr><td colspan='2'>"+users[x].user+"</td><td>P</td><td>GF</td><td>GA</td><td>GD</td><td>Pts</td></tr></tbody></table>");
+   
+   
+group.append("<table  style='background-color:"+bg+"'  width='100%' class='group_table'><tbody id="+table_id+"><tr><td colspan='2'>"+users[x].user+"</td><td>P</td><td>GF</td><td>GA</td><td>GD</td><td>Pts</td></tr></tbody></table>");
 for(var i=3; i>=0; i--) {
 
 
@@ -243,32 +247,32 @@ gd=users[x].tables[j][i].gd;
 if(gd>0) gd="+"+gd;
 $(group).find('tbody#'+table_id).append("<tr><td colspan='7'><hr/></td></tr><tr><td><img src='"+users[x].tables[j][i].team.flag+"'/></td><td class='name'><font color='"+getGroupColor(tablesSheet[j][i], users[x].tables[j][i])+"'>"+users[x].tables[j][i].team.name+"</font></td><td>"+users[x].tables[j][i].p+"</td><td>"+users[x].tables[j][i].gf+"</td><td>"+users[x].tables[j][i].ga+"</td><td>"+gd+"</td><td>"+users[x].tables[j][i].pts+"</td></tr>");
 }
-$(group).append("<hr/>");
+group.append("<br/>");
 }
 
 var leaderboard = $("#leaderboard");
 users[x].total = users[x].total + users[x].games_total + users[x].groups_total + users[x].specials_total;
-var user = $("<div data-role='collapsible'  data-theme='a' data-content-theme='b' data-mini='true'><h3><table><tr><td width='50%'>"+users[x].user+"</td><td  width='50%'align='right'>"+users[x].total+"</td></tr></table></h3><div>Games: "+users[x].games_total+"</div><hr/><div>Groups: "+users[x].groups_total+"</div><hr/><div>Specials: "+users[x].specials_total+"</div></div>").collapsible();
+var user = $("<div data-role='collapsible'  data-theme='a' data-content-theme='b' data-mini='true'><h3><table width='100%'><tr><td width='80%' align='left'>"+users[x].user+"</td><td  width='20%' align='right'>"+users[x].total+"</td></tr></table></h3><div>Games: "+users[x].games_total+"</div><hr/><div>Groups: "+users[x].groups_total+"</div><hr/><div>Specials: "+users[x].specials_total+"</div></div>").collapsible();
 leaderboard.append(user);
  $("#main").trigger("create");
  
  
  var winner = $("#winner");
- winner.append("<div><table><tr><td width='55%'>"+users[x].user+"</td><td align='left' width='40%'>"+teams[parseInt(users[x].winner)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].winner)-1].flag+"'/></td></tr></table></div><hr/>");
+ winner.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'>"+users[x].user+"</td><td align='right' width='40%'>"+teams[parseInt(users[x].winner)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].winner)-1].flag+"'/></td></tr></table></div>");
  var scoring_team = $("#scoring_team");
- scoring_team.append("<div><table><tr><td width='55%'>"+users[x].user+"</td><td align='left' width='40%'>"+teams[parseInt(users[x].scoring_team)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].scoring_team)-1].flag+"'/></td></tr></table></div><hr/>");
+ scoring_team.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'>"+users[x].user+"</td><td align='right' width='40%'>"+teams[parseInt(users[x].scoring_team)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].scoring_team)-1].flag+"'/></td></tr></table></div>");
  var aggressive = $("#aggressive");
- aggressive.append("<div><table><tr><td width='55%'>"+users[x].user+"</td><td align='left' width='40%'>"+teams[parseInt(users[x].aggressive)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].aggressive)-1].flag+"'/></td></tr></table></div><hr/>");
+ aggressive.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'>"+users[x].user+"</td><td align='right' width='40%'>"+teams[parseInt(users[x].aggressive)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].aggressive)-1].flag+"'/></td></tr></table></div>");
  var fairest = $("#fairest");
- fairest.append("<div><table><tr><td width='55%'>"+users[x].user+"</td><td align='left' width='40%'>"+teams[parseInt(users[x].fairest)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].fairest)-1].flag+"'/></td></tr></table></div><hr/>");
+ fairest.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'>"+users[x].user+"</td><td align='right' width='40%'>"+teams[parseInt(users[x].fairest)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].fairest)-1].flag+"'/></td></tr></table></div>");
  var top_scorer = $("#top_scorer");
- top_scorer.append("<div><table><tr><td width='55%'>"+users[x].user+"</td><td align='left' width='40%'>"+scorer[parseInt(users[x].top_scorer)-1].name+"&nbsp;<img width='15px' height='15px'  align='right' src='"+scorer[parseInt(users[x].top_scorer)-1].photo+"'/></td></tr></table></div><hr/>");
+ top_scorer.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'>"+users[x].user+"</td><td align='right' width='40%'>"+scorer[parseInt(users[x].top_scorer)-1].name+"&nbsp;<img width='15px' height='15px'  align='right' src='"+scorer[parseInt(users[x].top_scorer)-1].photo+"'/></td></tr></table></div>");
  var top_assister = $("#top_assister");
- top_assister.append("<div><table><tr><td width='55%'>"+users[x].user+"</td><td align='left' width='40%'>"+assister[parseInt(users[x].top_assister)-1].name+"&nbsp;<img width='15px' height='15px'  align='right' src='"+assister[parseInt(users[x].top_assister)-1].photo+"'/></td></tr></table></div><hr/>");
+ top_assister.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'>"+users[x].user+"</td><td align='right' width='40%'>"+assister[parseInt(users[x].top_assister)-1].name+"&nbsp;<img width='15px' height='15px'  align='right' src='"+assister[parseInt(users[x].top_assister)-1].photo+"'/></td></tr></table></div>");
  var tournament_surprise = $("#tournament_surprise");
- tournament_surprise.append("<div><table><tr><td width='55%'>"+users[x].user+"</td><td align='left' width='40%'>"+teams[parseInt(users[x].tournament_surprise)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].tournament_surprise)-1].flag+"'/></td></tr></table></div><hr/>");
+ tournament_surprise.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'>"+users[x].user+"</td><td align='right' width='40%'>"+teams[parseInt(users[x].tournament_surprise)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].tournament_surprise)-1].flag+"'/></td></tr></table></div>");
  var tournament_disappointment = $("#tournament_disappointment");
- tournament_disappointment.append("<div><table><tr><td width='55%'>"+users[x].user+"</td><td align='left' width='40%'>"+teams[parseInt(users[x].tournament_disappointment)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].tournament_disappointment)-1].flag+"'/></td></tr></table></div><hr/>");
+ tournament_disappointment.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'>"+users[x].user+"</td><td align='right' width='40%'>"+teams[parseInt(users[x].tournament_disappointment)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].tournament_disappointment)-1].flag+"'/></td></tr></table></div>");
   $("#main").trigger("create");
 }
 
@@ -418,14 +422,14 @@ var swapped;
 </div>
 
 </br><div data-role="collapsible"    data-theme="b" data-content-theme="a" data-mini="true"><h3>Groups</h3>
-<div data-role="collapsible"    data-theme="b" data-content-theme="a" data-mini="true"><h3><div align="center"><table class="group_table" id="group1h"></table></div></h3><div align="center" id="group1c"></div></div>
-<div data-role="collapsible"    data-theme="b" data-content-theme="a" data-mini="true"><h3><div align="center"><table class="group_table" id="group2h"></table></div></h3><div align="center" id="group2c"></div></div>
-<div data-role="collapsible"    data-theme="b" data-content-theme="a" data-mini="true"><h3><div align="center"><table class="group_table" id="group3h"></table></div></h3><div align="center" id="group3c"></div></div>
-<div data-role="collapsible"    data-theme="b" data-content-theme="a" data-mini="true"><h3><div align="center"><table class="group_table" id="group4h"></table></div></h3><div align="center" id="group4c"></div></div>
-<div data-role="collapsible"    data-theme="b" data-content-theme="a" data-mini="true"><h3><div align="center"><table class="group_table" id="group5h"></table></div></h3><div align="center" id="group5c"></div></div>
-<div data-role="collapsible"    data-theme="b" data-content-theme="a" data-mini="true"><h3><div align="center"><table class="group_table" id="group6h"></table></div></h3><div align="center" id="group6c"></div></div>
-<div data-role="collapsible"    data-theme="b" data-content-theme="a" data-mini="true"><h3><div align="center"><table class="group_table" id="group7h"></table></div></h3><div align="center" id="group7c"></div></div>
-<div data-role="collapsible"    data-theme="b" data-content-theme="a" data-mini="true"><h3><div align="center"><table class="group_table" id="group8h"></table></div></h3><div align="center" id="group8c"></div></div>
+<div data-role="collapsible"    data-theme="b" data-content-theme="a" data-mini="true"><h3><div align="center"><table width='100%' class="group_table" id="group1h"></table></div></h3><div align="center" id="group1c"></div></div>
+<div data-role="collapsible"    data-theme="b" data-content-theme="a" data-mini="true"><h3><div align="center"><table width='100%' class="group_table" id="group2h"></table></div></h3><div align="center" id="group2c"></div></div>
+<div data-role="collapsible"    data-theme="b" data-content-theme="a" data-mini="true"><h3><div align="center"><table width='100%' class="group_table" id="group3h"></table></div></h3><div align="center" id="group3c"></div></div>
+<div data-role="collapsible"    data-theme="b" data-content-theme="a" data-mini="true"><h3><div align="center"><table width='100%' class="group_table" id="group4h"></table></div></h3><div align="center" id="group4c"></div></div>
+<div data-role="collapsible"    data-theme="b" data-content-theme="a" data-mini="true"><h3><div align="center"><table width='100%' class="group_table" id="group5h"></table></div></h3><div align="center" id="group5c"></div></div>
+<div data-role="collapsible"    data-theme="b" data-content-theme="a" data-mini="true"><h3><div align="center"><table width='100%' class="group_table" id="group6h"></table></div></h3><div align="center" id="group6c"></div></div>
+<div data-role="collapsible"    data-theme="b" data-content-theme="a" data-mini="true"><h3><div align="center"><table width='100%' class="group_table" id="group7h"></table></div></h3><div align="center" id="group7c"></div></div>
+<div data-role="collapsible"    data-theme="b" data-content-theme="a" data-mini="true"><h3><div align="center"><table width='100%' class="group_table" id="group8h"></table></div></h3><div align="center" id="group8c"></div></div>
 
 </div>
 
