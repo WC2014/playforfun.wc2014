@@ -241,7 +241,12 @@ if(users[x].tables[j][i].team.id == tablesSheet[j][i].team.id) {users[x].groups_
 
 gd=users[x].tables[j][i].gd;
 if(gd>0) gd="+"+gd;
+<<<<<<< HEAD:11.html
 $(group).find('tbody#'+table_id).append("<tr><td colspan='7'><hr/></td></tr><tr><td><img src='"+users[x].tables[j][i].team.flag+"'/></td><td class='name'><font color='"+getGroupColor(tablesSheet[j][i], users[x].tables[j][i])+"'>"+users[x].tables[j][i].team.name+"</font></td><td>"+users[x].tables[j][i].p+"</td><td>"+users[x].tables[j][i].gf+"</td><td>"+users[x].tables[j][i].ga+"</td><td>"+gd+"</td><td>"+users[x].tables[j][i].pts+"</td></tr>");
+=======
+$(group).find('tbody').append("<tr><td colspan='7'><hr/></td></tr>");
+$(group).find('tbody').append("<tr><td><img src='"+kfir.tables[j][i].team.flag+"'/></td><td class='name'><font color='"+getGroupColor(tablesSheet[j][i], kfir.tables[j][i])+"'>"+kfir.tables[j][i].team.name+"</font></td><td>"+kfir.tables[j][i].p+"</td><td>"+kfir.tables[j][i].gf+"</td><td>"+kfir.tables[j][i].ga+"</td><td>"+gd+"</td><td>"+kfir.tables[j][i].pts+"</td></tr>");
+>>>>>>> cee533ac2da4490595e1f9d4f6a5dfff3769cc19:results.html
 }
 $(group).append("<hr/>");
 }
@@ -268,7 +273,11 @@ leaderboard.append(user);
  var tournament_surprise = $("#tournament_surprise");
  tournament_surprise.append("<div><table><tr><td width='55%'>"+users[x].user+"</td><td align='left' width='40%'>"+teams[parseInt(users[x].tournament_surprise)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].tournament_surprise)-1].flag+"'/></td></tr></table></div><hr/>");
  var tournament_disappointment = $("#tournament_disappointment");
+<<<<<<< HEAD:11.html
  tournament_disappointment.append("<div><table><tr><td width='55%'>"+users[x].user+"</td><td align='left' width='40%'>"+teams[parseInt(users[x].tournament_disappointment)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].tournament_disappointment)-1].flag+"'/></td></tr></table></div><hr/>");
+=======
+ tournament_disappointment.append("<div><table><tr><td width='55%'>"+kfir.user+"</td><td align='left' width='40%'>"+teams[parseInt(kfir.tournament_disappointment)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(kfir.tournament_disappointment)-1].flag+"'/></td></tr></table></div><hr/>");
+>>>>>>> cee533ac2da4490595e1f9d4f6a5dfff3769cc19:results.html
   $("#main").trigger("create");
 }
 
