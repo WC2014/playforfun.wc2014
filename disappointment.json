@@ -1,0 +1,62 @@
+{
+    "teams" :
+	[{
+			"id" : "1",
+			"name" : "Brazil",
+			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/22px-Flag_of_Brazil.svg.png"
+		}, {
+			"id" : "5",
+			"name" : "Spain",
+			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/23px-Flag_of_Spain.svg.png"
+		}, {
+			"id" : "6",
+			"name" : "Netherlands",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/23px-Flag_of_the_Netherlands.svg.png"
+		}, {
+			"id" : "7",
+			"name" : "Chile",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Flag_of_Chile.svg/23px-Flag_of_Chile.svg.png"
+		}, {
+			"id" : "9",
+			"name" : "Colombia",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/23px-Flag_of_Colombia.svg.png"
+		}, {
+			"id" : "13",
+			"name" : "Uruguay",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/23px-Flag_of_Uruguay.svg.png"
+		}, {
+			"id" : "15",
+			"name" : "England",
+			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/b/be/Flag_of_England.svg/23px-Flag_of_England.svg.png"
+		}, {
+			"id" : "16",
+			"name" : "Italy",
+			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/23px-Flag_of_Italy.svg.png"
+		},  {
+			"id" : "19",
+			"name" : "France",
+			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/23px-Flag_of_France.svg.png"
+		}, {
+			"id" : "21",
+			"name" : "Argentina",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/23px-Flag_of_Argentina.svg.png"
+		}, {
+			"id" : "25",
+			"name" : "Germany",
+			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/23px-Flag_of_Germany.svg.png"
+		}, {
+			"id" : "26",
+			"name" : "Portugal",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/23px-Flag_of_Portugal.svg.png"
+		}, {
+			"id" : "29",
+			"name" : "Belgium",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Flag_of_Belgium_%28civil%29.svg/23px-Flag_of_Belgium_%28civil%29.svg.png"
+		}, {
+			"id" : "31",
+			"name" : "Russia",
+			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/23px-Flag_of_Russia.svg.png"
+		}
+	]
+
+}

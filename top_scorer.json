@@ -1,0 +1,370 @@
+{
+  "players": [
+    {
+    "id" : "1",
+    "name" : "Lionel Messi",
+    "photo" : "http://cdn.soccerwiki.org/images/player/2772.jpg",
+    "nationality": "Argentina"
+  },
+  {
+    "id" : "2",
+    "name" : "Neymar",
+    "photo" : "http://cdn.soccerwiki.org/images/player/38457.jpg",
+    "nationality": "Brazil"
+  },
+  {
+    "id" : "3",  
+    "name" : "Sergio Aguero",
+    "photo" : "http://cdn.soccerwiki.org/images/player/3513.jpg",
+    "nationality": "Argentina"
+  },
+  {
+    "id" : "4",  
+    "name" : "Cristiano Ronaldo",
+    "photo" : "http://cdn.soccerwiki.org/images/player/1131.jpg",
+    "nationality": "Portugal"
+  },
+  {
+    "id" : "5",
+    "name" : "Fred",
+    "photo" : "http://cdn.soccerwiki.org/images/player/3707.jpg",
+    "nationality": "Brazil"
+  },
+  {
+    "id" : "6",
+    "name" : "Luis Suarez",
+    "photo" : "http://cdn.soccerwiki.org/images/player/6378.jpg",
+    "nationality": "Uruguay"
+  },
+  {
+    "id" : "7",
+    "name" : "Gonzalo Higuain",
+    "photo" : "http://cdn.soccerwiki.org/images/player/13651.jpg",
+    "nationality": "Argentina"
+  },
+  {
+    "id" : "8",
+    "name" : "Diego Costa",
+    "photo" : "http://cdn.soccerwiki.org/images/player/21674.jpg",
+    "nationality": "Spain"
+  },
+  {
+    "id" : "9",
+    "name" : "Romelu Lukaku",
+    "photo" : "http://cdn.soccerwiki.org/images/player/39507.jpg",
+    "nationality": "Belgium"
+  },
+  {
+    "id" : "10",
+    "name" : "Robin van Persie",
+    "photo" : "http://cdn.soccerwiki.org/images/player/22.jpg",
+    "nationality": "Netherlands"
+  },
+  {
+    "id" : "11",
+    "name" : "Thomas Muller",
+    "photo" : "http://cdn.soccerwiki.org/images/player/34809.jpg",
+    "nationality": "Germany"
+  },
+  {
+    "id" : "12",
+    "name" : "Karim Benzema",
+    "photo" : "http://cdn.soccerwiki.org/images/player/3884.jpg",
+    "nationality": "France"
+  },
+  {
+    "id" : "13",
+    "name" : "Edinson Cavani",
+    "photo" : "http://cdn.soccerwiki.org/images/player/17811.jpg",
+    "nationality": "Uruguay"
+  },
+  {
+    "id" : "14",
+    "name" : "Radamel Falcao",
+    "photo" : "http://cdn.soccerwiki.org/images/player/3580.jpg",
+    "nationality": "Colombia"
+  },
+  {
+    "id" : "15",
+    "name" : "Mario Balotelli",
+    "photo" : "http://cdn.soccerwiki.org/images/player/31561.jpg",
+    "nationality": " Italy"
+  },
+   {
+    "id" : "16",
+    "name" : "Hulk",
+    "photo" : "http://cdn.soccerwiki.org/images/player/33654.jpg",
+    "nationality": "Brazil"
+  },
+  {
+    "id" : "17",
+    "name" : "Miroslav Klose",
+    "photo" : "http://cdn.soccerwiki.org/images/player/4771.jpg",
+    "nationality": "Germany"
+  },
+  {
+    "id" : "18",
+    "name" : "Wayne Rooney ",
+    "photo" : "http://cdn.soccerwiki.org/images/player/1139.jpg",
+    "nationality": "England"
+  },
+  {
+    "id" : "19",
+    "name" : "Daniel Sturridge",
+    "photo" : "http://cdn.soccerwiki.org/images/player/20312.jpg",
+    "nationality": "England"
+  },{
+    "id" : "20",
+    "name" : "Edin Dzeko",
+    "photo" : "http://cdn.soccerwiki.org/images/player/14540.jpg",
+    "nationality": "Bosnia"
+  },
+  {
+    "id" : "21",
+    "name" : "Fernando Torres",
+    "photo" : "http://cdn.soccerwiki.org/images/player/2751.jpg",
+    "nationality": "Spain"
+  },
+  {
+    "id" : "22",
+    "name" : "Marco Reus",
+    "photo" : "http://cdn.soccerwiki.org/images/player/35346.jpg",
+    "nationality": "Germany"
+  },
+  {
+    "id" : "23",
+    "name" : "Olivier Giroud",
+    "photo" : "http://cdn.soccerwiki.org/images/player/15177.jpg",
+    "nationality": "France"
+  },
+  {
+    "id" : "24",
+    "name" : "Teofilo Gutierrez",
+    "photo" : "http://cdn.soccerwiki.org/images/player/31325.jpg",
+    "nationality": "Colombia"
+  },
+  {
+    "id" : "25",
+    "name" : "Franck Ribery",
+    "photo" : "http://cdn.soccerwiki.org/images/player/3898.jpg",
+    "nationality": "France"
+  },
+   {
+    "id" : "26",
+    "name" : "Oscar",
+    "photo" : "http://cdn.soccerwiki.org/images/player/38535.jpg",
+    "nationality": "Brazil"
+  },
+  {
+    "id" : "27",
+    "name" : "Arjen Robben",
+    "photo" : "http://cdn.soccerwiki.org/images/player/471.jpg",
+    "nationality": "Netherlands"
+  },
+  {
+    "id" : "28",
+    "name" : "Alexis Sanchez",
+    "photo" : "http://cdn.soccerwiki.org/images/player/12927.jpg",
+    "nationality": "Chile"
+  },
+  {
+    "id" : "29",
+    "name" : "Eden Hazard",
+    "photo" : "http://cdn.soccerwiki.org/images/player/32924.jpg",
+    "nationality": "Belgium"
+  },
+  {
+    "id" : "30",
+    "name" : "Mario Gotze",
+    "photo" : "http://cdn.soccerwiki.org/images/player/43269.jpg",
+    "nationality": "Germany"
+  },
+  {
+    "id" : "31",
+    "name" : "David Villa",
+    "photo" : "http://cdn.soccerwiki.org/images/player/2997.jpg",
+    "nationality": "Spain"
+  },
+  {
+    "id" : "32",
+    "name" : "Jackson Martinez",
+    "photo" : "http://cdn.soccerwiki.org/images/player/20854.jpg",
+    "nationality": "Colombia"
+  },
+  {
+    "id" : "33",
+    "name" : "Andre Schurrle",
+    "photo" : "http://cdn.soccerwiki.org/images/player/40800.jpg",
+    "nationality": "Germany"
+  },
+  {
+    "id" : "34",
+    "name" : "Juan Mata",
+    "photo" : "http://cdn.soccerwiki.org/images/player/14228.jpg",
+    "nationality": "Spain"
+  },
+  {
+    "id" : "35",
+    "name" : "Pedro",
+    "photo" : "http://cdn.soccerwiki.org/images/player/31960.jpg",
+    "nationality": "Spain"
+  },
+  {
+    "id" : "36",
+    "name" : "Cesc Fabregas",
+    "photo" : "http://cdn.soccerwiki.org/images/player/19.jpg",
+    "nationality": "Spain"
+  },
+  {
+    "id" : "37",
+    "name" : "Eduardo Vargas",
+    "photo" : "http://cdn.soccerwiki.org/images/player/32459.jpg",
+    "nationality": "Chile"
+  },
+  {
+    "id" : "38",
+    "name" : "Loic Remy",
+    "photo" : "http://cdn.soccerwiki.org/images/player/18650.jpg",
+    "nationality": "France"
+  },
+  {
+    "id" : "39",
+    "name" : "Alexander Kerzhakov",
+    "photo" : "http://cdn.soccerwiki.org/images/player/3451.jpg",
+    "nationality": "Russia"
+  },
+  {
+    "id" : "40",
+    "name" : "Guiseppe Rossi",
+    "photo" : "http://cdn.soccerwiki.org/images/player/1129.jpg",
+    "nationality": " Italy"
+  },
+  {
+    "id" : "41",
+    "name" : "Lukas Podolski",
+    "photo" : "http://cdn.soccerwiki.org/images/player/4491.jpg",
+    "nationality": "Germany"
+  },
+  {
+    "id" : "42",
+    "name" : "Mesut Ozil",
+    "photo" : "http://cdn.soccerwiki.org/images/player/20377.jpg",
+    "nationality": "Germany"
+  },
+  {
+    "id" : "43",
+    "name" : "Jo",
+    "photo" : "http://cdn.soccerwiki.org/images/player/3688.jpg",
+    "nationality": "Brazil"
+  },
+  {
+    "id" : "44",
+    "name" : "Klaas Jan Huntelaar",
+    "photo" : "http://cdn.soccerwiki.org/images/player/3242.jpg",
+    "nationality": "Netherlands"
+  },
+  {
+    "id" : "45",
+    "name" : "Paul Pogba",
+    "photo" : "http://cdn.soccerwiki.org/images/player/52519.jpg",
+    "nationality": "France"
+  },
+  {
+    "id" : "46",
+    "name" : "Diego Forlan",
+    "photo" : "http://cdn.soccerwiki.org/images/player/3027.jpg",
+    "nationality": "Uruguay"
+  },
+  {
+    "id" : "47",
+    "name" : "Javier Hernandez",
+    "photo" : "http://cdn.soccerwiki.org/images/player/20685.jpg",
+    "nationality": "Mexico"
+  },
+  {
+    "id" : "48",
+    "name" : "Angel Di Maria",
+    "photo" : "http://cdn.soccerwiki.org/images/player/18422.jpg",
+    "nationality": "Argentina"
+  },
+   {
+    "id" : "49",
+    "name" : "Didier Drogba",
+    "photo" : "http://cdn.soccerwiki.org/images/player/473.jpg",
+    "nationality": "Ivory Coast"
+  },
+  {
+    "id" : "50",
+    "name" : "Mario Mandzukic",
+    "photo" : "http://cdn.soccerwiki.org/images/player/19019.jpg",
+    "nationality": "Croatia"
+  },
+  {
+    "id" : "51",
+    "name" : "Ezequiel Lavezzi",
+    "photo" : "http://cdn.soccerwiki.org/images/player/3598.jpg",
+    "nationality": "Argentina"
+  },
+  {
+    "id" : "52",
+    "name" : "Ciro Immobile",
+    "photo" : "http://cdn.soccerwiki.org/images/player/43289.jpg",
+    "nationality": "Italy"
+  }, 
+  {
+    "id" : "53",
+    "name" : "Jeremain Lens",
+    "photo" : "http://cdn.soccerwiki.org/images/player/17051.jpg",
+    "nationality": "Netherlands"
+  },
+  {
+    "id" : "54",
+    "name" : "Kostas Mitroglou",
+    "photo" : "http://cdn.soccerwiki.org/images/player/27922.jpg",
+    "nationality": "Greece"
+  },
+  {
+    "id" : "55",
+    "name" : "Rodrigo Palacio",
+    "photo" : "http://cdn.soccerwiki.org/images/player/3472.jpg",
+    "nationality": "Argentina"
+  },{
+    "id" : "56",
+    "name" : "Kevin Volland",
+    "photo" : "http://cdn.soccerwiki.org/images/player/46207.jpg",
+    "nationality": "Germany"
+  },
+  {
+    "id" : "57",
+    "name" : "Alexander Kokorin",
+    "photo" : "http://cdn.soccerwiki.org/images/player/35603.jpg",
+    "nationality": "Russia"
+  },
+  {
+    "id" : "58",
+    "name" : "Adnan Januzaj",
+    "photo" : "http://cdn.soccerwiki.org/images/player/68051.jpg",
+    "nationality": "Belgium"
+  },
+  {
+    "id" : "59",
+    "name" : "Danny Welbeck",
+    "photo" : "http://cdn.soccerwiki.org/images/player/35510.jpg",
+    "nationality": "England"
+  },
+  {
+    "id" : "60",
+    "name" : "Carlos Bacca",
+    "photo" : "http://cdn.soccerwiki.org/images/player/40756.jpg",
+    "nationality": "Colombia"
+  },
+  {
+    "id" : "61",
+    "name" : "Other Player",
+    "photo" : "https://d22r54gnmuhwmk.cloudfront.net/app-assets/global/default_user_icon-0f83709782d4d6ab03c776297789ce69.jpg",
+    "nationality": ""
+  }
+   ]
+
+}
+  

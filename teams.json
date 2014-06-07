@@ -1,0 +1,134 @@
+{
+    "teams" :
+	[{
+			"id" : "1",
+			"name" : "Brazil",
+			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/22px-Flag_of_Brazil.svg.png"
+		}, {
+			"id" : "2",
+			"name" : "Croatia",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/23px-Flag_of_Croatia.svg.png"
+		}, {
+			"id" : "3",
+			"name" : "Mexico",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/23px-Flag_of_Mexico.svg.png"
+		}, {
+			"id" : "4",
+			"name" : "Cameroon",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Flag_of_Cameroon.svg/23px-Flag_of_Cameroon.svg.png"
+		}, {
+			"id" : "5",
+			"name" : "Spain",
+			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/23px-Flag_of_Spain.svg.png"
+		}, {
+			"id" : "6",
+			"name" : "Netherlands",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/23px-Flag_of_the_Netherlands.svg.png"
+		}, {
+			"id" : "7",
+			"name" : "Chile",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Flag_of_Chile.svg/23px-Flag_of_Chile.svg.png"
+		}, {
+			"id" : "8",
+			"name" : "Australia",
+			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Flag_of_Australia.svg/23px-Flag_of_Australia.svg.png"
+		}, {
+			"id" : "9",
+			"name" : "Colombia",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/23px-Flag_of_Colombia.svg.png"
+		}, {
+			"id" : "10",
+			"name" : "Greece",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Greece.svg/23px-Flag_of_Greece.svg.png"
+		}, {
+			"id" : "11",
+			"name" : "Ivory Coast",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_C%C3%B4te_d%27Ivoire.svg/23px-Flag_of_C%C3%B4te_d%27Ivoire.svg.png"
+		}, {
+			"id" : "12",
+			"name" : "Japan",
+			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/23px-Flag_of_Japan.svg.png"
+		}, {
+			"id" : "13",
+			"name" : "Uruguay",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/23px-Flag_of_Uruguay.svg.png"
+		}, {
+			"id" : "14",
+			"name" : "Costa Rica",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Costa_Rica.svg/23px-Flag_of_Costa_Rica.svg.png"
+		}, {
+			"id" : "15",
+			"name" : "England",
+			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/b/be/Flag_of_England.svg/23px-Flag_of_England.svg.png"
+		}, {
+			"id" : "16",
+			"name" : "Italy",
+			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/23px-Flag_of_Italy.svg.png"
+		}, {
+			"id" : "17",
+			"name" : "Switzerland",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/16px-Flag_of_Switzerland.svg.png"
+		}, {
+			"id" : "18",
+			"name" : "Ecuador",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Flag_of_Ecuador.svg/23px-Flag_of_Ecuador.svg.png"
+		}, {
+			"id" : "19",
+			"name" : "France",
+			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/23px-Flag_of_France.svg.png"
+		}, {
+			"id" : "20",
+			"name" : "Honduras",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Flag_of_Honduras.svg/23px-Flag_of_Honduras.svg.png"
+		}, {
+			"id" : "21",
+			"name" : "Argentina",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/23px-Flag_of_Argentina.svg.png"
+		}, {
+			"id" : "22",
+			"name" : "Bosnia",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Flag_of_Bosnia_and_Herzegovina.svg/23px-Flag_of_Bosnia_and_Herzegovina.svg.png"
+		}, {
+			"id" : "23",
+			"name" : "Iran",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Flag_of_Iran.svg/23px-Flag_of_Iran.svg.png"
+		}, {
+			"id" : "24",
+			"name" : "Nigeria",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/23px-Flag_of_Nigeria.svg.png"
+		}, {
+			"id" : "25",
+			"name" : "Germany",
+			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/23px-Flag_of_Germany.svg.png"
+		}, {
+			"id" : "26",
+			"name" : "Portugal",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/23px-Flag_of_Portugal.svg.png"
+		}, {
+			"id" : "27",
+			"name" : "Ghana",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Ghana.svg/23px-Flag_of_Ghana.svg.png"
+		}, {
+			"id" : "28",
+			"name" : "United States",
+			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/23px-Flag_of_the_United_States.svg.png"
+		}, {
+			"id" : "29",
+			"name" : "Belgium",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Flag_of_Belgium_%28civil%29.svg/23px-Flag_of_Belgium_%28civil%29.svg.png"
+		}, {
+			"id" : "30",
+			"name" : "Algeria",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_Algeria.svg/23px-Flag_of_Algeria.svg.png"
+		}, {
+			"id" : "31",
+			"name" : "Russia",
+			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/23px-Flag_of_Russia.svg.png"
+		}, {
+			"id" : "32",
+			"name" : "South Korea",
+			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/23px-Flag_of_South_Korea.svg.png"
+		}
+	]
+
+}
