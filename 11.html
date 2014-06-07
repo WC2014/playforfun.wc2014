@@ -216,7 +216,7 @@ for(x=0; x<users.length; x++) {
 points = calcGameScore(gamesSheet[i].home.score, gamesSheet[i].away.score, users[x].games[i].home.score, users[x].games[i].away.score) ;
 users[x].games_total = users[x].games_total + points;
 color = getGameColor(points, gamesSheet[i].home.score, gamesSheet[i].away.score);
-if(x%2==0) bg ="#292929" ; else bg="#383838" ;
+if(x%2==0) bg ="#383838" ; else bg="#474747" ;
 $("#game"+id+"c").append("<div style='background-color:"+bg+"' align='left'><table  width='100%'><tr><td width='50%'><font color='"+color+"'>"+users[x].user+"</font></td><td width='30%' align='left'><td width='10%' style='text-align:center;'><font color='"+color+"'>"+users[x].games[i].home.score+"</font></td><td><font color='"+color+"'> - </font></td><td width='10%' style='text-align:center;'><font color='"+color+"'>"+users[x].games[i].away.score+"</font></td></td></tr></table><div>");
 
 
