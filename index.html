@@ -459,6 +459,8 @@ sheet.winner = $('input[name=winner]:checked', '#sheet').val();
 xmlhttp.send(JSON.stringify(sheet));
 alert("Form sent");
 
+$("#s").val(JSON.stringify(sheet));
+
  }
  
 $(document).ready(function() {
@@ -690,9 +692,11 @@ saveGroupScores('#tableH',7,'#h43h','#h43a','#h44h','#h44a','#h45h','#h45a','#h4
 </div>
 <div align="center">
    <a data-role="button" data-inline="true" data-theme="b" data-icon="check" onclick="send()">Send</a>
+   <textarea id="s"></textarea>
    </div>
   </div>
 </div>
+
 
 
   </body>
