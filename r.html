@@ -253,7 +253,7 @@ group.append("<br/>");
 
 var leaderboard = $("#leaderboard");
 users[x].total = users[x].total + users[x].games_total + users[x].groups_total + users[x].specials_total;
-var user = $("<div data-role='collapsible'  data-theme='a' data-content-theme='b' data-mini='true'><h3><table width='100%'><tr><td width='80%' align='left'>"+users[x].user+"</td><td  width='20%' align='right'>"+users[x].total+"</td></tr></table></h3><div>Games: "+users[x].games_total+"</div><hr/><div>Groups: "+users[x].groups_total+"</div><hr/><div>Specials: "+users[x].specials_total+"</div></div>").collapsible();
+var user = $("<div data-role='collapsible'  data-theme='a' data-content-theme='a' data-mini='true'><h3><table width='100%'><tr><td width='80%' align='left'>"+users[x].user+"</td><td  width='20%' align='right'>"+users[x].total+"</td></tr></table></h3><div>Games: "+users[x].games_total+"</div><hr/><div>Groups: "+users[x].groups_total+"</div><hr/><div>Specials: "+users[x].specials_total+"</div></div>").collapsible();
 leaderboard.append(user);
  $("#main").trigger("create");
  
