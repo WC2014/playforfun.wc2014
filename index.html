@@ -201,7 +201,6 @@ if(users[x].tables[j][i].team.id == tablesSheet[j][i].team.id) {users[x].groups_
 users[x].total = users[x].total + users[x].games_total + users[x].groups_total + users[x].specials_total;
 }
 sort();
-var pl;
 
 for(x=0; x<users.length; x++) {
 users[x].games_total=0;
@@ -215,12 +214,11 @@ for(x=0; x<users.length; x++) {
    
    id = i+1;
    points=0;
-   pl = x+1;
 points = calcGameScore(gamesSheet[i].home.score, gamesSheet[i].away.score, users[x].games[i].home.score, users[x].games[i].away.score) ;
 users[x].games_total = users[x].games_total + points;
 color = getGameColor(points, gamesSheet[i].home.score, gamesSheet[i].away.score);
 if(x%2==0) bg ="#DDDDDD" ; else bg="#EEEEEE" ;
-$("#game"+id+"c").append("<div style='background-color:"+bg+"' align='left'><table width='100%'><tr><td width='50%'><font color='"+color+"'>"pl+") "+users[x].user+"</font></td><td width='30%' align='left'><td width='10%' style='text-align:center;'><font color='"+color+"'>"+users[x].games[i].home.score+"</font></td><td><font color='"+color+"'> - </font></td><td width='10%' style='text-align:center;'><font color='"+color+"'>"+users[x].games[i].away.score+"</font></td></td></tr></table><div>");
+$("#game"+id+"c").append("<div style='background-color:"+bg+"' align='left'><table width='100%'><tr><td width='50%'><font color='"+color+"'>"+users[x].user+"</font></td><td width='30%' align='left'><td width='10%' style='text-align:center;'><font color='"+color+"'>"+users[x].games[i].home.score+"</font></td><td><font color='"+color+"'> - </font></td><td width='10%' style='text-align:center;'><font color='"+color+"'>"+users[x].games[i].away.score+"</font></td></td></tr></table><div>");
 
 
 
