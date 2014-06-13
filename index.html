@@ -181,7 +181,7 @@ $(group).append(
 var id;
 var points;
 var color;
-
+var pl;
 for(x=0; x<users.length; x++) {
    for (var i = 0; i < 48; i++) {
    
@@ -193,8 +193,9 @@ users[x].games_total = users[x].games_total + points;
 for (var j = 0; j < 8; j++) {
 
 for(var i=3; i>=0; i--) {
+if(tablesSheet[j][i].p==3){
 if(users[x].tables[j][i].team.id == tablesSheet[j][i].team.id) {users[x].groups_total = users[x].groups_total + 2;}
-
+}
 }
 }
 
@@ -241,9 +242,9 @@ var gd;
 group.append("<table style='background-color:"+bg+"' width='100%' class='group_table'><tbody id="+table_id+"><tr><td colspan='2'>"+users[x].user+"</td><td>P</td><td>GF</td><td>GA</td><td>GD</td><td>Pts</td></tr></tbody></table>");
 for(var i=3; i>=0; i--) {
 
-
+if(tablesSheet[j][i].p==3){
 if(users[x].tables[j][i].team.id == tablesSheet[j][i].team.id) {users[x].groups_total = users[x].groups_total + 2;}
-
+}
 gd=users[x].tables[j][i].gd;
 if(gd>0) gd="+"+gd;
 $(group).find('tbody#'+table_id).append("<tr><td colspan='7'><hr/></td></tr><tr><td><img src='"+users[x].tables[j][i].team.flag+"'/></td><td class='name'><font color='"+getGroupColor(tablesSheet[j][i], users[x].tables[j][i])+"'>"+users[x].tables[j][i].team.name+"</font></td><td>"+users[x].tables[j][i].p+"</td><td>"+users[x].tables[j][i].gf+"</td><td>"+users[x].tables[j][i].ga+"</td><td>"+gd+"</td><td>"+users[x].tables[j][i].pts+"</td></tr>");
@@ -251,9 +252,10 @@ $(group).find('tbody#'+table_id).append("<tr><td colspan='7'><hr/></td></tr><tr>
 group.append("<br/>");
 }
 
+pl=x+1;
 var leaderboard = $("#leaderboard");
 users[x].total = users[x].total + users[x].games_total + users[x].groups_total + users[x].specials_total;
-var user = $("<div data-role='collapsible' data-theme='a' data-content-theme='a' data-mini='true'><h3><table width='100%'><tr><td width='80%' align='left'>"+users[x].user+"</td><td width='20%' align='right'>"+users[x].total+"</td></tr></table></h3><div>Games: "+users[x].games_total+"</div><hr/><div>Groups: "+users[x].groups_total+"</div><hr/><div>Specials: "+users[x].specials_total+"</div></div>").collapsible();
+var user = $("<div data-role='collapsible' data-theme='a' data-content-theme='a' data-mini='true'><h3><table width='100%'><tr><td width='80%' align='left'>"+pl+". "+users[x].user+"</td><td width='20%' align='right'>"+users[x].total+"</td></tr></table></h3><div>Games: "+users[x].games_total+"</div><hr/><div>Groups: "+users[x].groups_total+"</div><hr/><div>Specials: "+users[x].specials_total+"</div></div>").collapsible();
 leaderboard.append(user);
  $("#main").trigger("create");
  
