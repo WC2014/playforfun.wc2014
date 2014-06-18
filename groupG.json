@@ -5,13 +5,13 @@
 			"home" : {
 			"id" : "25",
 			"name" : "Germany",
-				"score" : "",
+				"score" : 4,
 			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/23px-Flag_of_Germany.svg.png"
 		},
 			"away" : {
 			"id" : "26",
 			"name" : "Portugal",
-				"score" : "",
+				"score" : 0,
 			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/23px-Flag_of_Portugal.svg.png"
 		},
 			"time" : "16.06.14 | 19:00",
@@ -22,13 +22,13 @@
 			"home" : {
 			"id" : "27",
 			"name" : "Ghana",
-				"score" : "",
+				"score" : 1,
 			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Ghana.svg/23px-Flag_of_Ghana.svg.png"
 		},
 			"away" : {
 			"id" : "28",
 			"name" : "United States",
-				"score" : "",
+				"score" : 2,
 			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/23px-Flag_of_the_United_States.svg.png"
 		},
 			"time" : "17.06.14 | 01:00",
