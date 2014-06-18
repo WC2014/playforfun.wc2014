@@ -1,158 +1,166 @@
 {
-	"games" :
-	[{
-			"id" : "19",
-			"home" : {
-			"id" : "13",
-			"name" : "Uruguay",
-				"score" : "",
-			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/23px-Flag_of_Uruguay.svg.png"
-		},
-			"away" : {
-			"id" : "14",
-			"name" : "Costa Rica",
-				"score" : "",
-			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Costa_Rica.svg/23px-Flag_of_Costa_Rica.svg.png"
-		},
-			"time" : "14.06.14 | 22:00",
-			"group" : "D",
-			"index" : 5
-		}, {
-			"id" : "20",
-			"home" : {
-			"id" : "15",
-			"name" : "England",
-				"score" : "",
-			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/b/be/Flag_of_England.svg/23px-Flag_of_England.svg.png"
-		},
-			"away" : {
-			"id" : "16",
-			"name" : "Italy",
-				"score" : "",
-			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/23px-Flag_of_Italy.svg.png"
-		},
-			"time" : "15.06.14 | 01:00",
-			"group" : "D",
-			"index" : 6
-		}, {
-			"id" : "21",
-			"home" : {
-			"id" : "13",
-			"name" : "Uruguay",
-				"score" : "",
-			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/23px-Flag_of_Uruguay.svg.png"
-		},
-			"away" : {
-			"id" : "15",
-			"name" : "England",
-				"score" : "",
-			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/b/be/Flag_of_England.svg/23px-Flag_of_England.svg.png"
-		},
-			"time" : "19.06.14 | 22:00",
-			"group" : "D",
-			"index" : 22
-		}, {
-			"id" : "22",
-			"home" : {
-			"id" : "16",
-			"name" : "Italy",
-				"score" : "",
-			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/23px-Flag_of_Italy.svg.png"
-		},
-			"away" :  {
-			"id" : "14",
-			"name" : "Costa Rica",
-				"score" : "",
-			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Costa_Rica.svg/23px-Flag_of_Costa_Rica.svg.png"
-		},
-			"time" : "20.06.14 | 19:00",
-			"group" : "D",
-			"index" : 23
-		}, {
-			"id" : "23",
-			"home" : {
-			"id" : "16",
-			"name" : "Italy",
-				"score" : "",
-			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/23px-Flag_of_Italy.svg.png"
-		},
-			"away" : {
-			"id" : "13",
-			"name" : "Uruguay",
-				"score" : "",
-			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/23px-Flag_of_Uruguay.svg.png"
-		},
-			"time" : "24.06.14 | 19:00",
-			"group" : "D",
-			"index" : 38
-		}, {
-			"id" : "24",
-			"home" : {
-			"id" : "14",
-			"name" : "Costa Rica",
-				"score" : "",
-			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Costa_Rica.svg/23px-Flag_of_Costa_Rica.svg.png"
-		},
-			"away" : {
-			"id" : "15",
-			"name" : "England",
-				"score" : "",
-			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/b/be/Flag_of_England.svg/23px-Flag_of_England.svg.png"
-		},
-			"time" : "24.06.14 | 19:00",
-			"group" : "D",
-			"index" : 39
-		}
-	],
-	 "table" : [{
-			"place" : "",
-			"team" : {
-			"id" : "13",
-			"name" : "Uruguay",
-			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/23px-Flag_of_Uruguay.svg.png"
-		},
-			"p" : "0",
-			"gd" : "0",
-			"gf" : "0",
-			"ga" : "0",
-			"pts" : "0"
-		}, {
-			"place" : "",
-			"team" : {
-			"id" : "14",
-			"name" : "Costa Rica",
-			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Costa_Rica.svg/23px-Flag_of_Costa_Rica.svg.png"
-		},
-			"p" : "0",
-			"gd" : "0",
-			"gf" : "0",
-			"ga" : "0",
-			"pts" : "0"
-		}, {
-			"place" : "",
-			"team" : {
-			"id" : "15",
-			"name" : "England",
-			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/b/be/Flag_of_England.svg/23px-Flag_of_England.svg.png"
-		},
-			"p" : "0",
-			"gd" : "0",
-			"gf" : "0",
-			"ga" : "0",
-			"pts" : "0"
-		}, {
-			"place" : "",
-			"team" : {
-			"id" : "16",
-			"name" : "Italy",
-			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/23px-Flag_of_Italy.svg.png"
-		},
-			"p" : "0",
-			"gd" : "",
-			"gf" : "0",
-			"ga" : "0",
-			"pts" : "0"
-		}
-	]
-
+  "games": [
+    {
+      "id": "19",
+      "home": {
+        "id": "13",
+        "name": "Uruguay",
+        "score": 1,
+        "flag": "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/23px-Flag_of_Uruguay.svg.png"
+      },
+      "away": {
+        "id": "14",
+        "name": "Costa Rica",
+        "score": 3,
+        "flag": "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Costa_Rica.svg/23px-Flag_of_Costa_Rica.svg.png"
+      },
+      "time": "14.06.14 | 22:00",
+      "group": "D",
+      "index": 5
+    },
+    {
+      "id": "20",
+      "home": {
+        "id": "15",
+        "name": "England",
+        "score": 1,
+        "flag": "http://upload.wikimedia.org/wikipedia/en/thumb/b/be/Flag_of_England.svg/23px-Flag_of_England.svg.png"
+      },
+      "away": {
+        "id": "16",
+        "name": "Italy",
+        "score": 2,
+        "flag": "http://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/23px-Flag_of_Italy.svg.png"
+      },
+      "time": "15.06.14 | 01:00",
+      "group": "D",
+      "index": 6
+    },
+    {
+      "id": "21",
+      "home": {
+        "id": "13",
+        "name": "Uruguay",
+        "score": "",
+        "flag": "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/23px-Flag_of_Uruguay.svg.png"
+      },
+      "away": {
+        "id": "15",
+        "name": "England",
+        "score": "",
+        "flag": "http://upload.wikimedia.org/wikipedia/en/thumb/b/be/Flag_of_England.svg/23px-Flag_of_England.svg.png"
+      },
+      "time": "19.06.14 | 22:00",
+      "group": "D",
+      "index": 22
+    },
+    {
+      "id": "22",
+      "home": {
+        "id": "16",
+        "name": "Italy",
+        "score": "",
+        "flag": "http://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/23px-Flag_of_Italy.svg.png"
+      },
+      "away": {
+        "id": "14",
+        "name": "Costa Rica",
+        "score": "",
+        "flag": "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Costa_Rica.svg/23px-Flag_of_Costa_Rica.svg.png"
+      },
+      "time": "20.06.14 | 19:00",
+      "group": "D",
+      "index": 23
+    },
+    {
+      "id": "23",
+      "home": {
+        "id": "16",
+        "name": "Italy",
+        "score": "",
+        "flag": "http://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/23px-Flag_of_Italy.svg.png"
+      },
+      "away": {
+        "id": "13",
+        "name": "Uruguay",
+        "score": "",
+        "flag": "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/23px-Flag_of_Uruguay.svg.png"
+      },
+      "time": "24.06.14 | 19:00",
+      "group": "D",
+      "index": 38
+    },
+    {
+      "id": "24",
+      "home": {
+        "id": "14",
+        "name": "Costa Rica",
+        "score": "",
+        "flag": "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Costa_Rica.svg/23px-Flag_of_Costa_Rica.svg.png"
+      },
+      "away": {
+        "id": "15",
+        "name": "England",
+        "score": "",
+        "flag": "http://upload.wikimedia.org/wikipedia/en/thumb/b/be/Flag_of_England.svg/23px-Flag_of_England.svg.png"
+      },
+      "time": "24.06.14 | 19:00",
+      "group": "D",
+      "index": 39
+    }
+  ],
+  "table": [
+    {
+      "place": "",
+      "team": {
+        "id": "13",
+        "name": "Uruguay",
+        "flag": "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/23px-Flag_of_Uruguay.svg.png"
+      },
+      "p": "0",
+      "gd": "0",
+      "gf": "0",
+      "ga": "0",
+      "pts": "0"
+    },
+    {
+      "place": "",
+      "team": {
+        "id": "14",
+        "name": "Costa Rica",
+        "flag": "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Costa_Rica.svg/23px-Flag_of_Costa_Rica.svg.png"
+      },
+      "p": "0",
+      "gd": "0",
+      "gf": "0",
+      "ga": "0",
+      "pts": "0"
+    },
+    {
+      "place": "",
+      "team": {
+        "id": "15",
+        "name": "England",
+        "flag": "http://upload.wikimedia.org/wikipedia/en/thumb/b/be/Flag_of_England.svg/23px-Flag_of_England.svg.png"
+      },
+      "p": "0",
+      "gd": "0",
+      "gf": "0",
+      "ga": "0",
+      "pts": "0"
+    },
+    {
+      "place": "",
+      "team": {
+        "id": "16",
+        "name": "Italy",
+        "flag": "http://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/23px-Flag_of_Italy.svg.png"
+      },
+      "p": "0",
+      "gd": "",
+      "gf": "0",
+      "ga": "0",
+      "pts": "0"
+    }
+  ]
 }
