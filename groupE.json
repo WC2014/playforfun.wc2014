@@ -5,13 +5,13 @@
 			"home" : {
 			"id" : "17",
 			"name" : "Switzerland",
-				"score" : "",
+				"score" : 2,
 			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/16px-Flag_of_Switzerland.svg.png"
 		},
 			"away" : {
 			"id" : "18",
 			"name" : "Ecuador",
-				"score" : "",
+				"score" : 1,
 			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Flag_of_Ecuador.svg/23px-Flag_of_Ecuador.svg.png"
 		},
 			"time" : "15.06.14 | 19:00",
@@ -22,13 +22,13 @@
 			"home" : {
 			"id" : "19",
 			"name" : "France",
-				"score" : "",
+				"score" : 3,
 			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/23px-Flag_of_France.svg.png"
 		},
 			"away" : {
 			"id" : "20",
 			"name" : "Honduras",
-				"score" : "",
+				"score" : 0,
 			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Flag_of_Honduras.svg/23px-Flag_of_Honduras.svg.png"
 		},
 			"time" : "15.06.14 | 22:00",
