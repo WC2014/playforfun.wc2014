@@ -5,13 +5,13 @@
 			"home" : {
 			"id" : "21",
 			"name" : "Argentina",
-				"score" : "",
+				"score" : 2,
 			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/23px-Flag_of_Argentina.svg.png"
 		},
 			"away" : {
 			"id" : "22",
 			"name" : "Bosnia",
-				"score" : "",
+				"score" : 1,
 			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Flag_of_Bosnia_and_Herzegovina.svg/23px-Flag_of_Bosnia_and_Herzegovina.svg.png"
 		},
 			"time" : "16.06.14 | 01:00",
@@ -22,13 +22,13 @@
 			"home" : {
 			"id" : "23",
 			"name" : "Iran",
-				"score" : "",
+				"score" : 0,
 			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Flag_of_Iran.svg/23px-Flag_of_Iran.svg.png"
 		},
 			"away" : {
 			"id" : "24",
 			"name" : "Nigeria",
-				"score" : "",
+				"score" : 0,
 			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/23px-Flag_of_Nigeria.svg.png"
 		},
 			"time" : " 16.06.14 | 22:00 ",
