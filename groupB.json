@@ -1,158 +1,166 @@
 {
-	"games" :
-	[{
-			"id" : "7",
-			"home" : {
-				"id" : "5",
-				"name" : "Spain",
-				"score" : "",
-				"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/23px-Flag_of_Spain.svg.png"
-			},
-			"away" : {
-				"id" : "6",
-				"name" : "Netherlands",
-				"score" : "",
-				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/23px-Flag_of_the_Netherlands.svg.png"
-			},
-			"time" : "13.06.14 | 22:00 ",
-			"group" : "B",
-			"index" : 2
-		}, {
-			"id" : "8",
-			"home" : {
-				"id" : "7",
-				"name" : "Chile",
-				"score" : "",
-				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Flag_of_Chile.svg/23px-Flag_of_Chile.svg.png"
-			},
-			"away" : {
-				"id" : "8",
-				"name" : "Australia",
-				"score" : "",
-				"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Flag_of_Australia.svg/23px-Flag_of_Australia.svg.png"
-			},
-			"time" : "14.06.14 | 01:00",
-			"group" : "B",
-			"index" : 3
-		}, {
-			"id" : "9",
-			"home" : {
-				"id" : "8",
-				"name" : "Australia",
-				"score" : "",
-				"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Flag_of_Australia.svg/23px-Flag_of_Australia.svg.png"
-			},
-			"away" : {
-				"id" : "6",
-				"name" : "Netherlands",
-				"score" : "",
-				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/23px-Flag_of_the_Netherlands.svg.png"
-			},
-			"time" : "18.06.14 | 19:00",
-			"group" : "B",
-			"index" : 18
-		}, {
-			"id" : "10",
-			"home" : {
-				"id" : "5",
-				"name" : "Spain",
-				"score" : "",
-				"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/23px-Flag_of_Spain.svg.png"
-			},
-			"away" : {
-				"id" : "7",
-				"name" : "Chile",
-				"score" : "",
-				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Flag_of_Chile.svg/23px-Flag_of_Chile.svg.png"
-			},
-			"time" : "18.06.14 | 22:00",
-			"group" : "B",
-			"index" : 19
-		}, {
-			"id" : "11",
-			"home" : {
-				"id" : "6",
-				"name" : "Netherlands",
-				"score" : "",
-				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/23px-Flag_of_the_Netherlands.svg.png"
-			},
-			"away" : {
-				"id" : "7",
-				"name" : "Chile",
-				"score" : "",
-				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Flag_of_Chile.svg/23px-Flag_of_Chile.svg.png"
-			},
-			"time" : "23.06.14 | 19:00",
-			"group" : "B",
-			"index" : 34
-		}, {
-			"id" : "12",
-			"home" : {
-				"id" : "8",
-				"name" : "Australia",
-				"score" : "",
-				"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Flag_of_Australia.svg/23px-Flag_of_Australia.svg.png"
-			},
-			"away" : {
-				"id" : "5",
-				"name" : "Spain",
-				"score" : "",
-				"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/23px-Flag_of_Spain.svg.png"
-			},
-			"time" : "23.06.14 | 20:40",
-			"group" : "B",
-			"index" : 35
-		}
-	],
-	 "table" : [{
-			"place" : "",
-			"team" : {
-			"id" : "5",
-			"name" : "Spain",
-			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/23px-Flag_of_Spain.svg.png"
-		},
-			"p" : "0",
-			"gd" : "0",
-			"gf" : "0",
-			"ga" : "0",
-			"pts" : "0"
-		}, {
-			"place" : "",
-			"team" : {
-			"id" : "6",
-			"name" : "Netherlands",
-			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/23px-Flag_of_the_Netherlands.svg.png"
-		},
-			"p" : "0",
-			"gd" : "0",
-			"gf" : "0",
-			"ga" : "0",
-			"pts" : "0"
-		}, {
-			"place" : "",
-			"team" : {
-			"id" : "7",
-			"name" : "Chile",
-			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Flag_of_Chile.svg/23px-Flag_of_Chile.svg.png"
-		},
-			"p" : "0",
-			"gd" : "0",
-			"gf" : "0",
-			"ga" : "0",
-			"pts" : "0"
-		}, {
-			"place" : "",
-			"team" : {
-			"id" : "8",
-			"name" : "Australia",
-			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Flag_of_Australia.svg/23px-Flag_of_Australia.svg.png"
-		},
-			"p" : "0",
-			"gd" : "0",
-			"gf" : "0",
-			"ga" : "0",
-			"pts" : "0"
-		}
-	]
-
+  "games": [
+    {
+      "id": "7",
+      "home": {
+        "id": "5",
+        "name": "Spain",
+        "score": 1,
+        "flag": "http://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/23px-Flag_of_Spain.svg.png"
+      },
+      "away": {
+        "id": "6",
+        "name": "Netherlands",
+        "score": 5,
+        "flag": "http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/23px-Flag_of_the_Netherlands.svg.png"
+      },
+      "time": "13.06.14 | 22:00 ",
+      "group": "B",
+      "index": 2
+    },
+    {
+      "id": "8",
+      "home": {
+        "id": "7",
+        "name": "Chile",
+        "score": 3,
+        "flag": "http://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Flag_of_Chile.svg/23px-Flag_of_Chile.svg.png"
+      },
+      "away": {
+        "id": "8",
+        "name": "Australia",
+        "score": 1,
+        "flag": "http://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Flag_of_Australia.svg/23px-Flag_of_Australia.svg.png"
+      },
+      "time": "14.06.14 | 01:00",
+      "group": "B",
+      "index": 3
+    },
+    {
+      "id": "9",
+      "home": {
+        "id": "8",
+        "name": "Australia",
+        "score": 2,
+        "flag": "http://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Flag_of_Australia.svg/23px-Flag_of_Australia.svg.png"
+      },
+      "away": {
+        "id": "6",
+        "name": "Netherlands",
+        "score": 3,
+        "flag": "http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/23px-Flag_of_the_Netherlands.svg.png"
+      },
+      "time": "18.06.14 | 19:00",
+      "group": "B",
+      "index": 18
+    },
+    {
+      "id": "10",
+      "home": {
+        "id": "5",
+        "name": "Spain",
+        "score": "",
+        "flag": "http://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/23px-Flag_of_Spain.svg.png"
+      },
+      "away": {
+        "id": "7",
+        "name": "Chile",
+        "score": "",
+        "flag": "http://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Flag_of_Chile.svg/23px-Flag_of_Chile.svg.png"
+      },
+      "time": "18.06.14 | 22:00",
+      "group": "B",
+      "index": 19
+    },
+    {
+      "id": "11",
+      "home": {
+        "id": "6",
+        "name": "Netherlands",
+        "score": "",
+        "flag": "http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/23px-Flag_of_the_Netherlands.svg.png"
+      },
+      "away": {
+        "id": "7",
+        "name": "Chile",
+        "score": "",
+        "flag": "http://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Flag_of_Chile.svg/23px-Flag_of_Chile.svg.png"
+      },
+      "time": "23.06.14 | 19:00",
+      "group": "B",
+      "index": 34
+    },
+    {
+      "id": "12",
+      "home": {
+        "id": "8",
+        "name": "Australia",
+        "score": "",
+        "flag": "http://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Flag_of_Australia.svg/23px-Flag_of_Australia.svg.png"
+      },
+      "away": {
+        "id": "5",
+        "name": "Spain",
+        "score": "",
+        "flag": "http://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/23px-Flag_of_Spain.svg.png"
+      },
+      "time": "23.06.14 | 20:40",
+      "group": "B",
+      "index": 35
+    }
+  ],
+  "table": [
+    {
+      "place": "",
+      "team": {
+        "id": "5",
+        "name": "Spain",
+        "flag": "http://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/23px-Flag_of_Spain.svg.png"
+      },
+      "p": "0",
+      "gd": "0",
+      "gf": "0",
+      "ga": "0",
+      "pts": "0"
+    },
+    {
+      "place": "",
+      "team": {
+        "id": "6",
+        "name": "Netherlands",
+        "flag": "http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/23px-Flag_of_the_Netherlands.svg.png"
+      },
+      "p": "0",
+      "gd": "0",
+      "gf": "0",
+      "ga": "0",
+      "pts": "0"
+    },
+    {
+      "place": "",
+      "team": {
+        "id": "7",
+        "name": "Chile",
+        "flag": "http://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Flag_of_Chile.svg/23px-Flag_of_Chile.svg.png"
+      },
+      "p": "0",
+      "gd": "0",
+      "gf": "0",
+      "ga": "0",
+      "pts": "0"
+    },
+    {
+      "place": "",
+      "team": {
+        "id": "8",
+        "name": "Australia",
+        "flag": "http://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Flag_of_Australia.svg/23px-Flag_of_Australia.svg.png"
+      },
+      "p": "0",
+      "gd": "0",
+      "gf": "0",
+      "ga": "0",
+      "pts": "0"
+    }
+  ]
 }
