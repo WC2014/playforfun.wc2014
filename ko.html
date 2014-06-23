@@ -79,9 +79,10 @@ padding: 0px 10px 0px 10px;
   <meta name=viewport content="user-scalable=no,width=device-width" />
 
  
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+ 
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
   
   
 
@@ -104,8 +105,8 @@ gamesSheet=json.games;
 var id;
 for (var i = 0; i < 8; i++) {
 id = i+1;
-$("#game"+id+"c").append("<table width='100%'><tr><td width='25%' align='right'>"+gamesSheet[i].home.name+"</td><td align='right' width='5%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+gamesSheet[i].home.flag+"'/></td><td align='center'>-</td><td width='5%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px' src='"+gamesSheet[i].away.flag+"'/></td><td width='25%'>"+gamesSheet[i].away.name+"</td></tr></table>");
-$("#game"+id+"c").append("<div width='100%' align='center' data-role='fieldcontain'><fieldset data-role='controlgroup' data-type='horizontal'><input name='stage' id='stage1' type='radio' data-mini='true'/><label for='stage1'>90'</label><input  name='stage' id='stage2' type='radio' data-mini='true'/><label for='stage2'>120'</label><input  name='stage' id='stage3'  type='radio' data-mini='true'/><label  for='stage3'>Penalties</label></fieldset></div>");
+$("#game"+id+"c").append("<div width='100%' align='center' data-role='fieldcontain'><fieldset data-role='controlgroup' data-type='horizontal'><input name='game"+id+"' id='"+id+"game1' type='radio' data-mini='true'/><label for='"+id+"game1'>"+gamesSheet[i].home.name+"<img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+gamesSheet[i].home.flag+"'/></label><input  name='game"+id+"' id='"+id+"game2' type='radio' data-mini='true'/><label  for='"+id+"game2'><img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+gamesSheet[i].away.flag+"'/>"+gamesSheet[i].away.name+"</label></fieldset></div>");
+$("#game"+id+"c").append("<div width='100%' align='center' data-role='fieldcontain'><fieldset data-role='controlgroup' data-type='horizontal'><input name='stage"+id+"' id='"+id+"stage1' type='radio' data-mini='true'/><label  for='"+id+"stage1'>90'</label><input  name='stage"+id+"' id='"+id+"stage2' type='radio' data-mini='true'/><label  for='"+id+"stage2'>120'</label><input  name='stage"+id+"' id='"+id+"stage3'  type='radio' data-mini='true'/><label  for='"+id+"stage3'>Penalties</label></fieldset></div>");
 
 }
 
@@ -121,7 +122,7 @@ $("#game"+id+"c").append("<div width='100%' align='center' data-role='fieldconta
 
 <div class="page" data-role="page" data-theme="a" data-content-theme="a" data-mini="true">
  
-<div class="header" data-role="header" data-position="fixed" data-theme="b">
+<div class="header" data-role="header" data-position="fixed" data-theme="a">
 	
 	<img width="100px" height="40px" align="left" src="header.png"/>
 	<a href="#" class="ui-btn-right" data-icon="home" data-iconpos="notext" onclick="$.mobile.silentScroll(0)" data-role="button"></a>
@@ -133,41 +134,41 @@ $("#game"+id+"c").append("<div width='100%' align='center' data-role='fieldconta
 
 
 </br>
-<div data-role="collapsible"  data-collapsed="false" data-theme="b" data-content-theme="a" data-mini="true"><h3>1/8</h3>
+<div data-role="collapsible"  data-collapsed="false" data-theme="a" data-content-theme="a" data-mini="true"><h3>1/8</h3>
+<div style="background-color:#DDDDDD" id="game1c"></div>
+<div style="background-color:#EEEEEE" id="game2c"></div>
+<div style="background-color:#DDDDDD" id="game3c"></div>
+<div style="background-color:#EEEEEE" id="game4c"></div>
+<div style="background-color:#DDDDDD" id="game5c"></div>
+<div style="background-color:#EEEEEE" id="game6c"></div>
+<div style="background-color:#DDDDDD" id="game7c"></div>
+<div style="background-color:#EEEEEE" id="game8c"></div> 
+</div>
+
+<div data-role="collapsible" data-collapsed="false"  data-theme="a" data-content-theme="a" data-mini="true"><h3>1/4</h3>
 <div id="game1c"></div>
 <div id="game2c"></div>
 <div id="game3c"></div>
 <div id="game4c"></div>
-<div id="game5c"></div>
-<div id="game6c"></div>
-<div id="game7c"></div>
-<div id="game8c"></div>
-</div>
-
-<div data-role="collapsible" data-collapsed="false"  data-theme="b" data-content-theme="a" data-mini="true"><h3>1/4</h3>
-<div id="game1c"></div>
-<div id="game2c"></div>
-<div id="game3c"></div>
-<div id="game4c"></div>
 
 </div>
 
 
-<div data-role="collapsible" data-collapsed="false"  data-theme="b" data-content-theme="a" data-mini="true"><h3>1/2</h3>
+<div data-role="collapsible" data-collapsed="false"  data-theme="a" data-content-theme="a" data-mini="true"><h3>1/2</h3>
 <div id="game1c"></div>
 <div id="game2c"></div>
 
 </div>
 
 
-<div data-role="collapsible" data-collapsed="false"  data-theme="b" data-content-theme="a" data-mini="true"><h3>Final</h3>
+<div data-role="collapsible" data-collapsed="false"  data-theme="a" data-content-theme="a" data-mini="true"><h3>Final</h3>
 <div id="game1c"></div>
 
 </div>
 
 
 <div align="center">
-   <a data-role="button" data-inline="true" data-theme="b" data-icon="check" onclick="send()">Send</a>
+   <a data-role="button" data-inline="true" data-theme="a" data-icon="check" onclick="send()">Send</a>
    <textarea id="s"></textarea>
    </div>
   </div>
