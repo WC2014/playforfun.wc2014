@@ -102,32 +102,48 @@ padding: 0px 10px 0px 10px;
    var json = $.parseJSON(data);
 
 gamesSheet=json.games;
-var id;
+
+createGames1();
+
+
+      }
+   });
+   
+   function createGames1() {
+   var id;
+var index;
 for (var i = 0; i < 8; i++) {
 id = i+1;
-$("#game"+id+"c").append("<div width='100%' align='center' data-role='fieldcontain'><fieldset data-role='controlgroup' data-type='horizontal'><input name='game"+id+"' id='"+id+"game1' type='radio' data-mini='true'/><label for='"+id+"game1'>"+gamesSheet[i].home.name+"<img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+gamesSheet[i].home.flag+"'/></label><input  name='game"+id+"' id='"+id+"game2' type='radio' data-mini='true'/><label  for='"+id+"game2'><img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+gamesSheet[i].away.flag+"'/>"+gamesSheet[i].away.name+"</label></fieldset></div>");
-$("#game"+id+"c").append("<div width='100%' align='center' data-role='fieldcontain'><fieldset data-role='controlgroup' data-type='horizontal'><input name='stage"+id+"' id='"+id+"stage1' type='radio' data-mini='true'/><label  for='"+id+"stage1'>90'</label><input  name='stage"+id+"' id='"+id+"stage2' type='radio' data-mini='true'/><label  for='"+id+"stage2'>120'</label><input  name='stage"+id+"' id='"+id+"stage3'  type='radio' data-mini='true'/><label  for='"+id+"stage3'>Penalties</label></fieldset></div>");
+index = (8+(i/2)) | 0;
+
+$("#game"+id+"c").append("<div width='100%' align='center' data-role='fieldcontain'><fieldset data-role='controlgroup' data-type='horizontal'><input onclick='gamesSheet["+i+"].home.score=1; gamesSheet["+i+"].away.score=0; setTeams(gamesSheet["+i+"].home,"+index+","+i+");' name='game"+id+"' id='"+id+"game1' type='radio' data-mini='true'/><label for='"+id+"game1'>"+gamesSheet[i].home.name+"<img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+gamesSheet[i].home.flag+"'/></label><input  onclick='gamesSheet["+i+"].home.score=0; gamesSheet["+i+"].away.score=1; setTeams(gamesSheet["+i+"].away,"+index+","+i+");' name='game"+id+"' id='"+id+"game2' type='radio' data-mini='true'/><label  for='"+id+"game2'><img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+gamesSheet[i].away.flag+"'/>"+gamesSheet[i].away.name+"</label></fieldset></div>");
+$("#game"+id+"c").append("<div width='100%' align='center' data-role='fieldcontain'><fieldset data-role='controlgroup' data-type='horizontal'><input onclick='gamesSheet["+i+"].stage=0;' name='stage"+id+"' id='"+id+"stage1' type='radio' data-mini='true'/><label  for='"+id+"stage1'>90'</label><input onclick='gamesSheet["+i+"].stage=1;' name='stage"+id+"' id='"+id+"stage2' type='radio' data-mini='true'/><label  for='"+id+"stage2'>120'</label><input onclick='gamesSheet["+i+"].stage=2;' name='stage"+id+"' id='"+id+"stage3'  type='radio' data-mini='true'/><label  for='"+id+"stage3'>Penalties</label></fieldset></div>");
 
 }
+     $("#main").trigger("create");
+}
 
+ function createGames2() {
 for (var i = 8; i < 12; i++) {
 id = i+1;
 $("#game"+id+"c").append("<div width='100%' align='center' data-role='fieldcontain'><fieldset data-role='controlgroup' data-type='horizontal'><input name='game"+id+"' id='"+id+"game1' type='radio' data-mini='true'/><label for='"+id+"game1'>"+gamesSheet[i].home.name+"<img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+gamesSheet[i].home.flag+"'/></label><input  name='game"+id+"' id='"+id+"game2' type='radio' data-mini='true'/><label  for='"+id+"game2'><img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+gamesSheet[i].away.flag+"'/>"+gamesSheet[i].away.name+"</label></fieldset></div>");
 $("#game"+id+"c").append("<div width='100%' align='center' data-role='fieldcontain'><fieldset data-role='controlgroup' data-type='horizontal'><input name='stage"+id+"' id='"+id+"stage1' type='radio' data-mini='true'/><label  for='"+id+"stage1'>90'</label><input  name='stage"+id+"' id='"+id+"stage2' type='radio' data-mini='true'/><label  for='"+id+"stage2'>120'</label><input  name='stage"+id+"' id='"+id+"stage3'  type='radio' data-mini='true'/><label  for='"+id+"stage3'>Penalties</label></fieldset></div>");
 
 }
+     $("#main").trigger("create");
+}
 
-
-
+ function createGames3() {
 for (var i = 12; i < 14; i++) {
 id = i+1;
 $("#game"+id+"c").append("<div width='100%' align='center' data-role='fieldcontain'><fieldset data-role='controlgroup' data-type='horizontal'><input name='game"+id+"' id='"+id+"game1' type='radio' data-mini='true'/><label for='"+id+"game1'>"+gamesSheet[i].home.name+"<img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+gamesSheet[i].home.flag+"'/></label><input  name='game"+id+"' id='"+id+"game2' type='radio' data-mini='true'/><label  for='"+id+"game2'><img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+gamesSheet[i].away.flag+"'/>"+gamesSheet[i].away.name+"</label></fieldset></div>");
 $("#game"+id+"c").append("<div width='100%' align='center' data-role='fieldcontain'><fieldset data-role='controlgroup' data-type='horizontal'><input name='stage"+id+"' id='"+id+"stage1' type='radio' data-mini='true'/><label  for='"+id+"stage1'>90'</label><input  name='stage"+id+"' id='"+id+"stage2' type='radio' data-mini='true'/><label  for='"+id+"stage2'>120'</label><input  name='stage"+id+"' id='"+id+"stage3'  type='radio' data-mini='true'/><label  for='"+id+"stage3'>Penalties</label></fieldset></div>");
 
 }
+     $("#main").trigger("create");
+}
 
-
-
+ function createGames4() {
 
 for (var i = 14; i < 15; i++) {
 id = i+1;
@@ -135,22 +151,27 @@ $("#game"+id+"c").append("<div width='100%' align='center' data-role='fieldconta
 $("#game"+id+"c").append("<div width='100%' align='center' data-role='fieldcontain'><fieldset data-role='controlgroup' data-type='horizontal'><input name='stage"+id+"' id='"+id+"stage1' type='radio' data-mini='true'/><label  for='"+id+"stage1'>90'</label><input  name='stage"+id+"' id='"+id+"stage2' type='radio' data-mini='true'/><label  for='"+id+"stage2'>120'</label><input  name='stage"+id+"' id='"+id+"stage3'  type='radio' data-mini='true'/><label  for='"+id+"stage3'>Penalties</label></fieldset></div>");
 
 }
+     $("#main").trigger("create");
+}
 
-
-
+ function createGames5() {
 for (var i = 15; i < 16; i++) {
 id = i+1;
 $("#game"+id+"c").append("<div width='100%' align='center' data-role='fieldcontain'><fieldset data-role='controlgroup' data-type='horizontal'><input name='game"+id+"' id='"+id+"game1' type='radio' data-mini='true'/><label for='"+id+"game1'>"+gamesSheet[i].home.name+"<img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+gamesSheet[i].home.flag+"'/></label><input  name='game"+id+"' id='"+id+"game2' type='radio' data-mini='true'/><label  for='"+id+"game2'><img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+gamesSheet[i].away.flag+"'/>"+gamesSheet[i].away.name+"</label></fieldset></div>");
 $("#game"+id+"c").append("<div width='100%' align='center' data-role='fieldcontain'><fieldset data-role='controlgroup' data-type='horizontal'><input name='stage"+id+"' id='"+id+"stage1' type='radio' data-mini='true'/><label  for='"+id+"stage1'>90'</label><input  name='stage"+id+"' id='"+id+"stage2' type='radio' data-mini='true'/><label  for='"+id+"stage2'>120'</label><input  name='stage"+id+"' id='"+id+"stage3'  type='radio' data-mini='true'/><label  for='"+id+"stage3'>Penalties</label></fieldset></div>");
 
 }
+     $("#main").trigger("create");
+
+}
 
 
-
-  $("#main").trigger("create");
-      }
-   });
  
+ function setTeams(team, index, i){
+ if(i%2==0) gamesSheet[index].home=team;
+ if(i%2==1) gamesSheet[index].away=team;
+ //alert(JSON.stringify(gamesSheet));
+ }
 
   </script>
   
@@ -181,6 +202,9 @@ $("#game"+id+"c").append("<div width='100%' align='center' data-role='fieldconta
 <div id="game7c"></div><hr/>
 <div id="game8c"></div> 
 </div>
+
+  <a data-role="button" data-inline="true" data-theme="a" data-icon="check" onclick="createGames2()">Send</a>
+
 <hr/>
 <div data-role="collapsible" data-collapsed="false"  data-theme="a" data-content-theme="a" data-mini="true"><h3>1/4</h3>
 <div id="game9c"></div><hr/>
