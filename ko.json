@@ -149,8 +149,16 @@
 		{
 			"id" : "9",
 			"home" : {
+				"id" : "1",
+				"name" : "Brazil",
+				"score": 0,
+				"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/22px-Flag_of_Brazil.svg.png"
 			},
 			"away" : {
+				"id" : "2",
+				"name" : "Croatia",
+				"score": 0,
+				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/23px-Flag_of_Croatia.svg.png"
 			},
 			"time" : "",
 			"stage" : "",
@@ -159,8 +167,16 @@
 		{
 			"id" : "10",
 			"home" : {
+				"id" : "1",
+				"name" : "Brazil",
+				"score": 0,
+				"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/22px-Flag_of_Brazil.svg.png"
 			},
 			"away" : {
+				"id" : "2",
+				"name" : "Croatia",
+				"score": 0,
+				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/23px-Flag_of_Croatia.svg.png"
 			},
 			"time" : "",
 			"stage" : "",
@@ -169,8 +185,16 @@
 		{
 			"id" : "11",
 			"home" : {
+				"id" : "1",
+				"name" : "Brazil",
+				"score": 0,
+				"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/22px-Flag_of_Brazil.svg.png"
 			},
 			"away" : {
+				"id" : "2",
+				"name" : "Croatia",
+				"score": 0,
+				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/23px-Flag_of_Croatia.svg.png"
 			},
 			"time" : "",
 			"stage" : "",
@@ -179,8 +203,16 @@
 		{
 			"id" : "12",
 			"home" : {
+				"id" : "1",
+				"name" : "Brazil",
+				"score": 0,
+				"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/22px-Flag_of_Brazil.svg.png"
 			},
 			"away" : {
+				"id" : "2",
+				"name" : "Croatia",
+				"score": 0,
+				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/23px-Flag_of_Croatia.svg.png"
 			},
 			"time" : "",
 			"stage" : "",
@@ -189,8 +221,16 @@
 		{
 			"id" : "13",
 			"home" : {
+				"id" : "1",
+				"name" : "Brazil",
+				"score": 0,
+				"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/22px-Flag_of_Brazil.svg.png"
 			},
 			"away" : {
+				"id" : "2",
+				"name" : "Croatia",
+				"score": 0,
+				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/23px-Flag_of_Croatia.svg.png"
 			},
 			"time" : "",
 			"stage" : "",
@@ -199,8 +239,16 @@
 		{
 			"id" : "14",
 			"home" : {
+				"id" : "1",
+				"name" : "Brazil",
+				"score": 0,
+				"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/22px-Flag_of_Brazil.svg.png"
 			},
 			"away" : {
+				"id" : "2",
+				"name" : "Croatia",
+				"score": 0,
+				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/23px-Flag_of_Croatia.svg.png"
 			},
 			"time" : "",
 			"stage" : "",
@@ -209,8 +257,16 @@
 		{
 			"id" : "15",
 			"home" : {
+				"id" : "1",
+				"name" : "Brazil",
+				"score": 0,
+				"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/22px-Flag_of_Brazil.svg.png"
 			},
 			"away" : {
+				"id" : "2",
+				"name" : "Croatia",
+				"score": 0,
+				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/23px-Flag_of_Croatia.svg.png"
 			},
 			"time" : "",
 			"stage" : "",
@@ -219,8 +275,16 @@
 		{
 			"id" : "16",
 			"home" : {
+				"id" : "1",
+				"name" : "Brazil",
+				"score": 0,
+				"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/22px-Flag_of_Brazil.svg.png"
 			},
 			"away" : {
+				"id" : "2",
+				"name" : "Croatia",
+				"score": 0,
+				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/23px-Flag_of_Croatia.svg.png"
 			},
 			"time" : "",
 			"stage" : "",
