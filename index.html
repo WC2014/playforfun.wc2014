@@ -259,7 +259,9 @@ if(users[x].tables[j][i].team.id == tablesSheet[j][i].team.id) {users[x].groups_
 }
 }
 }
-
+if(teams[parseInt(users[x].tournament_disappointment)-1].id==5 ||teams[parseInt(users[x].tournament_disappointment)-1].id==15 ||teams[parseInt(users[x].tournament_disappointment)-1].id==16 ||teams[parseInt(users[x].tournament_disappointment)-1].id==26||teams[parseInt(users[x].tournament_disappointment)-1].id==31) {
+	users[x].specials_total = users[x].specials_total+6;
+	}
 users[x].total = users[x].total + users[x].games_total + users[x].groups_total + users[x].specials_total;
 }
 sort();
@@ -318,37 +320,37 @@ group.append("<br/>");
  var winner = $("#winner");
  if(teams[parseInt(users[x].winner)-1].id==111 || teams[parseInt(users[x].winner)-1].id==111) {
 	users[x].specials_total = users[x].specials_total+5;
- }
+ }  users[x].total =  users[x].games_total + users[x].groups_total + users[x].specials_total;
  winner.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font>"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].winner)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].winner)-1].flag+"'/></td></tr></table></div>");
  var scoring_team = $("#scoring_team");
  if(teams[parseInt(users[x].scoring_team)-1].id==111) {
 	users[x].specials_total = users[x].specials_total+5;
- }
+ }  users[x].total =  users[x].games_total + users[x].groups_total + users[x].specials_total;
  scoring_team.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font>"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].scoring_team)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].scoring_team)-1].flag+"'/></td></tr></table></div>");
  var aggressive = $("#aggressive");
  if(teams[parseInt(users[x].aggressive)-1].id==111) {
 	users[x].specials_total = users[x].specials_total+5;
- }
+ }  users[x].total =  users[x].games_total + users[x].groups_total + users[x].specials_total;
  aggressive.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font>"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].aggressive)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].aggressive)-1].flag+"'/></td></tr></table></div>");
  var fairest = $("#fairest");
  /*if(teams[parseInt(users[x].fairest)-1].id==111) {
 	users[x].specials_total = users[x].specials_total+5;
- }*/
+ }*/  users[x].total =  users[x].games_total + users[x].groups_total + users[x].specials_total;
  fairest.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font>"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].fairest)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].fairest)-1].flag+"'/></td></tr></table></div>");
  var top_scorer = $("#top_scorer");
  if(teams[parseInt(users[x].top_scorer)-1].id==111) {
 	users[x].specials_total = users[x].specials_total+5;
- }
+ }  users[x].total =  users[x].games_total + users[x].groups_total + users[x].specials_total;
  top_scorer.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font>"+users[x].user+"</font></td><td align='right' width='40%'>"+scorer[parseInt(users[x].top_scorer)-1].name+"&nbsp;<img width='15px' height='15px' align='right' src='"+scorer[parseInt(users[x].top_scorer)-1].photo+"'/></td></tr></table></div>");
  var top_assister = $("#top_assister");
 /* if(teams[parseInt(users[x].top_assister)-1].id==111) {
 	users[x].specials_total = users[x].specials_total+5;
- }*/
+ }*/  users[x].total =  users[x].games_total + users[x].groups_total + users[x].specials_total;
  top_assister.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font>"+users[x].user+"</font></td><td align='right' width='40%'>"+assister[parseInt(users[x].top_assister)-1].name+"&nbsp;<img width='15px' height='15px' align='right' src='"+assister[parseInt(users[x].top_assister)-1].photo+"'/></td></tr></table></div>");
  var tournament_surprise = $("#tournament_surprise");
  if(teams[parseInt(users[x].tournament_surprise)-1].id==111) {
 	users[x].specials_total = users[x].specials_total+5;
- }
+ }  users[x].total =  users[x].games_total + users[x].groups_total + users[x].specials_total;
  tournament_surprise.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font>"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].tournament_surprise)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].tournament_surprise)-1].flag+"'/></td></tr></table></div>");
  var tournament_disappointment = $("#tournament_disappointment");
  var col;
@@ -357,13 +359,11 @@ group.append("<br/>");
 	col=getSpecialColor(6);
  }else {
  col=getSpecialColor(0);
- }
+ }  users[x].total =  users[x].games_total + users[x].groups_total + users[x].specials_total;
  tournament_disappointment.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font color="+col+">"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].tournament_disappointment)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].tournament_disappointment)-1].flag+"'/></td></tr></table></div>");
   $("#main").trigger("create");
   }
-  for(x=0; x<users.length; x++) { 
-  users[x].total = users[x].total + users[x].games_total + users[x].groups_total + users[x].specials_total;
-  }
+
   sort();
  for(x=0; x<users.length; x++) { 
   pl=x+1;
