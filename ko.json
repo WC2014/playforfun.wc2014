@@ -15,7 +15,7 @@
 				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Flag_of_Chile.svg/23px-Flag_of_Chile.svg.png"
 			},
 			"time" : "",
-			"stage" : "",
+			"stage" : -1,
 			"index" : 0
 		}, 
 		{
@@ -33,7 +33,7 @@
 			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/23px-Flag_of_Uruguay.svg.png"
 		},
 			"time" : "",
-			"stage" : "",
+			"stage" : -1,
 			"index" : 0
 		}, 
 		{
@@ -51,7 +51,7 @@
 			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/23px-Flag_of_Nigeria.svg.png"
 		},
 			"time" : "",
-			"stage" : "",
+			"stage" : -1,
 			"index" : 0
 		}, 
 		{
@@ -69,7 +69,7 @@
 			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_Algeria.svg/23px-Flag_of_Algeria.svg.png"
 		},
 			"time" : "",
-			"stage" : "",
+			"stage" : -1,
 			"index" : 0
 		}, 
 		{
@@ -88,7 +88,7 @@
 				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/23px-Flag_of_Mexico.svg.png"
 			},
 			"time" : "",
-			"stage" : "",
+			"stage" : -1,
 			"index" : 0
 		}, 
 		{
@@ -106,7 +106,7 @@
 			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Greece.svg/23px-Flag_of_Greece.svg.png"
 		},
 			"time" : "",
-			"stage" : "",
+			"stage" : -1,
 			"index" : 0
 		}, 
 		{
@@ -124,7 +124,7 @@
 			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/16px-Flag_of_Switzerland.svg.png"
 		},
 			"time" : "",
-			"stage" : "",
+			"stage" : -1,
 			"index" : 0
 		}
 		
@@ -144,7 +144,7 @@
 			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/23px-Flag_of_the_United_States.svg.png"
 		},
 			"time" : "",
-			"stage" : "",
+			"stage" : -1,
 			"index" : 0
 		}, 
 		{
@@ -153,16 +153,16 @@
 				"id" : "",
 				"name" : "",
 				"score": 0,
-				"flag" : ""
+				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"away" : {
 				"id" : "",
 				"name" : "",
 				"score": 0,
-				"flag" : ""
+				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"time" : "",
-			"stage" : "",
+			"stage" : -1,
 			"index" : 0
 		}, 
 		{
@@ -171,16 +171,16 @@
 				"id" : "",
 				"name" : "",
 				"score": 0,
-				"flag" : ""
+				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"away" : {
 				"id" : "",
 				"name" : "",
 				"score": 0,
-				"flag" : ""
+				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"time" : "",
-			"stage" : "",
+			"stage" : -1,
 			"index" : 0
 		}, 
 		{
@@ -189,16 +189,16 @@
 				"id" : "",
 				"name" : "",
 				"score": 0,
-				"flag" : ""
+				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"away" :{
 				"id" : "",
 				"name" : "",
 				"score": 0,
-				"flag" : ""
+				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"time" : "",
-			"stage" : "",
+			"stage" : -1,
 			"index" : 0
 		}, 
 		{
@@ -207,16 +207,16 @@
 				"id" : "",
 				"name" : "",
 				"score": 0,
-				"flag" : ""
+				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"away" : {
 				"id" : "",
 				"name" : "",
 				"score": 0,
-				"flag" : ""
+				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"time" : "",
-			"stage" : "",
+			"stage" : -1,
 			"index" : 0
 		}, 
 		{
@@ -225,16 +225,16 @@
 				"id" : "",
 				"name" : "",
 				"score": 0,
-				"flag" : ""
+				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"away" : {
 				"id" : "",
 				"name" : "",
 				"score": 0,
-				"flag" : ""
+				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"time" : "",
-			"stage" : "",
+			"stage" : -1,
 			"index" : 0
 		}, 
 		{
@@ -243,16 +243,16 @@
 				"id" : "",
 				"name" : "",
 				"score": 0,
-				"flag" : ""
+				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"away" : {
 				"id" : "",
 				"name" : "",
 				"score": 0,
-				"flag" : ""
+				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"time" : "",
-			"stage" : "",
+			"stage" : -1,
 			"index" : 0
 		}, 
 		{
@@ -261,16 +261,16 @@
 				"id" : "",
 				"name" : "",
 				"score": 0,
-				"flag" : ""
+				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"away" : {
 				"id" : "",
 				"name" : "",
 				"score": 0,
-				"flag" : ""
+				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"time" : "",
-			"stage" : "",
+			"stage" : -1,
 			"index" : 0
 		}, 
 		{
@@ -279,16 +279,16 @@
 				"id" : "",
 				"name" : "",
 				"score": 0,
-				"flag" : ""
+				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"away" : {
 				"id" : "",
 				"name" : "",
 				"score": 0,
-				"flag" : ""
+				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"time" : "",
-			"stage" : "",
+			"stage" : -1,
 			"index" : 0
 		}
 		
