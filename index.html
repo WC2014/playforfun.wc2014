@@ -100,6 +100,7 @@ padding: 0px 5px 0px 5px;
   var gamesSheet;
   var tablesSheet;
   var users;
+  var ko;
   
   
   
@@ -135,7 +136,67 @@ padding: 0px 5px 0px 5px;
 }
 });
 
+   $.ajax({
+   url : "ko.json",
+   dataType : "text",
+   success : function (data) {
+   var json = $.parseJSON(data);
+ ko = json.games;
+ 
+ var id;
+ var stage;
+  for (var i = 0; i < 8; i++) {
+  if(ko[i].stage==0) stage="90'";
+  if(ko[i].stage==1) stage="120'";
+  if(ko[i].stage==2) stage="Penalties";
+  if(ko[i].stage==-1) stage="";
+   id = i+1;
+$("#ko"+id+"h").append("<div align='left'><table width='100%'><tr><td width='20%'>"+ko[i].time+"</td><td width='25%' align='right'>"+ko[i].home.name+"</td><td align='right' width='5%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+ko[i].home.flag+"'/></td><td width='5%' style='text-align:center;'>"+ko[i].home.score+"</td><td width='5%' style='text-align:center;'>"+stage+"</td><td width='5%' style='text-align:center;'>"+ko[i].away.score+"</td><td width='5%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px' src='"+ko[i].away.flag+"'/></td><td width='25%'>"+ko[i].away.name+"</td></tr></table><div>");
+}
 
+ for (var i = 8; i < 12; i++) {
+  if(ko[i].stage==0) stage="90'";
+  if(ko[i].stage==1) stage="120'";
+  if(ko[i].stage==2) stage="Penalties";
+  if(ko[i].stage==-1) stage="";
+   id = i+1;
+$("#ko"+id+"h").append("<div align='left'><table width='100%'><tr><td width='20%'>"+ko[i].time+"</td><td width='25%' align='right'>"+ko[i].home.name+"</td><td align='right' width='5%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+ko[i].home.flag+"'/></td><td width='5%' style='text-align:center;'>"+ko[i].home.score+"</td><td width='5%' style='text-align:center;'>"+stage+"</td><td width='5%' style='text-align:center;'>"+ko[i].away.score+"</td><td width='5%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px' src='"+ko[i].away.flag+"'/></td><td width='25%'>"+ko[i].away.name+"</td></tr></table><div>");
+}
+
+
+ for (var i = 12; i < 14; i++) {
+  if(ko[i].stage==0) stage="90'";
+  if(ko[i].stage==1) stage="120'";
+  if(ko[i].stage==2) stage="Penalties";
+  if(ko[i].stage==-1) stage="";
+   id = i+1;
+$("#ko"+id+"h").append("<div align='left'><table width='100%'><tr><td width='20%'>"+ko[i].time+"</td><td width='25%' align='right'>"+ko[i].home.name+"</td><td align='right' width='5%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+ko[i].home.flag+"'/></td><td width='5%' style='text-align:center;'>"+ko[i].home.score+"</td><td width='5%' style='text-align:center;'>"+stage+"</td><td width='5%' style='text-align:center;'>"+ko[i].away.score+"</td><td width='5%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px' src='"+ko[i].away.flag+"'/></td><td width='25%'>"+ko[i].away.name+"</td></tr></table><div>");
+}
+
+
+ for (var i = 14; i <15; i++) {
+  if(ko[i].stage==0) stage="90'";
+  if(ko[i].stage==1) stage="120'";
+  if(ko[i].stage==2) stage="Penalties";
+  if(ko[i].stage==-1) stage="";
+   id = i+1;
+$("#ko"+id+"h").append("<div align='left'><table width='100%'><tr><td width='20%'>"+ko[i].time+"</td><td width='25%' align='right'>"+ko[i].home.name+"</td><td align='right' width='5%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+ko[i].home.flag+"'/></td><td width='5%' style='text-align:center;'>"+ko[i].home.score+"</td><td width='5%' style='text-align:center;'>"+stage+"</td><td width='5%' style='text-align:center;'>"+ko[i].away.score+"</td><td width='5%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px' src='"+ko[i].away.flag+"'/></td><td width='25%'>"+ko[i].away.name+"</td></tr></table><div>");
+}
+
+
+ for (var i = 15; i < 16; i++) {
+  if(ko[i].stage==0) stage="90'";
+  if(ko[i].stage==1) stage="120'";
+  if(ko[i].stage==2) stage="Penalties";
+  if(ko[i].stage==-1) stage="";
+   id = i+1;
+$("#ko"+id+"h").append("<div align='left'><table width='100%'><tr><td width='20%'>"+ko[i].time+"</td><td width='25%' align='right'>"+ko[i].home.name+"</td><td align='right' width='5%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+ko[i].home.flag+"'/></td><td width='5%' style='text-align:center;'>"+ko[i].home.score+"</td><td width='5%' style='text-align:center;'>"+stage+"</td><td width='5%' style='text-align:center;'>"+ko[i].away.score+"</td><td width='5%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px' src='"+ko[i].away.flag+"'/></td><td width='25%'>"+ko[i].away.name+"</td></tr></table><div>");
+}
+  
+     
+
+}
+   });
 
   
    $.ajax({
@@ -252,31 +313,61 @@ $(group).find('tbody#'+table_id).append("<tr><td colspan='7'><hr/></td></tr><tr>
 group.append("<br/>");
 }
 
-pl=x+1;
+
+ 
+ var winner = $("#winner");
+ if(teams[parseInt(users[x].winner)-1].id==111 || teams[parseInt(users[x].winner)-1].id==111) {
+	users[x].specials_total = users[x].specials_total+5;
+ }
+ winner.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font>"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].winner)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].winner)-1].flag+"'/></td></tr></table></div>");
+ var scoring_team = $("#scoring_team");
+ if(teams[parseInt(users[x].scoring_team)-1].id==111) {
+	users[x].specials_total = users[x].specials_total+5;
+ }
+ scoring_team.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font>"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].scoring_team)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].scoring_team)-1].flag+"'/></td></tr></table></div>");
+ var aggressive = $("#aggressive");
+ if(teams[parseInt(users[x].aggressive)-1].id==111) {
+	users[x].specials_total = users[x].specials_total+5;
+ }
+ aggressive.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font>"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].aggressive)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].aggressive)-1].flag+"'/></td></tr></table></div>");
+ var fairest = $("#fairest");
+ /*if(teams[parseInt(users[x].fairest)-1].id==111) {
+	users[x].specials_total = users[x].specials_total+5;
+ }*/
+ fairest.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font>"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].fairest)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].fairest)-1].flag+"'/></td></tr></table></div>");
+ var top_scorer = $("#top_scorer");
+ if(teams[parseInt(users[x].top_scorer)-1].id==111) {
+	users[x].specials_total = users[x].specials_total+5;
+ }
+ top_scorer.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font>"+users[x].user+"</font></td><td align='right' width='40%'>"+scorer[parseInt(users[x].top_scorer)-1].name+"&nbsp;<img width='15px' height='15px' align='right' src='"+scorer[parseInt(users[x].top_scorer)-1].photo+"'/></td></tr></table></div>");
+ var top_assister = $("#top_assister");
+/* if(teams[parseInt(users[x].top_assister)-1].id==111) {
+	users[x].specials_total = users[x].specials_total+5;
+ }*/
+ top_assister.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font>"+users[x].user+"</font></td><td align='right' width='40%'>"+assister[parseInt(users[x].top_assister)-1].name+"&nbsp;<img width='15px' height='15px' align='right' src='"+assister[parseInt(users[x].top_assister)-1].photo+"'/></td></tr></table></div>");
+ var tournament_surprise = $("#tournament_surprise");
+ if(teams[parseInt(users[x].tournament_surprise)-1].id==111) {
+	users[x].specials_total = users[x].specials_total+5;
+ }
+ tournament_surprise.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font>"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].tournament_surprise)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].tournament_surprise)-1].flag+"'/></td></tr></table></div>");
+ var tournament_disappointment = $("#tournament_disappointment");
+ var col;
+ if(teams[parseInt(users[x].tournament_disappointment)-1].id==5 ||teams[parseInt(users[x].tournament_disappointment)-1].id==15 ||teams[parseInt(users[x].tournament_disappointment)-1].id==16 ||teams[parseInt(users[x].tournament_disappointment)-1].id==26||teams[parseInt(users[x].tournament_disappointment)-1].id==31) {
+	users[x].specials_total = users[x].specials_total+6;
+	col=getSpecialColor(6);
+ }else {
+ col=getSpecialColor(0);
+ }
+ tournament_disappointment.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font color="+col+">"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].tournament_disappointment)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].tournament_disappointment)-1].flag+"'/></td></tr></table></div>");
+  $("#main").trigger("create");
+  
+  pl=x+1;
 var leaderboard = $("#leaderboard");
 users[x].total = users[x].total + users[x].games_total + users[x].groups_total + users[x].specials_total;
 var user = $("<div data-role='collapsible' data-theme='a' data-content-theme='a' data-mini='true'><h3><table width='100%'><tr><td width='80%' align='left'>"+pl+". "+users[x].user+"</td><td width='20%' align='right'>"+users[x].total+"</td></tr></table></h3><div>Games: "+users[x].games_total+"</div><hr/><div>Groups: "+users[x].groups_total+"</div><hr/><div>Specials: "+users[x].specials_total+"</div></div>").collapsible();
 leaderboard.append(user);
  $("#main").trigger("create");
  
- 
- var winner = $("#winner");
- winner.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'>"+users[x].user+"</td><td align='right' width='40%'>"+teams[parseInt(users[x].winner)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].winner)-1].flag+"'/></td></tr></table></div>");
- var scoring_team = $("#scoring_team");
- scoring_team.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'>"+users[x].user+"</td><td align='right' width='40%'>"+teams[parseInt(users[x].scoring_team)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].scoring_team)-1].flag+"'/></td></tr></table></div>");
- var aggressive = $("#aggressive");
- aggressive.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'>"+users[x].user+"</td><td align='right' width='40%'>"+teams[parseInt(users[x].aggressive)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].aggressive)-1].flag+"'/></td></tr></table></div>");
- var fairest = $("#fairest");
- fairest.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'>"+users[x].user+"</td><td align='right' width='40%'>"+teams[parseInt(users[x].fairest)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].fairest)-1].flag+"'/></td></tr></table></div>");
- var top_scorer = $("#top_scorer");
- top_scorer.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'>"+users[x].user+"</td><td align='right' width='40%'>"+scorer[parseInt(users[x].top_scorer)-1].name+"&nbsp;<img width='15px' height='15px' align='right' src='"+scorer[parseInt(users[x].top_scorer)-1].photo+"'/></td></tr></table></div>");
- var top_assister = $("#top_assister");
- top_assister.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'>"+users[x].user+"</td><td align='right' width='40%'>"+assister[parseInt(users[x].top_assister)-1].name+"&nbsp;<img width='15px' height='15px' align='right' src='"+assister[parseInt(users[x].top_assister)-1].photo+"'/></td></tr></table></div>");
- var tournament_surprise = $("#tournament_surprise");
- tournament_surprise.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'>"+users[x].user+"</td><td align='right' width='40%'>"+teams[parseInt(users[x].tournament_surprise)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].tournament_surprise)-1].flag+"'/></td></tr></table></div>");
- var tournament_disappointment = $("#tournament_disappointment");
- tournament_disappointment.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'>"+users[x].user+"</td><td align='right' width='40%'>"+teams[parseInt(users[x].tournament_disappointment)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].tournament_disappointment)-1].flag+"'/></td></tr></table></div>");
-  $("#main").trigger("create");
 }
 
 }
@@ -285,15 +376,7 @@ leaderboard.append(user);
 
   $(document).ready(function() {
   
-   /*  $.ajax({
-   url : "video.json",
-   dataType : "text",
-   success : function (data) {
-   var json = $.parseJSON(data);
-   $("#video").attr('src', json.video);
-
-}
-});*/
+    
   });
 
 
@@ -315,6 +398,15 @@ if(u.team.id == r.team.id) return '#2E8B57';
 return '#CD3333';
 
 }
+
+function getSpecialColor(p) {
+
+if(p>0) return '#2E8B57';
+
+return '#CD3333';
+
+}
+
 
 function calcGameScore(rh, ra, uh, ua)
 {
@@ -381,13 +473,78 @@ var swapped;
 
 <br/>
 
-<!--div data-role="collapsible" data-collapsed="false" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Highlights</h3><div></div><iframe id="video" width="100%" height="35%" src="" frameborder="0" allowfullscreen></iframe></div--><br/>
 
 
 <div data-role="collapsible" data-collapsed="false" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Leaderboard</h3><div id="leaderboard"></div></div><br/>
 
 
-<div data-role="collapsible" data-collapsed="false" id="games" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Games</h3>
+<div data-role="collapsible" data-collapsed="false" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Knockout</h3><div id="leaderboard"></div>
+
+<div data-role="collapsible"  data-collapsed="false" data-theme="a" data-content-theme="a" data-mini="true"><h3>1/8</h3>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko1h"></span></h3><div id="ko1c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko2h"></span></h3><div id="ko2c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko3h"></span></h3><div id="ko3c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko4h"></span></h3><div id="ko4c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko5h"></span></h3><div id="ko5c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko6h"></span></h3><div id="ko6c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko7h"></span></h3><div id="ko7c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko8h"></span></h3><div id="ko8c"></div></div>
+
+</div>
+
+ 
+<div data-role="collapsible"  data-collapsed="false" data-theme="a" data-content-theme="a" data-mini="true"><h3>1/4</h3>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko9h"></span></h3><div id="ko9c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko10h"></span></h3><div id="ko10c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko11h"></span></h3><div id="ko11c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko12h"></span></h3><div id="ko12c"></div></div>
+
+</div> 
+
+
+<div data-role="collapsible" data-collapsed="false"  data-theme="a" data-content-theme="a" data-mini="true"><h3>1/2</h3>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko13h"></span></h3><div id="ko13c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko14h"></span></h3><div id="ko14c"></div></div>
+
+</div>
+
+
+<div data-role="collapsible" data-collapsed="false"  data-theme="a" data-content-theme="a" data-mini="true"><h3>3-4</h3>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko15h"></span></h3><div id="ko15c"></div></div>
+
+</div>
+
+<div data-role="collapsible" data-collapsed="false"  data-theme="a" data-content-theme="a" data-mini="true"><h3>Final</h3>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko16h"></span></h3><div id="ko16c"></div></div>
+
+</div>
+
+</div>
+ </br><div data-role="collapsible" data-collapsed="false" data-theme="a" data-content-theme="a" data-mini="true"><h3>Specials</h3>
+<form id="sheet">
+
+    <div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Champions</h3><div id="winner"></div></div>
+      <div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Highest Scoring Team</h3><div><fieldset id="scoring_team" data-role="controlgroup"></fieldset></div></div>
+<div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Most Aggressive Team</h3><div><fieldset id="aggressive" data-role="controlgroup"></fieldset></div></div>
+<div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Fairest Team</h3><div><fieldset id="fairest" data-role="controlgroup"></fieldset></div></div>
+
+
+    <div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Top Scorer</h3><div><fieldset id="top_scorer" data-role="controlgroup"></fieldset></div></div>
+
+<div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Top Assister</h3><div><fieldset id="top_assister" data-role="controlgroup"></fieldset></div></div>
+
+<div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Tournament Surprise</h3><div><fieldset id="tournament_surprise" data-role="controlgroup"></fieldset></div></div>
+
+<div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Tournament Disappointment 
+<img src="http://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/23px-Flag_of_Spain.svg.png"/>
+<img src="http://upload.wikimedia.org/wikipedia/en/thumb/b/be/Flag_of_England.svg/23px-Flag_of_England.svg.png"/>
+<img src="http://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/23px-Flag_of_Italy.svg.png"/>
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/23px-Flag_of_Portugal.svg.png"/>
+<img src="http://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/23px-Flag_of_Russia.svg.png"/>
+</h3><div><fieldset id="tournament_disappointment" data-role="controlgroup"></fieldset></div></div>
+
+  </div>
+</br><div data-role="collapsible" data-collapsed="false" id="games" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Games</h3>
 <div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game1h"></span></h3><div id="game1c"></div></div>
 <div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game2h"></span></h3><div id="game2c"></div></div>
 <div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game3h"></span></h3><div id="game3c"></div></div>
@@ -451,28 +608,13 @@ var swapped;
 
 </div>
 
- </br><div data-role="collapsible" data-collapsed="false" data-theme="a" data-content-theme="a" data-mini="true"><h3>Specials</h3>
-<form id="sheet">
-
-    <div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Champions</h3><div id="winner"></div></div>
-      <div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Highest Scoring Team</h3><div><fieldset id="scoring_team" data-role="controlgroup"></fieldset></div></div>
-<div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Most Aggressive Team</h3><div><fieldset id="aggressive" data-role="controlgroup"></fieldset></div></div>
-<div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Fairest Team</h3><div><fieldset id="fairest" data-role="controlgroup"></fieldset></div></div>
-
-
-    <div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Top Scorer</h3><div><fieldset id="top_scorer" data-role="controlgroup"></fieldset></div></div>
-
-<div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Top Assister</h3><div><fieldset id="top_assister" data-role="controlgroup"></fieldset></div></div>
-
-<div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Tournament Surprise</h3><div><fieldset id="tournament_surprise" data-role="controlgroup"></fieldset></div></div>
-
-<div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Tournament Disappointment</h3><div><fieldset id="tournament_disappointment" data-role="controlgroup"></fieldset></div></div>
 
 </form>
 
 
-  </div>
 
+
+  
 </div>
 
 
