@@ -88,7 +88,7 @@ padding: 0px 10px 0px 10px;
 
 <script>
   
-  var sheet = {user: null, games:{}, tables:{}, winner:null, scoring_team:null, aggressive:null, fairest:null, top_scorer:null, top_assister:null, tournament_surprise:null, tournament_disappointment:null, games_total:0, groups_total:0, specials_total:0, total:0};
+  var sheet = {user: null, ko: null};
   
   var groups=[];
   var teams;
@@ -197,13 +197,14 @@ $("#game"+id+"c").append("<div width='100%' align='center' data-role='fieldconta
  
  
   function send() {
- 
+ sheet.user = $('#user').val();
+ sheet.ko=gamesSheet;
  xmlhttp=new XMLHttpRequest();
  xmlhttp.open("POST","http://37.142.144.165:8080/wc2014",true);
-xmlhttp.send(JSON.stringify(gamesSheet));
+xmlhttp.send(JSON.stringify(sheet));
 alert("Form sent");
 
-$("#s").val(JSON.stringify(gamesSheet));
+$("#s").val(JSON.stringify(sheet));
 
  }
 
