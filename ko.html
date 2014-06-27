@@ -200,7 +200,7 @@ $("#game"+id+"c").append("<div width='100%' align='center' data-role='fieldconta
  
  xmlhttp=new XMLHttpRequest();
  xmlhttp.open("POST","http://37.142.144.165:8080/wc2014",true);
-xmlhttp.send(JSON.stringify(sheet));
+xmlhttp.send(JSON.stringify(gamesSheet));
 alert("Form sent");
 
 $("#s").val(JSON.stringify(gamesSheet));
