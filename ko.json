@@ -21,7 +21,7 @@
 			"home" : {
 				"id" : "9",
 				"name" : "Colombia",
-				"score" : 0,
+				"score" : 2,
 				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/23px-Flag_of_Colombia.svg.png"
 			},
 			"away" : {
@@ -31,7 +31,7 @@
 				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/23px-Flag_of_Uruguay.svg.png"
 			},
 			"time" : "",
-			"stage" : -1,
+			"stage" : 0,
 			"index" : 0
 		}, {
 			"id" : "3",
@@ -145,10 +145,10 @@
 				"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/22px-Flag_of_Brazil.svg.png"
 			},
 			"away" : {
-				"id" : "",
-				"name" : "",
+				"id" : "9",
+				"name" : "Colombia",
 				"score" : 0,
-				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
+				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/23px-Flag_of_Colombia.svg.png"
 			},
 			"time" : "",
 			"stage" : -1,
