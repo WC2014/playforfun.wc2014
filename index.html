@@ -318,8 +318,8 @@ users[x].games_total = users[x].games_total + points;
 color = get8Color(points, ko[i].home.score, ko[i].away.score);
 if(x%2==0) bg ="#DDDDDD" ; else bg="#EEEEEE" ;
 
-if(users[x].ko[i].home.score == 1) team = users[x].ko[i].home.name;
-if(users[x].ko[i].away.score == 1) team = users[x].ko[i].away.name;
+if(users[x].ko[i].home.score == 1) team = users[x].ko[i].home;
+if(users[x].ko[i].away.score == 1) team = users[x].ko[i].away;
 
 if(users[x].ko[i].stage == 0) stage = "90'";
 if(users[x].ko[i].stage == 1) stage = "120'";
@@ -327,7 +327,7 @@ if(users[x].ko[i].stage == 2) stage = "P'";
 
 
 
-$("#ko"+id+"c").append("<div style='background-color:"+bg+"' align='left'><table width='100%'><tr><td width='50%'><font color='"+color+"'>"+users[x].user+"</font></td><td width='20%' align='left'><td width='20%' style='text-align:center;'><font color='"+color+"'>"+team+"</font></td><td><font color='"+color+"'></font></td><td width='10%' style='text-align:center;'><font color='"+color+"'>"+stage+"</font></td></td></tr></table><div>");
+$("#ko"+id+"c").append("<div style='background-color:"+bg+"' align='left'><table width='100%'><tr><td width='50%'><font color='"+color+"'>"+users[x].user+"</font></td><td width='20%' align='left'><td width='20%' style='text-align:center;'><font color='"+color+"'>"+team.name+"</font></td><td><img src='"+team.flag+"'/></td><td><font color='"+color+"'></font></td><td width='10%' style='text-align:center;'><font color='"+color+"'>"+stage+"</font></td></td></tr></table><div>");
 
 }
 
@@ -341,8 +341,8 @@ points = points + calc8Stage(ko[i].home.stage, users[x].ko[i].stage) ;
 color = get8Color(points, ko[i].home.score, ko[i].away.score);
 if(x%2==0) bg ="#DDDDDD" ; else bg="#EEEEEE" ;
 
-if(users[x].ko[i].home.score == 1) team = users[x].ko[i].home.name;
-if(users[x].ko[i].away.score == 1) team = users[x].ko[i].away.name;
+if(users[x].ko[i].home.score == 1) team = users[x].ko[i].home;
+if(users[x].ko[i].away.score == 1) team = users[x].ko[i].away;
 
 if(users[x].ko[i].stage == 0) stage = "90'";
 if(users[x].ko[i].stage == 1) stage = "120'";
@@ -350,7 +350,7 @@ if(users[x].ko[i].stage == 2) stage = "P'";
 
 
 
-$("#ko"+id+"c").append("<div style='background-color:"+bg+"' align='left'><table width='100%'><tr><td width='50%'><font color='"+color+"'>"+users[x].user+"</font></td><td width='20%' align='left'><td width='20%' style='text-align:center;'><font color='"+color+"'>"+team+"</font></td><td><font color='"+color+"'></font></td><td width='10%' style='text-align:center;'><font color='"+color+"'>"+stage+"</font></td></td></tr></table><div>");
+$("#ko"+id+"c").append("<div style='background-color:"+bg+"' align='left'><table width='100%'><tr><td width='50%'><font color='"+color+"'>"+users[x].user+"</font></td><td width='20%' align='left'><td width='20%' style='text-align:center;'><font color='"+color+"'>"+team.name+"</font></td><td><img src='"+team.flag+"'/></td><td><font color='"+color+"'></font></td><td width='10%' style='text-align:center;'><font color='"+color+"'>"+stage+"</font></td></td></tr></table><div>");
 }
 }
 
@@ -364,8 +364,8 @@ points = points + calc8Stage(ko[i].home.stage, users[x].ko[i].stage) ;
 color = get8Color(points, ko[i].home.score, ko[i].away.score);
 if(x%2==0) bg ="#DDDDDD" ; else bg="#EEEEEE" ;
 
-if(users[x].ko[i].home.score == 1) team = users[x].ko[i].home.name;
-if(users[x].ko[i].away.score == 1) team = users[x].ko[i].away.name;
+if(users[x].ko[i].home.score == 1) team = users[x].ko[i].home;
+if(users[x].ko[i].away.score == 1) team = users[x].ko[i].away;
 
 if(users[x].ko[i].stage == 0) stage = "90'";
 if(users[x].ko[i].stage == 1) stage = "120'";
@@ -373,7 +373,7 @@ if(users[x].ko[i].stage == 2) stage = "P'";
 
 
 
-$("#ko"+id+"c").append("<div style='background-color:"+bg+"' align='left'><table width='100%'><tr><td width='50%'><font color='"+color+"'>"+users[x].user+"</font></td><td width='20%' align='left'><td width='20%' style='text-align:center;'><font color='"+color+"'>"+team+"</font></td><td><font color='"+color+"'></font></td><td width='10%' style='text-align:center;'><font color='"+color+"'>"+stage+"</font></td></td></tr></table><div>");
+$("#ko"+id+"c").append("<div style='background-color:"+bg+"' align='left'><table width='100%'><tr><td width='50%'><font color='"+color+"'>"+users[x].user+"</font></td><td width='20%' align='left'><td width='20%' style='text-align:center;'><font color='"+color+"'>"+team.name+"</font></td><td><img src='"+team.flag+"'/></td><td><font color='"+color+"'></font></td><td width='10%' style='text-align:center;'><font color='"+color+"'>"+stage+"</font></td></td></tr></table><div>");
 }
 }
 
@@ -387,8 +387,8 @@ points = points + calc8Stage(ko[i].home.stage, users[x].ko[i].stage) ;
 color = get8Color(points, ko[i].home.score, ko[i].away.score);
 if(x%2==0) bg ="#DDDDDD" ; else bg="#EEEEEE" ;
 
-if(users[x].ko[i].home.score == 1) team = users[x].ko[i].home.name;
-if(users[x].ko[i].away.score == 1) team = users[x].ko[i].away.name;
+if(users[x].ko[i].home.score == 1) team = users[x].ko[i].home;
+if(users[x].ko[i].away.score == 1) team = users[x].ko[i].away;
 
 if(users[x].ko[i].stage == 0) stage = "90'";
 if(users[x].ko[i].stage == 1) stage = "120'";
@@ -396,7 +396,7 @@ if(users[x].ko[i].stage == 2) stage = "P'";
 
 
 
-$("#ko"+id+"c").append("<div style='background-color:"+bg+"' align='left'><table width='100%'><tr><td width='50%'><font color='"+color+"'>"+users[x].user+"</font></td><td width='20%' align='left'><td width='20%' style='text-align:center;'><font color='"+color+"'>"+team+"</font></td><td><font color='"+color+"'></font></td><td width='10%' style='text-align:center;'><font color='"+color+"'>"+stage+"</font></td></td></tr></table><div>");
+$("#ko"+id+"c").append("<div style='background-color:"+bg+"' align='left'><table width='100%'><tr><td width='50%'><font color='"+color+"'>"+users[x].user+"</font></td><td width='20%' align='left'><td width='20%' style='text-align:center;'><font color='"+color+"'>"+team.name+"</font></td><td><img src='"+team.flag+"'/></td><td><font color='"+color+"'></font></td><td width='10%' style='text-align:center;'><font color='"+color+"'>"+stage+"</font></td></td></tr></table><div>");
 }
 }
 
@@ -410,15 +410,15 @@ users[x].games_total = users[x].games_total + points;
 color = get8Color(points, ko[i].home.score, ko[i].away.score);
 if(x%2==0) bg ="#DDDDDD" ; else bg="#EEEEEE" ;
 
-if(users[x].ko[i].home.score == 1) team = users[x].ko[i].home.name;
-if(users[x].ko[i].away.score == 1) team = users[x].ko[i].away.name;
+if(users[x].ko[i].home.score == 1) team = users[x].ko[i].home;
+if(users[x].ko[i].away.score == 1) team = users[x].ko[i].away;
 
 if(users[x].ko[i].stage == 0) stage = "90'";
 if(users[x].ko[i].stage == 1) stage = "120'";
 if(users[x].ko[i].stage == 2) stage = "P'";
 
 
-$("#ko"+id+"c").append("<div style='background-color:"+bg+"' align='left'><table width='100%'><tr><td width='50%'><font color='"+color+"'>"+users[x].user+"</font></td><td width='20%' align='left'><td width='20%' style='text-align:center;'><font color='"+color+"'>"+team+"</font></td><td><font color='"+color+"'></font></td><td width='10%' style='text-align:center;'><font color='"+color+"'>"+stage+"</font></td></td></tr></table><div>");
+$("#ko"+id+"c").append("<div style='background-color:"+bg+"' align='left'><table width='100%'><tr><td width='50%'><font color='"+color+"'>"+users[x].user+"</font></td><td width='20%' align='left'><td width='20%' style='text-align:center;'><font color='"+color+"'>"+team.name+"</font></td><td><img src='"+team.flag+"'/></td><td><font color='"+color+"'></font></td><td width='10%' style='text-align:center;'><font color='"+color+"'>"+stage+"</font></td></td></tr></table><div>");
 }
 }
 
