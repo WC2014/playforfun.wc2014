@@ -247,6 +247,8 @@ $(group).append(
 var id;
 var points;
 var color;
+var colorG;
+var colorS;
 var pl;
 for(x=0; x<users.length; x++) {
    for (var i = 0; i < 48; i++) {
@@ -313,9 +315,10 @@ id = i+1;
    points=0;
 
 points = calc8Score(ko[i].home.score, ko[i].away.score, users[x].ko[i].home.score, users[x].ko[i].away.score) ;
+colorG = get8Color(points, ko[i].home.score, ko[i].away.score);
+colorS = get8ColorStage(calc8Stage(ko[i].stage, users[x].ko[i].stage), ko[i].home.score, ko[i].away.score);
 points = points + calc8Stage(ko[i].stage, users[x].ko[i].stage) ;
 users[x].games_total = users[x].games_total + points;
-color = get8Color(points, ko[i].home.score, ko[i].away.score);
 if(x%2==0) bg ="#DDDDDD" ; else bg="#EEEEEE" ;
 
 if(users[x].ko[i].home.score == 1) team = users[x].ko[i].home;
@@ -327,7 +330,7 @@ if(users[x].ko[i].stage == 2) stage = "P'";
 
 
 
-$("#ko"+id+"c").append("<div style='background-color:"+bg+"' align='left'><table width='100%'><tr><td width='50%'><font color='"+color+"'>"+users[x].user+"</font></td><td width='20%' align='left'><td width='20%' style='text-align:center;'><font color='"+color+"'>"+team.name+"</font></td><td><img src='"+team.flag+"'/></td><td><font color='"+color+"'></font></td><td width='10%' style='text-align:center;'><font color='"+color+"'>"+stage+"</font></td></td></tr></table><div>");
+$("#ko"+id+"c").append("<div style='background-color:"+bg+"' align='left'><table width='100%'><tr><td width='50%'>"+users[x].user+"</td><td width='20%' align='left'><td width='20%' style='text-align:center;'><font color='"+colorG+"'>"+team.name+"</font></td><td><img src='"+team.flag+"'/></td><td width='10%' style='text-align:center;'><font color='"+colorS+"'>"+stage+"</font></td></td></tr></table><div>");
 
 }
 
@@ -562,8 +565,17 @@ function get8Color(points, h, a) {
 if(h==0 && a==0) return '';
 
 if(points==0) return '#CD3333';
-if(points==6) return '#FF7F00';
-if(points==9) return '#2E8B57';
+if(points==6) return '#2E8B57';
+
+return '#CD3333';
+}
+
+function get8ColorStage(points, h, a) {
+
+if(h==0 && a==0) return '';
+
+if(points==0) return '#CD3333';
+if(points==3) return '#2E8B57';
 
 return '#CD3333';
 }
