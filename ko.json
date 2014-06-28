@@ -1,78 +1,73 @@
 {
-	"games" :
-	[{
+	"games" : [{
 			"id" : "1",
 			"home" : {
 				"id" : "1",
 				"name" : "Brazil",
-				"score": 0,
+				"score" : 4,
 				"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/22px-Flag_of_Brazil.svg.png"
 			},
 			"away" : {
 				"id" : "7",
 				"name" : "Chile",
-				"score" : 0,
+				"score" : 3,
 				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Flag_of_Chile.svg/23px-Flag_of_Chile.svg.png"
+			},
+			"time" : "",
+			"stage" : 2,
+			"index" : 0
+		}, {
+			"id" : "2",
+			"home" : {
+				"id" : "9",
+				"name" : "Colombia",
+				"score" : 0,
+				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/23px-Flag_of_Colombia.svg.png"
+			},
+			"away" : {
+				"id" : "13",
+				"name" : "Uruguay",
+				"score" : 0,
+				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/23px-Flag_of_Uruguay.svg.png"
 			},
 			"time" : "",
 			"stage" : -1,
 			"index" : 0
-		}, 
-		{
-			"id" : "2",
-			"home" : {
-			"id" : "9",
-			"name" : "Colombia",
-				"score" : 0,
-			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/23px-Flag_of_Colombia.svg.png"
-		},
-			"away" : {
-			"id" : "13",
-			"name" : "Uruguay",
-				"score" : 0,
-			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/23px-Flag_of_Uruguay.svg.png"
-		},
-			"time" : "",
-			"stage" : -1,
-			"index" : 0
-		}, 
-		{
+		}, {
 			"id" : "3",
 			"home" : {
-			"id" : "19",
-			"name" : "France",
+				"id" : "19",
+				"name" : "France",
 				"score" : 0,
-			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/23px-Flag_of_France.svg.png"
-		},
+				"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/23px-Flag_of_France.svg.png"
+			},
 			"away" : {
-			"id" : "24",
-			"name" : "Nigeria",
+				"id" : "24",
+				"name" : "Nigeria",
 				"score" : 0,
-			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/23px-Flag_of_Nigeria.svg.png"
-		},
+				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/23px-Flag_of_Nigeria.svg.png"
+			},
 			"time" : "",
 			"stage" : -1,
 			"index" : 0
-		}, 
-		{
+		}, {
 			"id" : "4",
 			"home" : {
-			"id" : "25",
-			"name" : "Germany",
+				"id" : "25",
+				"name" : "Germany",
 				"score" : 0,
-			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/23px-Flag_of_Germany.svg.png"
-		},
+				"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/23px-Flag_of_Germany.svg.png"
+			},
 			"away" : {
-			"id" : "30",
-			"name" : "Algeria",
+				"id" : "30",
+				"name" : "Algeria",
 				"score" : 0,
-			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_Algeria.svg/23px-Flag_of_Algeria.svg.png"
-		},
+				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_Algeria.svg/23px-Flag_of_Algeria.svg.png"
+			},
 			"time" : "",
 			"stage" : -1,
 			"index" : 0
-		}, 
-		{
+		}, {
 			"id" : "5",
 			"home" : {
 				"id" : "6",
@@ -90,210 +85,193 @@
 			"time" : "",
 			"stage" : -1,
 			"index" : 0
-		}, 
-		{
+		}, {
 			"id" : "6",
 			"home" : {
-			"id" : "14",
-			"name" : "Costa Rica",
+				"id" : "14",
+				"name" : "Costa Rica",
 				"score" : 0,
-			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Costa_Rica.svg/23px-Flag_of_Costa_Rica.svg.png"
-		},
-		"away" :{
-			"id" : "10",
-			"name" : "Greece",
+				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Costa_Rica.svg/23px-Flag_of_Costa_Rica.svg.png"
+			},
+			"away" : {
+				"id" : "10",
+				"name" : "Greece",
 				"score" : 0,
-			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Greece.svg/23px-Flag_of_Greece.svg.png"
-		},
+				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Greece.svg/23px-Flag_of_Greece.svg.png"
+			},
 			"time" : "",
 			"stage" : -1,
 			"index" : 0
-		}, 
-		{
+		}, {
 			"id" : "7",
 			"home" : {
-			"id" : "21",
-			"name" : "Argentina",
+				"id" : "21",
+				"name" : "Argentina",
 				"score" : 0,
-			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/23px-Flag_of_Argentina.svg.png"
-		},
+				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/23px-Flag_of_Argentina.svg.png"
+			},
 			"away" : {
-			"id" : "17",
-			"name" : "Switzerland",
+				"id" : "17",
+				"name" : "Switzerland",
 				"score" : 0,
-			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/16px-Flag_of_Switzerland.svg.png"
-		},
+				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/16px-Flag_of_Switzerland.svg.png"
+			},
 			"time" : "",
 			"stage" : -1,
 			"index" : 0
-		}
-		
-		, 
-		{
+		}, {
 			"id" : "8",
 			"home" : {
-			"id" : "29",
-			"name" : "Belgium",
+				"id" : "29",
+				"name" : "Belgium",
 				"score" : 0,
-			"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Flag_of_Belgium_%28civil%29.svg/23px-Flag_of_Belgium_%28civil%29.svg.png"
-		},
+				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Flag_of_Belgium_%28civil%29.svg/23px-Flag_of_Belgium_%28civil%29.svg.png"
+			},
 			"away" : {
-			"id" : "28",
-			"name" : "United States",
+				"id" : "28",
+				"name" : "United States",
 				"score" : 0,
-			"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/23px-Flag_of_the_United_States.svg.png"
-		},
+				"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/23px-Flag_of_the_United_States.svg.png"
+			},
 			"time" : "",
 			"stage" : -1,
 			"index" : 0
-		}, 
-		{
+		}, {
 			"id" : "9",
 			"home" : {
-				"id" : "",
-				"name" : "",
-				"score": 0,
-				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
+				"id" : "1",
+				"name" : "Brazil",
+				"score" : 0,
+				"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/22px-Flag_of_Brazil.svg.png"
 			},
 			"away" : {
 				"id" : "",
 				"name" : "",
-				"score": 0,
+				"score" : 0,
 				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"time" : "",
 			"stage" : -1,
 			"index" : 0
-		}, 
-		{
+		}, {
 			"id" : "10",
 			"home" : {
 				"id" : "",
 				"name" : "",
-				"score": 0,
+				"score" : 0,
 				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"away" : {
 				"id" : "",
 				"name" : "",
-				"score": 0,
+				"score" : 0,
 				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"time" : "",
 			"stage" : -1,
 			"index" : 0
-		}, 
-		{
+		}, {
 			"id" : "11",
 			"home" : {
 				"id" : "",
 				"name" : "",
-				"score": 0,
+				"score" : 0,
 				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
-			"away" :{
+			"away" : {
 				"id" : "",
 				"name" : "",
-				"score": 0,
+				"score" : 0,
 				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"time" : "",
 			"stage" : -1,
 			"index" : 0
-		}, 
-		{
+		}, {
 			"id" : "12",
 			"home" : {
 				"id" : "",
 				"name" : "",
-				"score": 0,
+				"score" : 0,
 				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"away" : {
 				"id" : "",
 				"name" : "",
-				"score": 0,
+				"score" : 0,
 				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"time" : "",
 			"stage" : -1,
 			"index" : 0
-		}, 
-		{
+		}, {
 			"id" : "13",
 			"home" : {
 				"id" : "",
 				"name" : "",
-				"score": 0,
+				"score" : 0,
 				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"away" : {
 				"id" : "",
 				"name" : "",
-				"score": 0,
+				"score" : 0,
 				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"time" : "",
 			"stage" : -1,
 			"index" : 0
-		}, 
-		{
+		}, {
 			"id" : "14",
 			"home" : {
 				"id" : "",
 				"name" : "",
-				"score": 0,
+				"score" : 0,
 				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"away" : {
 				"id" : "",
 				"name" : "",
-				"score": 0,
+				"score" : 0,
 				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"time" : "",
 			"stage" : -1,
 			"index" : 0
-		}, 
-		{
+		}, {
 			"id" : "15",
 			"home" : {
 				"id" : "",
 				"name" : "",
-				"score": 0,
+				"score" : 0,
 				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"away" : {
 				"id" : "",
 				"name" : "",
-				"score": 0,
+				"score" : 0,
 				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"time" : "",
 			"stage" : -1,
 			"index" : 0
-		}, 
-		{
+		}, {
 			"id" : "16",
 			"home" : {
 				"id" : "",
 				"name" : "",
-				"score": 0,
+				"score" : 0,
 				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"away" : {
 				"id" : "",
 				"name" : "",
-				"score": 0,
+				"score" : 0,
 				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
 			},
 			"time" : "",
 			"stage" : -1,
 			"index" : 0
 		}
-		
-		
-		
 	]
-
 }
