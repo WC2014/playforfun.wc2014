@@ -21,7 +21,7 @@
 			"home" : {
 				"id" : "9",
 				"name" : "Colombia",
-				"score" : 1,
+				"score" : 2,
 				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/23px-Flag_of_Colombia.svg.png"
 			},
 			"away" : {
@@ -90,17 +90,17 @@
 			"home" : {
 				"id" : "14",
 				"name" : "Costa Rica",
-				"score" : 0,
+				"score" : 6,
 				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Costa_Rica.svg/23px-Flag_of_Costa_Rica.svg.png"
 			},
 			"away" : {
 				"id" : "10",
 				"name" : "Greece",
-				"score" : 0,
+				"score" : 4,
 				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Greece.svg/23px-Flag_of_Greece.svg.png"
 			},
 			"time" : "",
-			"stage" : -1,
+			"stage" : 2,
 			"index" : 0
 		}, {
 			"id" : "7",
@@ -179,10 +179,10 @@
 				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/23px-Flag_of_the_Netherlands.svg.png"
 			},
 			"away" : {
-				"id" : "",
-				"name" : "",
+				"id" : "14",
+				"name" : "Costa Rica",
 				"score" : 0,
-				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
+				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Costa_Rica.svg/23px-Flag_of_Costa_Rica.svg.png"
 			},
 			"time" : "",
 			"stage" : -1,
