@@ -55,17 +55,17 @@
 			"home" : {
 				"id" : "25",
 				"name" : "Germany",
-				"score" : 0,
+				"score" : 2,
 				"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/23px-Flag_of_Germany.svg.png"
 			},
 			"away" : {
 				"id" : "30",
 				"name" : "Algeria",
-				"score" : 0,
+				"score" : 1,
 				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_Algeria.svg/23px-Flag_of_Algeria.svg.png"
 			},
 			"time" : "",
-			"stage" : -1,
+			"stage" : 1,
 			"index" : 0
 		}, {
 			"id" : "5",
@@ -162,10 +162,10 @@
 				"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/23px-Flag_of_France.svg.png"
 			},
 			"away" : {
-				"id" : "",
-				"name" : "",
+				"id" : "25",
+				"name" : "Germany",
 				"score" : 0,
-				"flag" : "http://www.vphosted.com/sf/_hc-450/_/vp/images/b09/common/icon/2-rectangle-sticker-small.gif"
+				"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/23px-Flag_of_Germany.svg.png"
 			},
 			"time" : "",
 			"stage" : -1,
