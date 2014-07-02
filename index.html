@@ -297,11 +297,36 @@ users[x].games_total = users[x].games_total + points;
 
 }
 
+
+for (var i = 14; i < 15; i++) {
+id = i+1;
+   points=0;
+
+points = calc34Score(ko[i].home.score, ko[i].away.score, users[x].ko[i].home.score, users[x].ko[i].away.score, ko[i], users[x].ko[i]) ;
+points = points + calc34Stage(ko[i].stage, users[x].ko[i].stage) ;
+users[x].games_total = users[x].games_total + points;
+
+}
+
+for (var i = 15; i < 16; i++) {
+id = i+1;
+   points=0;
+
+points = calcFScore(ko[i].home.score, ko[i].away.score, users[x].ko[i].home.score, users[x].ko[i].away.score, ko[i], users[x].ko[i]) ;
+points = points + calcFStage(ko[i].stage, users[x].ko[i].stage) ;
+users[x].games_total = users[x].games_total + points;
+
+}
+
 if(teams[parseInt(users[x].tournament_disappointment)-1].id==5 ||teams[parseInt(users[x].tournament_disappointment)-1].id==15 ||teams[parseInt(users[x].tournament_disappointment)-1].id==16 ||teams[parseInt(users[x].tournament_disappointment)-1].id==26||teams[parseInt(users[x].tournament_disappointment)-1].id==31) {
 	users[x].specials_total = users[x].specials_total+6;
 	}
 users[x].total = users[x].total + users[x].games_total + users[x].groups_total + users[x].specials_total;
 }
+
+
+
+
 sort();
 
 for(x=0; x<users.length; x++) {
@@ -407,10 +432,12 @@ for (var i = 14; i < 15; i++) {
 id = i+1;
    points=0;
    if( users[x].ko != ""){
-points = calc8Score(ko[i].home.score, ko[i].away.score, users[x].ko[i].home.score, users[x].ko[i].away.score) ;
-colorG = get8Color(points, ko[i].home.score, ko[i].away.score);
-colorS = get8ColorStage(calc8Stage(ko[i].stage, users[x].ko[i].stage), ko[i].home.score, ko[i].away.score);
-points = points + calc8Stage(ko[i].stage, users[x].ko[i].stage) ;
+points = calc34Score(ko[i].home.score, ko[i].away.score, users[x].ko[i].home.score, users[x].ko[i].away.score, ko[i], users[x].ko[i]) ;
+colorG = get34Color(points, ko[i].home.score, ko[i].away.score);
+colorS = get34ColorStage(calc34Stage(ko[i].stage, users[x].ko[i].stage), ko[i].home.score, ko[i].away.score);
+points = points + calc34Stage(ko[i].stage, users[x].ko[i].stage) ;
+users[x].games_total = users[x].games_total + points;
+
 if(x%2==0) bg ="#DDDDDD" ; else bg="#EEEEEE" ;
 
 if(users[x].ko[i].home.score == 1) team = users[x].ko[i].home;
@@ -430,10 +457,10 @@ for (var i = 15; i < 16; i++) {
 id = i+1;
    points=0;
    if( users[x].ko != ""){
-points = calc8Score(ko[i].home.score, ko[i].away.score, users[x].ko[i].home.score, users[x].ko[i].away.score) ;
-colorG = get8Color(points, ko[i].home.score, ko[i].away.score);
-colorS = get8ColorStage(calc8Stage(ko[i].stage, users[x].ko[i].stage), ko[i].home.score, ko[i].away.score);
-points = points + calc8Stage(ko[i].stage, users[x].ko[i].stage) ;
+points = calcFScore(ko[i].home.score, ko[i].away.score, users[x].ko[i].home.score, users[x].ko[i].away.score, ko[i], users[x].ko[i]) ;
+colorG = getFColor(points, ko[i].home.score, ko[i].away.score);
+colorS = getFColorStage(calcFStage(ko[i].stage, users[x].ko[i].stage), ko[i].home.score, ko[i].away.score);
+points = points + calcFStage(ko[i].stage, users[x].ko[i].stage) ;
 if(x%2==0) bg ="#DDDDDD" ; else bg="#EEEEEE" ;
 
 if(users[x].ko[i].home.score == 1) team = users[x].ko[i].home;
@@ -716,6 +743,100 @@ return points;
 
 }
 
+function calc34Score(rh, ra, uh, ua ,ri, ui)
+{
+var points = 0;
+if(rh==0 && ra==0) return 0;
+
+if(rh>ra && uh>ua && ri.home.id==ui.home.id) {
+points=points+12;
+}
+else if(rh<ra && uh<ua && ri.away.id==ui.away.id) {
+points=points+12;
+}
+
+return points;
+
+}
+
+function get34Color(points, h, a) {
+
+if(h==0 && a==0) return '';
+
+if(points==0) return '#CD3333';
+if(points==12) return '#2E8B57';
+
+return '#CD3333';
+}
+
+function get34ColorStage(points, h, a) {
+
+if(h==0 && a==0) return '';
+
+if(points==0) return '#CD3333';
+if(points==5) return '#2E8B57';
+
+return '#CD3333';
+}
+
+function calc34Stage(rs, us)
+{
+var points = 0;
+if(rs==-1) return points;
+if(rs==us) points = 5;
+
+return points;
+
+}
+
+
+
+function calcFScore(rh, ra, uh, ua ,ri, ui)
+{
+var points = 0;
+if(rh==0 && ra==0) return 0;
+
+if(rh>ra && uh>ua && ri.home.id==ui.home.id) {
+points=points+20;
+}
+else if(rh<ra && uh<ua && ri.away.id==ui.away.id) {
+points=points+20;
+}
+
+return points;
+
+}
+
+function getFColor(points, h, a) {
+
+if(h==0 && a==0) return '';
+
+if(points==0) return '#CD3333';
+if(points==20) return '#2E8B57';
+
+return '#CD3333';
+}
+
+function getFColorStage(points, h, a) {
+
+if(h==0 && a==0) return '';
+
+if(points==0) return '#CD3333';
+if(points==8) return '#2E8B57';
+
+return '#CD3333';
+}
+
+function calcFStage(rs, us)
+{
+var points = 0;
+if(rs==-1) return points;
+if(rs==us) points = 8;
+
+return points;
+
+}
+
 function getGroupColor(r, u) {
 
 if(u.team.id == r.team.id) return '#2E8B57';
@@ -724,15 +845,7 @@ return '#CD3333';
 
 }
 
-function calc4Stage(rs, us)
-{
-var points = 0;
-if(rs==-1) return points;
-if(rs==us) points = 4;
 
-return points;
-
-}
 function calcGameScore(rh, ra, uh, ua)
 {
 var points = 0;
@@ -860,7 +973,6 @@ var swapped;
 
 <div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Tournament Surprise
 <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Costa_Rica.svg/23px-Flag_of_Costa_Rica.svg.png"/>
-<img src="http://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/23px-Flag_of_the_United_States.svg.png"/>?
 </h3><div><fieldset id="tournament_surprise" data-role="controlgroup"></fieldset></div></div>
 
 <div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Tournament Disappointment 
