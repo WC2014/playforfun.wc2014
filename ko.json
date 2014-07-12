@@ -249,11 +249,11 @@
 			"away" : {
 				"id" : "6",
 				"name" : "Netherlands",
-				"score" : 0,
+				"score" : 3,
 				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/23px-Flag_of_the_Netherlands.svg.png"
 			},
 			"time" : "",
-			"stage" : -1,
+			"stage" : 0,
 			"index" : 0
 		}, {
 			"id" : "16",
