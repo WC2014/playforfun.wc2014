@@ -260,7 +260,7 @@
 			"home" : {
 				"id" : "25",
 				"name" : "Germany",
-				"score" : 0,
+				"score" : 1,
 				"flag" : "http://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/23px-Flag_of_Germany.svg.png"
 			},
 			"away" : {
@@ -270,7 +270,7 @@
 				"flag" : "http://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/23px-Flag_of_Argentina.svg.png"
 			},
 			"time" : "",
-			"stage" : -1,
+			"stage" : 1,
 			"index" : 0
 		}
 	]
