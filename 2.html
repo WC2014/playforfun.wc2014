@@ -1,0 +1,1133 @@
+<html>
+
+  <head>
+ <title>World Cup 2014</title>
+  <style>
+  
+  html {
+
+}
+
+
+  .main {
+width: 98%;
+margin:0 auto;
+font-size:10px;
+opacity:0.9;
+
+  }
+  
+  .page {
+
+#background: -webkit-linear-gradient(#FFFACD, #AABBCC); /* For Safari 5.1 to 6.0 */
+#background: -o-linear-gradient(#FFFACD, #AABBCC); /* For Opera 11.1 to 12.0 */
+#background: -moz-linear-gradient(#FFFACD, #AABBCC); /* For Firefox 3.6 to 15 */
+#background: linear-gradient(#FFFACD, #AABBCC); /* Standard syntax */
+ #background: url('http://us.cdn281.fansshare.com/photos/worldcup2014/fifa-world-cup-wallpaper-414382939.jpg') no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
+
+  .header {
+#opacity:0.95;
+
+}
+
+
+  
+   .group_table .name {
+  
+  width: 100px;
+  
+  }
+  
+  .games {
+  
+   font-size:8px;
+  
+  }
+
+  .group_table{
+    font-size:10px;
+
+  }
+  
+  .game td {
+  
+   font-size:70%;
+  
+  }
+  
+  .group_table td {
+padding: 0px 5px 0px 5px;
+}
+   .group_table .name {
+  
+  width: 60px;
+  
+  }
+  
+
+  .group_table{
+    font-size:10px;
+
+  }
+      @media only screen and (min-width: 480px) { .ui-page { width: 480px !important; margin: 0 auto !important; position: relative !important; } }
+
+  </style>
+  
+  <meta name=viewport content="user-scalable=no,width=device-width" />
+
+ 
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+  
+  
+
+<script>
+  
+  var sheet = {user: null, games:{}, tables:{}, winner:null, runner_up:null, bronze:null, scoring_team:null, aggressive:null, fairest:null, top_scorer:null, top_assister:null, tournament_surprise:null, tournament_disappointment:null};
+  
+  var groups=[];
+  var teams;
+  var scorer;
+  var assister;
+
+  var originalGroups=[];
+  var gamesSheet;
+  var tablesSheet;
+  var users;
+  var ko;
+  
+  
+  
+
+     $.ajax({
+   url : "teams.json",
+   dataType : "text",
+   success : function (data) {
+   var json = $.parseJSON(data);
+   teams = json.teams;
+
+}
+});
+  
+   $.ajax({
+   url : "top_scorer.json",
+   dataType : "text",
+   success : function (data) {
+   var json = $.parseJSON(data);
+   scorer = json.players;
+
+}
+});
+
+
+ $.ajax({
+   url : "top_assister.json",
+   dataType : "text",
+   success : function (data) {
+   var json = $.parseJSON(data);
+   assister = json.players;
+
+}
+});
+
+   $.ajax({
+   url : "ko.json",
+   dataType : "text",
+   success : function (data) {
+   var json = $.parseJSON(data);
+ ko = json.games;
+ 
+ var id;
+ var stage;
+  for (var i = 0; i < 8; i++) {
+  if(ko[i].stage==0) stage="90'";
+  if(ko[i].stage==1) stage="120'";
+  if(ko[i].stage==2) stage="P'";
+  if(ko[i].stage==-1) stage="";
+   id = i+1;
+$("#ko"+id+"h").append("<div align='left'><table width='100%'><tr><td width='20%'>"+ko[i].time+"</td><td width='25%' align='right'>"+ko[i].home.name+"</td><td align='right' width='5%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+ko[i].home.flag+"'/></td><td width='5%' style='text-align:center;'>"+ko[i].home.score+"</td><td width='5%' style='text-align:center;'>"+stage+"</td><td width='5%' style='text-align:center;'>"+ko[i].away.score+"</td><td width='5%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px' src='"+ko[i].away.flag+"'/></td><td width='25%'>"+ko[i].away.name+"</td></tr></table><div>");
+}
+
+ for (var i = 8; i < 12; i++) {
+  if(ko[i].stage==0) stage="90'";
+  if(ko[i].stage==1) stage="120'";
+  if(ko[i].stage==2) stage="P'";
+  if(ko[i].stage==-1) stage="";
+   id = i+1;
+$("#ko"+id+"h").append("<div align='left'><table width='100%'><tr><td width='20%'>"+ko[i].time+"</td><td width='25%' align='right'>"+ko[i].home.name+"</td><td align='right' width='5%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+ko[i].home.flag+"'/></td><td width='5%' style='text-align:center;'>"+ko[i].home.score+"</td><td width='5%' style='text-align:center;'>"+stage+"</td><td width='5%' style='text-align:center;'>"+ko[i].away.score+"</td><td width='5%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px' src='"+ko[i].away.flag+"'/></td><td width='25%'>"+ko[i].away.name+"</td></tr></table><div>");
+}
+
+
+ for (var i = 12; i < 14; i++) {
+  if(ko[i].stage==0) stage="90'";
+  if(ko[i].stage==1) stage="120'";
+  if(ko[i].stage==2) stage="P'";
+  if(ko[i].stage==-1) stage="";
+   id = i+1;
+$("#ko"+id+"h").append("<div align='left'><table width='100%'><tr><td width='20%'>"+ko[i].time+"</td><td width='25%' align='right'>"+ko[i].home.name+"</td><td align='right' width='5%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+ko[i].home.flag+"'/></td><td width='5%' style='text-align:center;'>"+ko[i].home.score+"</td><td width='5%' style='text-align:center;'>"+stage+"</td><td width='5%' style='text-align:center;'>"+ko[i].away.score+"</td><td width='5%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px' src='"+ko[i].away.flag+"'/></td><td width='25%'>"+ko[i].away.name+"</td></tr></table><div>");
+}
+
+
+ for (var i = 14; i <15; i++) {
+  if(ko[i].stage==0) stage="90'";
+  if(ko[i].stage==1) stage="120'";
+  if(ko[i].stage==2) stage="P'";
+  if(ko[i].stage==-1) stage="";
+   id = i+1;
+$("#ko"+id+"h").append("<div align='left'><table width='100%'><tr><td width='20%'>"+ko[i].time+"</td><td width='25%' align='right'>"+ko[i].home.name+"</td><td align='right' width='5%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+ko[i].home.flag+"'/></td><td width='5%' style='text-align:center;'>"+ko[i].home.score+"</td><td width='5%' style='text-align:center;'>"+stage+"</td><td width='5%' style='text-align:center;'>"+ko[i].away.score+"</td><td width='5%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px' src='"+ko[i].away.flag+"'/></td><td width='25%'>"+ko[i].away.name+"</td></tr></table><div>");
+}
+
+
+ for (var i = 15; i < 16; i++) {
+  if(ko[i].stage==0) stage="90'";
+  if(ko[i].stage==1) stage="120'";
+  if(ko[i].stage==2) stage="P'";
+  if(ko[i].stage==-1) stage="";
+   id = i+1;
+$("#ko"+id+"h").append("<div align='left'><table width='100%'><tr><td width='20%'>"+ko[i].time+"</td><td width='25%' align='right'>"+ko[i].home.name+"</td><td align='right' width='5%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+ko[i].home.flag+"'/></td><td width='5%' style='text-align:center;'>"+ko[i].home.score+"</td><td width='5%' style='text-align:center;'>"+stage+"</td><td width='5%' style='text-align:center;'>"+ko[i].away.score+"</td><td width='5%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px' src='"+ko[i].away.flag+"'/></td><td width='25%'>"+ko[i].away.name+"</td></tr></table><div>");
+}
+  
+     
+
+}
+   });
+
+  
+   $.ajax({
+   url : "results.json",
+   dataType : "text",
+   success : function (data) {
+   var json = $.parseJSON(data);
+ gamesSheet = json.games;
+ tablesSheet = json.tables;
+ 
+ var id;
+  for (var i = 0; i < 48; i++) {
+   id = i+1;
+$("#game"+id+"h").append("<div align='left'><table width='100%'><tr><td width='20%'>"+gamesSheet[i].time.split("|")[0]+"</td><td width='25%' align='right'>"+gamesSheet[i].home.name+"</td><td align='right' width='5%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px;' src='"+gamesSheet[i].home.flag+"'/></td><td width='5%' style='text-align:center;'>"+gamesSheet[i].home.score+"</td><td>-</td><td width='5%' style='text-align:center;'>"+gamesSheet[i].away.score+"</td><td width='5%'><img style='width:20px; height:12px; padding:0px 5px 0px 5px' src='"+gamesSheet[i].away.flag+"'/></td><td width='25%'>"+gamesSheet[i].away.name+"</td></tr></table><div>");
+}
+  var gd;
+   var group;
+ for (var j = 0; j < 8; j++) {
+   id = j+1;
+   gd;
+   group = $("#group"+id+"h");
+group.append("<tr><td colspan='2'>Team</td><td>P</td><td>GF</td><td>GA</td><td>GD</td><td>Pts</td></tr>");
+for(var i=3; i>=0; i--) {
+gd=tablesSheet[j][i].gd;
+if(gd>0) gd="+"+gd;
+$(group).append("<tr><td colspan='7'><hr/></td></tr>");
+$(group).append(
+"<tr><td><img src='"+tablesSheet[j][i].team.flag+"'/></td><td class='name'>"+tablesSheet[j][i].team.name+"</td><td>"+tablesSheet[j][i].p+"</td><td>"+tablesSheet[j][i].gf+"</td><td>"+tablesSheet[j][i].ga+"</td><td>"+gd+"</td><td><font color='red'>"+tablesSheet[j][i].pts+"</font></td></tr>"
+
+                );
+}
+
+}
+}
+   });
+  
+  $(document).ready(function() {
+  
+    
+
+
+ $.ajax({
+   url : "users.json",
+   dataType : "text",
+   success : function (data) {
+   var json = $.parseJSON(data);
+ users = json.users;
+var id;
+var points;
+var color;
+var colorG;
+var colorS;
+var pl;
+for(x=0; x<users.length; x++) {
+   for (var i = 0; i < 48; i++) {
+   
+   points=0;
+points = calcGameScore(gamesSheet[i].home.score, gamesSheet[i].away.score, users[x].games[i].home.score, users[x].games[i].away.score) ;
+users[x].games_total = users[x].games_total + points;
+}
+
+for (var j = 0; j < 8; j++) {
+
+for(var i=3; i>=0; i--) {
+if(tablesSheet[j][i].p==3){
+if(users[x].tables[j][i].team.id == tablesSheet[j][i].team.id) {users[x].groups_total = users[x].groups_total + 2;}
+}
+}
+}
+
+for (var i = 0; i < 8; i++) {
+id = i+1;
+   points=0;
+
+points = calc8Score(ko[i].home.score, ko[i].away.score, users[x].ko[i].home.score, users[x].ko[i].away.score) ;
+points = points + calc8Stage(ko[i].stage, users[x].ko[i].stage) ;
+users[x].games_total = users[x].games_total + points;
+
+}
+
+for (var i = 8; i < 12; i++) {
+id = i+1;
+   points=0;
+
+points = calc4Score(ko[i].home.score, ko[i].away.score, users[x].ko[i].home.score, users[x].ko[i].away.score, ko[i], users[x].ko[i]) ;
+points = points + calc4Stage(ko[i].stage, users[x].ko[i].stage) ;
+users[x].games_total = users[x].games_total + points;
+
+}
+
+for (var i = 12; i < 14; i++) {
+id = i+1;
+   points=0;
+
+points = calc2Score(ko[i].home.score, ko[i].away.score, users[x].ko[i].home.score, users[x].ko[i].away.score, ko[i], users[x].ko[i]) ;
+points = points + calc2Stage(ko[i].stage, users[x].ko[i].stage) ;
+users[x].games_total = users[x].games_total + points;
+
+}
+
+
+for (var i = 14; i < 15; i++) {
+id = i+1;
+   points=0;
+
+points = calc34Score(ko[i].home.score, ko[i].away.score, users[x].ko[i].home.score, users[x].ko[i].away.score, ko[i], users[x].ko[i]) ;
+points = points + calc34Stage(ko[i].stage, users[x].ko[i].stage) ;
+users[x].games_total = users[x].games_total + points;
+
+}
+
+for (var i = 15; i < 16; i++) {
+id = i+1;
+   points=0;
+
+points = calcFScore(ko[i].home.score, ko[i].away.score, users[x].ko[i].home.score, users[x].ko[i].away.score, ko[i], users[x].ko[i]) ;
+points = points + calcFStage(ko[i].stage, users[x].ko[i].stage) ;
+users[x].games_total = users[x].games_total + points;
+
+}
+
+if(teams[parseInt(users[x].tournament_disappointment)-1].id==5 ||teams[parseInt(users[x].tournament_disappointment)-1].id==15 ||teams[parseInt(users[x].tournament_disappointment)-1].id==16 ||teams[parseInt(users[x].tournament_disappointment)-1].id==26||teams[parseInt(users[x].tournament_disappointment)-1].id==31) {
+	users[x].specials_total = users[x].specials_total+6;
+	}
+	
+	 if(scorer[parseInt(users[x].top_scorer)-1].id==61) {
+		users[x].specials_total = users[x].specials_total+12;
+	}
+	
+	
+	if(teams[parseInt(users[x].scoring_team)-1].id==25) {
+	users[x].specials_total = users[x].specials_total+8;
+ }
+ 
+ if(teams[parseInt(users[x].fairest)-1].id==17 || teams[parseInt(users[x].fairest)-1].id==24) {
+	users[x].specials_total = users[x].specials_total+7;
+ }
+ 
+
+ if(scorer[parseInt(users[x].top_scorer)-1].id==61) {
+	users[x].specials_total = users[x].specials_total+12;
+
+ }
+
+ if(assister[parseInt(users[x].top_assister)-1].id==61) {
+	users[x].specials_total = users[x].specials_total+8;
+ }
+	
+users[x].total = users[x].total + users[x].games_total + users[x].groups_total + users[x].specials_total;
+}
+
+
+
+
+sort();
+
+for(x=0; x<users.length; x++) {
+users[x].games_total=0;
+users[x].groups_total=0;
+users[x].specials_total=0;
+users[x].total=0;
+}
+
+for(x=0; x<users.length; x++) {
+   for (var i = 0; i < 48; i++) {
+   
+   id = i+1;
+   points=0;
+points = calcGameScore(gamesSheet[i].home.score, gamesSheet[i].away.score, users[x].games[i].home.score, users[x].games[i].away.score) ;
+users[x].games_total = users[x].games_total + points;
+color = getGameColor(points, gamesSheet[i].home.score, gamesSheet[i].away.score);
+if(x%2==0) bg ="#DDDDDD" ; else bg="#EEEEEE" ;
+$("#game"+id+"c").append("<div style='background-color:"+bg+"' align='left'><table width='100%'><tr><td width='50%'><font color='"+color+"'>"+users[x].user+"</font></td><td width='30%' align='left'><td width='10%' style='text-align:center;'><font color='"+color+"'>"+users[x].games[i].home.score+"</font></td><td><font color='"+color+"'> - </font></td><td width='10%' style='text-align:center;'><font color='"+color+"'>"+users[x].games[i].away.score+"</font></td></td></tr></table><div>");
+
+
+
+
+//$("#game"+id+"c").append("<div align='center'><table><tr><td align='left'><font color='"+color+"'>"+users[x].user+"</font></td><td width='10' style='text-align:center;'><font color='"+color+"'>"+users[x].games[i].home.score+"</font></td><td><font color='"+color+"'> - </font></td><td width='10' style='text-align:center;'><font color='"+color+"'>"+users[x].games[i].away.score+"</font></td></tr></table><div><hr/>");
+}
+var team;
+var stage;
+for (var i = 0; i < 8; i++) {
+id = i+1;
+   points=0;
+
+points = calc8Score(ko[i].home.score, ko[i].away.score, users[x].ko[i].home.score, users[x].ko[i].away.score, ko[i], users[x].ko[i]) ;
+colorG = get8Color(points, ko[i].home.score, ko[i].away.score);
+colorS = get8ColorStage(calc8Stage(ko[i].stage, users[x].ko[i].stage), ko[i].home.score, ko[i].away.score);
+points = points + calc8Stage(ko[i].stage, users[x].ko[i].stage) ;
+users[x].games_total = users[x].games_total + points;
+if(x%2==0) bg ="#DDDDDD" ; else bg="#EEEEEE" ;
+
+if(users[x].ko[i].home.score == 1) team = users[x].ko[i].home;
+if(users[x].ko[i].away.score == 1) team = users[x].ko[i].away;
+
+if(users[x].ko[i].stage == 0) stage = "90'";
+if(users[x].ko[i].stage == 1) stage = "120'";
+if(users[x].ko[i].stage == 2) stage = "P'";
+
+
+
+$("#ko"+id+"c").append("<div style='background-color:"+bg+"' align='left'><table width='100%'><tr><td width='50%'>"+users[x].user+"</td><td width='20%' align='left'><td width='20%' style='text-align:center;'><font color='"+colorG+"'>"+team.name+"</font></td><td><img src='"+team.flag+"'/></td><td width='10%' style='text-align:center;'><font color='"+colorS+"'>"+stage+"</font></td></td></tr></table><div>");
+
+}
+
+for (var i = 8; i < 12; i++) {
+id = i+1;
+   points=0;
+   if( users[x].ko != ""){
+points = calc4Score(ko[i].home.score, ko[i].away.score, users[x].ko[i].home.score, users[x].ko[i].away.score, ko[i], users[x].ko[i]) ;
+colorG = get4Color(points, ko[i].home.score, ko[i].away.score);
+colorS = get4ColorStage(calc4Stage(ko[i].stage, users[x].ko[i].stage), ko[i].home.score, ko[i].away.score);
+points = points + calc4Stage(ko[i].stage, users[x].ko[i].stage) ;
+users[x].games_total = users[x].games_total + points;
+
+if(x%2==0) bg ="#DDDDDD" ; else bg="#EEEEEE" ;
+
+if(users[x].ko[i].home.score == 1) team = users[x].ko[i].home;
+if(users[x].ko[i].away.score == 1) team = users[x].ko[i].away;
+
+if(users[x].ko[i].stage == 0) stage = "90'";
+if(users[x].ko[i].stage == 1) stage = "120'";
+if(users[x].ko[i].stage == 2) stage = "P'";
+
+
+
+$("#ko"+id+"c").append("<div style='background-color:"+bg+"' align='left'><table width='100%'><tr><td width='50%'>"+users[x].user+"</td><td width='20%' align='left'><td width='20%' style='text-align:center;'><font color='"+colorG+"'>"+team.name+"</font></td><td><img src='"+team.flag+"'/></td><td width='10%' style='text-align:center;'><font color='"+colorS+"'>"+stage+"</font></td></td></tr></table><div>");
+}
+}
+
+for (var i = 12; i < 14; i++) {
+id = i+1;
+   points=0;
+   if( users[x].ko != ""){
+points = calc2Score(ko[i].home.score, ko[i].away.score, users[x].ko[i].home.score, users[x].ko[i].away.score, ko[i], users[x].ko[i]) ;
+colorG = get2Color(points, ko[i].home.score, ko[i].away.score);
+colorS = get2ColorStage(calc2Stage(ko[i].stage, users[x].ko[i].stage), ko[i].home.score, ko[i].away.score);
+points = points + calc2Stage(ko[i].stage, users[x].ko[i].stage) ;
+users[x].games_total = users[x].games_total + points;
+
+if(x%2==0) bg ="#DDDDDD" ; else bg="#EEEEEE" ;
+
+if(users[x].ko[i].home.score == 1) team = users[x].ko[i].home;
+if(users[x].ko[i].away.score == 1) team = users[x].ko[i].away;
+
+if(users[x].ko[i].stage == 0) stage = "90'";
+if(users[x].ko[i].stage == 1) stage = "120'";
+if(users[x].ko[i].stage == 2) stage = "P'";
+
+
+
+$("#ko"+id+"c").append("<div style='background-color:"+bg+"' align='left'><table width='100%'><tr><td width='50%'>"+users[x].user+"</td><td width='20%' align='left'><td width='20%' style='text-align:center;'><font color='"+colorG+"'>"+team.name+"</font></td><td><img src='"+team.flag+"'/></td><td width='10%' style='text-align:center;'><font color='"+colorS+"'>"+stage+"</font></td></td></tr></table><div>");
+}
+}
+
+for (var i = 14; i < 15; i++) {
+id = i+1;
+   points=0;
+   if( users[x].ko != ""){
+points = calc34Score(ko[i].home.score, ko[i].away.score, users[x].ko[i].home.score, users[x].ko[i].away.score, ko[i], users[x].ko[i]) ;
+colorG = get34Color(points, ko[i].home.score, ko[i].away.score);
+colorS = get34ColorStage(calc34Stage(ko[i].stage, users[x].ko[i].stage), ko[i].home.score, ko[i].away.score);
+points = points + calc34Stage(ko[i].stage, users[x].ko[i].stage) ;
+users[x].games_total = users[x].games_total + points;
+
+if(x%2==0) bg ="#DDDDDD" ; else bg="#EEEEEE" ;
+
+if(users[x].ko[i].home.score == 1) team = users[x].ko[i].home;
+if(users[x].ko[i].away.score == 1) team = users[x].ko[i].away;
+
+if(users[x].ko[i].stage == 0) stage = "90'";
+if(users[x].ko[i].stage == 1) stage = "120'";
+if(users[x].ko[i].stage == 2) stage = "P'";
+
+
+
+$("#ko"+id+"c").append("<div style='background-color:"+bg+"' align='left'><table width='100%'><tr><td width='50%'>"+users[x].user+"</td><td width='20%' align='left'><td width='20%' style='text-align:center;'><font color='"+colorG+"'>"+team.name+"</font></td><td><img src='"+team.flag+"'/></td><td width='10%' style='text-align:center;'><font color='"+colorS+"'>"+stage+"</font></td></td></tr></table><div>");
+}
+}
+
+for (var i = 15; i < 16; i++) {
+id = i+1;
+   points=0;
+   if( users[x].ko != ""){
+points = calcFScore(ko[i].home.score, ko[i].away.score, users[x].ko[i].home.score, users[x].ko[i].away.score, ko[i], users[x].ko[i]) ;
+colorG = getFColor(points, ko[i].home.score, ko[i].away.score);
+colorS = getFColorStage(calcFStage(ko[i].stage, users[x].ko[i].stage), ko[i].home.score, ko[i].away.score);
+points = points + calcFStage(ko[i].stage, users[x].ko[i].stage) ;
+if(x%2==0) bg ="#DDDDDD" ; else bg="#EEEEEE" ;
+
+if(users[x].ko[i].home.score == 1) team = users[x].ko[i].home;
+if(users[x].ko[i].away.score == 1) team = users[x].ko[i].away;
+
+if(users[x].ko[i].stage == 0) stage = "90'";
+if(users[x].ko[i].stage == 1) stage = "120'";
+if(users[x].ko[i].stage == 2) stage = "P'";
+
+
+$("#ko"+id+"c").append("<div style='background-color:"+bg+"' align='left'><table width='100%'><tr><td width='50%'>"+users[x].user+"</td><td width='20%' align='left'><td width='20%' style='text-align:center;'><font color='"+colorG+"'>"+team.name+"</font></td><td><img src='"+team.flag+"'/></td><td width='10%' style='text-align:center;'><font color='"+colorS+"'>"+stage+"</font></td></td></tr></table><div>");
+}
+}
+
+var gd;
+   var group;
+   var table_id;
+   var bg;
+ for (var j = 0; j < 8; j++) {
+   id = j+1;
+   gd;
+   table_id = "group"+id+"c"+x;
+   group = $("#group"+id+"c");
+   
+   
+group.append("<table style='background-color:"+bg+"' width='100%' class='group_table'><tbody id="+table_id+"><tr><td colspan='2'>"+users[x].user+"</td><td>P</td><td>GF</td><td>GA</td><td>GD</td><td>Pts</td></tr></tbody></table>");
+for(var i=3; i>=0; i--) {
+
+if(tablesSheet[j][i].p==3){
+if(users[x].tables[j][i].team.id == tablesSheet[j][i].team.id) {users[x].groups_total = users[x].groups_total + 2;}
+}
+gd=users[x].tables[j][i].gd;
+if(gd>0) gd="+"+gd;
+$(group).find('tbody#'+table_id).append("<tr><td colspan='7'><hr/></td></tr><tr><td><img src='"+users[x].tables[j][i].team.flag+"'/></td><td class='name'><font color='"+getGroupColor(tablesSheet[j][i], users[x].tables[j][i])+"'>"+users[x].tables[j][i].team.name+"</font></td><td>"+users[x].tables[j][i].p+"</td><td>"+users[x].tables[j][i].gf+"</td><td>"+users[x].tables[j][i].ga+"</td><td>"+gd+"</td><td>"+users[x].tables[j][i].pts+"</td></tr>");
+}
+group.append("<br/>");
+}
+
+
+   var col;
+ var winner = $("#winner");
+
+ if(teams[parseInt(users[x].winner)-1].id==21) {
+users[x].specials_total = users[x].specials_total+9;
+	col=getSpecialColor(9);
+ }else {
+ col=getSpecialColor(0);
+ }   
+ winner.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font color="+col+">"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].winner)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].winner)-1].flag+"'/></td></tr></table></div>");
+ 
+ 
+ var scoring_team = $("#scoring_team");
+ if(teams[parseInt(users[x].scoring_team)-1].id==25) {
+	users[x].specials_total = users[x].specials_total+8;
+	col=getSpecialColor(8);
+ }else {
+ col=getSpecialColor(0);
+ }  
+ scoring_team.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font color="+col+">"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].scoring_team)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].scoring_team)-1].flag+"'/></td></tr></table></div>");
+ 
+ 
+ 
+ var aggressive = $("#aggressive");
+ if(teams[parseInt(users[x].aggressive)-1].id==111) {
+	//users[x].specials_total = users[x].specials_total+5;
+ }  
+ aggressive.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font>"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].aggressive)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].aggressive)-1].flag+"'/></td></tr></table></div>");
+ 
+ 
+ 
+ var fairest = $("#fairest");
+ if(teams[parseInt(users[x].fairest)-1].id==17 || teams[parseInt(users[x].fairest)-1].id==24) {
+	users[x].specials_total = users[x].specials_total+7;
+	col=getSpecialColor(7);
+ }else {
+ col=getSpecialColor(0);
+ }   
+ 
+ fairest.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font color="+col+">"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].fairest)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].fairest)-1].flag+"'/></td></tr></table></div>");
+ 
+ 
+ 
+ var top_scorer = $("#top_scorer");
+ if(scorer[parseInt(users[x].top_scorer)-1].id==61) {
+	users[x].specials_total = users[x].specials_total+12;
+	col=getSpecialColor(12);
+ }else {
+ col=getSpecialColor(0);
+ }  
+ top_scorer.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font color="+col+">"+users[x].user+"</font></td><td align='right' width='40%'>"+scorer[parseInt(users[x].top_scorer)-1].name+"&nbsp;<img width='15px' height='15px' align='right' src='"+scorer[parseInt(users[x].top_scorer)-1].photo+"'/></td></tr></table></div>");
+ 
+ var top_assister = $("#top_assister");
+ if(assister[parseInt(users[x].top_assister)-1].id==61) {
+	users[x].specials_total = users[x].specials_total+8;
+	col=getSpecialColor(8);
+ }else {
+ col=getSpecialColor(0);
+ } 
+ top_assister.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font color="+col+">"+users[x].user+"</font></td><td align='right' width='40%'>"+assister[parseInt(users[x].top_assister)-1].name+"&nbsp;<img width='15px' height='15px' align='right' src='"+assister[parseInt(users[x].top_assister)-1].photo+"'/></td></tr></table></div>");
+ 
+ 
+ var tournament_surprise = $("#tournament_surprise");
+
+ if(teams[parseInt(users[x].tournament_surprise)-1].id==-1) {
+	users[x].specials_total = users[x].specials_total+6;
+	col=getSpecialColor(6);
+ }else {
+ col=getSpecialColor(0);
+ } 
+ tournament_surprise.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font color="+col+">"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].tournament_surprise)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].tournament_surprise)-1].flag+"'/></td></tr></table></div>");
+ 
+ var tournament_disappointment = $("#tournament_disappointment");
+ if(teams[parseInt(users[x].tournament_disappointment)-1].id==5 ||teams[parseInt(users[x].tournament_disappointment)-1].id==15 ||teams[parseInt(users[x].tournament_disappointment)-1].id==16 ||teams[parseInt(users[x].tournament_disappointment)-1].id==26||teams[parseInt(users[x].tournament_disappointment)-1].id==31) {
+	users[x].specials_total = users[x].specials_total+6;
+	col=getSpecialColor(6);
+ }else {
+ col=getSpecialColor(0);
+ }  
+ tournament_disappointment.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font color="+col+">"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].tournament_disappointment)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].tournament_disappointment)-1].flag+"'/></td></tr></table></div>");
+ 
+users[x].total =  users[x].games_total + users[x].groups_total + users[x].specials_total;
+ $("#main").trigger("create");
+  }
+
+  sort();
+ for(x=0; x<users.length; x++) { 
+  pl=x+1;
+var leaderboard = $("#leaderboard");
+var user = $("<div data-role='collapsible' data-theme='a' data-content-theme='a' data-mini='true'><h3><table width='100%'><tr><td width='80%' align='left'>"+pl+". "+users[x].user+"</td><td width='20%' align='right'>"+users[x].total+"</td></tr></table></h3><div>Games: "+users[x].games_total+"</div><hr/><div>Groups: "+users[x].groups_total+"</div><hr/><div>Specials: "+users[x].specials_total+"</div></div>").collapsible();
+leaderboard.append(user);
+
+ } $("#main").trigger("create");
+}
+
+
+   });
+   
+  });
+
+function getGameColor(points, h, a) {
+
+if(h=='') return '';
+if(a=='') return '';
+
+if(points==0) return '#CD3333';
+if(points==2) return '#FF7F00';
+if(points==5) return '#2E8B57';
+}
+
+
+function getGroupColor(r, u) {
+
+if(u.team.id == r.team.id) return '#2E8B57';
+
+return '#CD3333';
+
+}
+
+function getSpecialColor(p) {
+
+if(p>0) return '#2E8B57';
+
+return '#CD3333';
+
+}
+
+function calc8Score(rh, ra, uh, ua)
+{
+var points = 0;
+if(rh==0 && ra==0) return 0;
+
+if(rh>ra && uh>ua) {
+points=points+6;
+}
+else if(rh<ra && uh<ua) {
+points=points+6;
+}
+
+return points;
+
+}
+
+function get8Color(points, h, a) {
+
+if(h==0 && a==0) return '';
+
+if(points==0) return '#CD3333';
+if(points==6) return '#2E8B57';
+
+return '#CD3333';
+}
+
+function get8ColorStage(points, h, a) {
+
+if(h==0 && a==0) return '';
+
+if(points==0) return '#CD3333';
+if(points==3) return '#2E8B57';
+
+return '#CD3333';
+}
+function getGroupColor(r, u) {
+
+if(u.team.id == r.team.id) return '#2E8B57';
+
+return '#CD3333';
+
+}
+
+function calc8Stage(rs, us)
+{
+var points = 0;
+if(rs==-1) return points;
+if(rs==us) points = 3;
+
+return points;
+
+}
+
+function calc4Score(rh, ra, uh, ua, ri, ui)
+{
+var points = 0;
+if(rh==0 && ra==0) return 0;
+
+if(rh>ra && uh>ua && ri.home.id==ui.home.id) {
+points=points+10;
+}
+else if(rh<ra && uh<ua  && ri.away.id==ui.away.id) {
+points=points+10;
+}
+
+return points;
+
+}
+
+function get4Color(points, h, a) {
+
+if(h==0 && a==0) return '';
+
+if(points==0) return '#CD3333';
+if(points==10) return '#2E8B57';
+
+return '#CD3333';
+}
+
+function get4ColorStage(points, h, a) {
+
+if(h==0 && a==0) return '';
+
+if(points==0) return '#CD3333';
+if(points==4) return '#2E8B57';
+
+return '#CD3333';
+}
+
+function calc4Stage(rs, us)
+{
+var points = 0;
+if(rs==-1) return points;
+if(rs==us) points = 4;
+
+return points;
+
+}
+
+function calc2Score(rh, ra, uh, ua ,ri, ui)
+{
+var points = 0;
+if(rh==0 && ra==0) return 0;
+
+if(rh>ra && uh>ua && ri.home.id==ui.home.id) {
+points=points+15;
+}
+else if(rh<ra && uh<ua && ri.away.id==ui.away.id) {
+points=points+15;
+}
+
+return points;
+
+}
+
+function get2Color(points, h, a) {
+
+if(h==0 && a==0) return '';
+
+if(points==0) return '#CD3333';
+if(points==15) return '#2E8B57';
+
+return '#CD3333';
+}
+
+function get2ColorStage(points, h, a) {
+
+if(h==0 && a==0) return '';
+
+if(points==0) return '#CD3333';
+if(points==6) return '#2E8B57';
+
+return '#CD3333';
+}
+
+function calc2Stage(rs, us)
+{
+var points = 0;
+if(rs==-1) return points;
+if(rs==us) points = 6;
+
+return points;
+
+}
+
+function calc34Score(rh, ra, uh, ua ,ri, ui)
+{
+var points = 0;
+if(rh==0 && ra==0) return 0;
+
+if(rh>ra && uh>ua && ri.home.id==ui.home.id) {
+points=points+12;
+}
+else if(rh<ra && uh<ua && ri.away.id==ui.away.id) {
+points=points+12;
+}
+
+return points;
+
+}
+
+function get34Color(points, h, a) {
+
+if(h==0 && a==0) return '';
+
+if(points==0) return '#CD3333';
+if(points==12) return '#2E8B57';
+
+return '#CD3333';
+}
+
+function get34ColorStage(points, h, a) {
+
+if(h==0 && a==0) return '';
+
+if(points==0) return '#CD3333';
+if(points==5) return '#2E8B57';
+
+return '#CD3333';
+}
+
+function calc34Stage(rs, us)
+{
+var points = 0;
+if(rs==-1) return points;
+if(rs==us) points = 5;
+
+return points;
+
+}
+
+
+
+function calcFScore(rh, ra, uh, ua ,ri, ui)
+{
+var points = 0;
+if(rh==0 && ra==0) return 0;
+
+if(rh>ra && uh>ua && ri.home.id==ui.home.id) {
+points=points+20;
+}
+else if(rh<ra && uh<ua && ri.away.id==ui.away.id) {
+points=points+20;
+}
+
+return points;
+
+}
+
+function getFColor(points, h, a) {
+
+if(h==0 && a==0) return '';
+
+if(points==0) return '#CD3333';
+if(points==20) return '#2E8B57';
+
+return '#CD3333';
+}
+
+function getFColorStage(points, h, a) {
+
+if(h==0 && a==0) return '';
+
+if(points==0) return '#CD3333';
+if(points==8) return '#2E8B57';
+
+return '#CD3333';
+}
+
+function calcFStage(rs, us)
+{
+var points = 0;
+if(rs==-1) return points;
+if(rs==us) points = 8;
+
+return points;
+
+}
+
+function getGroupColor(r, u) {
+
+if(u.team.id == r.team.id) return '#2E8B57';
+
+return '#CD3333';
+
+}
+
+
+function calcGameScore(rh, ra, uh, ua)
+{
+var points = 0;
+if(rh=="" || ra=="") return 0;
+
+if(rh==ra && uh==ua) {
+points=points+2;
+if(rh==uh && ra==ua){
+points=points+3;
+}
+}
+else if(rh>ra && uh>ua) {
+points=points+2;
+if(rh==uh && ra==ua){
+points=points+3;
+}
+}
+else if(rh<ra && uh<ua) {
+points=points+2;
+if(rh==uh && ra==ua){
+points=points+3;
+}
+}
+
+return points;
+
+}
+
+function sort() {
+
+var swapped;
+    do {
+        swapped = false;
+        for (var i=0; i < users.length-1; i++) {
+            if (users[i].total < users[i+1].total) {
+                var temp = users[i];
+                users[i] = users[i+1];
+                users[i+1] = temp;
+                swapped = true;
+            }	
+        }
+    } while (swapped);
+   
+
+}
+
+
+  </script>
+  
+  </head>
+  <body>
+
+<div class="page" data-role="page" data-theme="a" data-mini="true">
+ 
+<div class="header" data-role="header" data-position="fixed" data-theme="a" data-content-theme="a">
+
+<img style="cursor:pointer" onclick="location.reload();" width="100px" height="40px" align="left" src="header.png"/>
+
+<a href="#" class="ui-btn-right" data-icon="home" data-iconpos="notext" onclick="$.mobile.silentScroll(0)" data-role="button"></a>
+
+</div>
+<div class="main" id="main">
+
+<br/>
+
+
+
+<div data-role="collapsible" data-collapsed="false" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Leaderboard</h3><div id="leaderboard"></div></div><br/>
+
+
+<div data-role="collapsible" data-collapsed="false" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Knockout</h3><div id="leaderboard"></div>
+
+<div data-role="collapsible"  data-collapsed="false" data-theme="a" data-content-theme="a" data-mini="true"><h3>1/8</h3>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko1h"></span></h3><div id="ko1c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko2h"></span></h3><div id="ko2c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko3h"></span></h3><div id="ko3c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko4h"></span></h3><div id="ko4c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko5h"></span></h3><div id="ko5c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko6h"></span></h3><div id="ko6c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko7h"></span></h3><div id="ko7c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko8h"></span></h3><div id="ko8c"></div></div>
+
+</div>
+
+ 
+<div data-role="collapsible"  data-collapsed="false" data-theme="a" data-content-theme="a" data-mini="true"><h3>1/4</h3>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko9h"></span></h3><div id="ko9c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko10h"></span></h3><div id="ko10c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko11h"></span></h3><div id="ko11c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko12h"></span></h3><div id="ko12c"></div></div>
+
+</div> 
+
+
+<div data-role="collapsible" data-collapsed="false"  data-theme="a" data-content-theme="a" data-mini="true"><h3>1/2</h3>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko13h"></span></h3><div id="ko13c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko14h"></span></h3><div id="ko14c"></div></div>
+
+</div>
+
+
+<div data-role="collapsible" data-collapsed="false"  data-theme="a" data-content-theme="a" data-mini="true"><h3>3-4</h3>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko15h"></span></h3><div id="ko15c"></div></div>
+
+</div>
+
+<div data-role="collapsible" data-collapsed="false"  data-theme="a" data-content-theme="a" data-mini="true"><h3>Final</h3>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="ko16h"></span></h3><div id="ko16c"></div></div>
+
+</div>
+
+</div>
+ </br><div data-role="collapsible" data-collapsed="false" data-theme="a" data-content-theme="a" data-mini="true"><h3>Specials</h3>
+<form id="sheet">
+
+    <div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Champions
+	<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/23px-Flag_of_Argentina.svg.png"/>
+	</h3><div id="winner"></div></div>
+      
+	  <div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Highest Scoring Team
+	  <img src="http://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/23px-Flag_of_Germany.svg.png"/>
+	  </h3><div><fieldset id="scoring_team" data-role="controlgroup"></fieldset></div></div>
+	  
+	  
+<div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Most Aggressive Team
+<img   height="20" width="20" src="http://www.sudoku.name/pictures/x.gif"/>
+</h3><div><fieldset id="aggressive" data-role="controlgroup"></fieldset></div></div>
+
+<div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Fairest Team
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/16px-Flag_of_Switzerland.svg.png"/>
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/23px-Flag_of_Nigeria.svg.png"/>
+</h3><div><fieldset id="fairest" data-role="controlgroup"></fieldset></div></div>
+
+
+    <div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Top Scorer
+	<img  height="20" width="20" src="https://d22r54gnmuhwmk.cloudfront.net/app-assets/global/default_user_icon-0f83709782d4d6ab03c776297789ce69.jpg"/>
+	</h3><div><fieldset id="top_scorer" data-role="controlgroup"></fieldset></div></div>
+
+<div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Top Assister
+<img   height="20" width="20" src="https://d22r54gnmuhwmk.cloudfront.net/app-assets/global/default_user_icon-0f83709782d4d6ab03c776297789ce69.jpg"/>
+</h3><div><fieldset id="top_assister" data-role="controlgroup"></fieldset></div></div>
+
+<div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Tournament Surprise
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Costa_Rica.svg/23px-Flag_of_Costa_Rica.svg.png"/>
+</h3><div><fieldset id="tournament_surprise" data-role="controlgroup"></fieldset></div></div>
+
+<div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Tournament Disappointment 
+<img src="http://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/23px-Flag_of_Spain.svg.png"/>
+<img src="http://upload.wikimedia.org/wikipedia/en/thumb/b/be/Flag_of_England.svg/23px-Flag_of_England.svg.png"/>
+<img src="http://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/23px-Flag_of_Italy.svg.png"/>
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/23px-Flag_of_Portugal.svg.png"/>
+<img src="http://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/23px-Flag_of_Russia.svg.png"/>
+</h3><div><fieldset id="tournament_disappointment" data-role="controlgroup"></fieldset></div></div>
+
+  </div>
+</br><div data-role="collapsible" data-collapsed="false" id="games" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Games</h3>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game1h"></span></h3><div id="game1c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game2h"></span></h3><div id="game2c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game3h"></span></h3><div id="game3c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game4h"></span></h3><div id="game4c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game5h"></span></h3><div id="game5c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game6h"></span></h3><div id="game6c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game7h"></span></h3><div id="game7c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game8h"></span></h3><div id="game8c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game9h"></span></h3><div id="game9c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game10h"></span></h3><div id="game10c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game11h"></span></h3><div id="game11c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game12h"></span></h3><div id="game12c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game13h"></span></h3><div id="game13c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game14h"></span></h3><div id="game14c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game15h"></span></h3><div id="game15c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game16h"></span></h3><div id="game16c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game17h"></span></h3><div id="game17c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game18h"></span></h3><div id="game18c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game19h"></span></h3><div id="game19c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game20h"></span></h3><div id="game20c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game21h"></span></h3><div id="game21c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game22h"></span></h3><div id="game22c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game23h"></span></h3><div id="game23c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game24h"></span></h3><div id="game24c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game25h"></span></h3><div id="game25c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game26h"></span></h3><div id="game26c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game27h"></span></h3><div id="game27c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game28h"></span></h3><div id="game28c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game29h"></span></h3><div id="game29c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game30h"></span></h3><div id="game30c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game31h"></span></h3><div id="game31c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game32h"></span></h3><div id="game32c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game33h"></span></h3><div id="game33c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game34h"></span></h3><div id="game34c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game35h"></span></h3><div id="game35c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game36h"></span></h3><div id="game36c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game37h"></span></h3><div id="game37c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game38h"></span></h3><div id="game38c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game39h"></span></h3><div id="game39c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game40h"></span></h3><div id="game40c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game41h"></span></h3><div id="game41c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game42h"></span></h3><div id="game42c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game43h"></span></h3><div id="game43c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game44h"></span></h3><div id="game44c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game45h"></span></h3><div id="game45c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game46h"></span></h3><div id="game46c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game47h"></span></h3><div id="game47c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><span id="game48h"></span></h3><div id="game48c"></div></div>
+
+</div>
+
+</br><div data-role="collapsible" data-collapsed="false" data-theme="a" data-content-theme="a" data-mini="true"><h3>Groups</h3>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><div align="center"><table width='100%' class="group_table" id="group1h"></table></div></h3><div align="center" id="group1c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><div align="center"><table width='100%' class="group_table" id="group2h"></table></div></h3><div align="center" id="group2c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><div align="center"><table width='100%' class="group_table" id="group3h"></table></div></h3><div align="center" id="group3c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><div align="center"><table width='100%' class="group_table" id="group4h"></table></div></h3><div align="center" id="group4c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><div align="center"><table width='100%' class="group_table" id="group5h"></table></div></h3><div align="center" id="group5c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><div align="center"><table width='100%' class="group_table" id="group6h"></table></div></h3><div align="center" id="group6c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><div align="center"><table width='100%' class="group_table" id="group7h"></table></div></h3><div align="center" id="group7c"></div></div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a" data-mini="true"><h3><div align="center"><table width='100%' class="group_table" id="group8h"></table></div></h3><div align="center" id="group8c"></div></div>
+
+</div>
+
+
+</form>
+
+
+
+
+  
+</div>
+
+
+  </body>
+
+</html>
