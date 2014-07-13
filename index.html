@@ -314,6 +314,7 @@ id = i+1;
 
 points = calcFScore(ko[i].home.score, ko[i].away.score, users[x].ko[i].home.score, users[x].ko[i].away.score, ko[i], users[x].ko[i]) ;
 points = points + calcFStage(ko[i].stage, users[x].ko[i].stage) ;
+
 users[x].games_total = users[x].games_total + points;
 
 }
@@ -321,7 +322,35 @@ users[x].games_total = users[x].games_total + points;
 if(teams[parseInt(users[x].tournament_disappointment)-1].id==5 ||teams[parseInt(users[x].tournament_disappointment)-1].id==15 ||teams[parseInt(users[x].tournament_disappointment)-1].id==16 ||teams[parseInt(users[x].tournament_disappointment)-1].id==26||teams[parseInt(users[x].tournament_disappointment)-1].id==31) {
 	users[x].specials_total = users[x].specials_total+6;
 	}
+	
+	 if(scorer[parseInt(users[x].top_scorer)-1].id==61) {
+		users[x].specials_total = users[x].specials_total+12;
+	}
+	
+	
+	if(teams[parseInt(users[x].scoring_team)-1].id==25) {
+	users[x].specials_total = users[x].specials_total+8;
+ }
+ 
+ if(teams[parseInt(users[x].fairest)-1].id==17 || teams[parseInt(users[x].fairest)-1].id==24) {
+	users[x].specials_total = users[x].specials_total+7;
+ }
+ 
+
+ if(scorer[parseInt(users[x].top_scorer)-1].id==61) {
+	users[x].specials_total = users[x].specials_total+12;
+
+ }
+
+ if(assister[parseInt(users[x].top_assister)-1].id==61) {
+	users[x].specials_total = users[x].specials_total+8;
+ }
+	
+	 if(teams[parseInt(users[x].winner)-1].id==25) {
+	users[x].specials_total = users[x].specials_total+9;
+ }
 users[x].total = users[x].total + users[x].games_total + users[x].groups_total + users[x].specials_total;
+
 }
 
 
@@ -461,6 +490,8 @@ points = calcFScore(ko[i].home.score, ko[i].away.score, users[x].ko[i].home.scor
 colorG = getFColor(points, ko[i].home.score, ko[i].away.score);
 colorS = getFColorStage(calcFStage(ko[i].stage, users[x].ko[i].stage), ko[i].home.score, ko[i].away.score);
 points = points + calcFStage(ko[i].stage, users[x].ko[i].stage) ;
+users[x].games_total = users[x].games_total + points;
+
 if(x%2==0) bg ="#DDDDDD" ; else bg="#EEEEEE" ;
 
 if(users[x].ko[i].home.score == 1) team = users[x].ko[i].home;
@@ -500,41 +531,70 @@ group.append("<br/>");
 }
 
 
- 
+   var col;
  var winner = $("#winner");
 
- if(teams[parseInt(users[x].winner)-1].id==111 || teams[parseInt(users[x].winner)-1].id==111) {
-	//users[x].specials_total = users[x].specials_total+5;
- }  
- winner.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font>"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].winner)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].winner)-1].flag+"'/></td></tr></table></div>");
+ if(teams[parseInt(users[x].winner)-1].id==25) {
+users[x].specials_total = users[x].specials_total+9;
+	col=getSpecialColor(9);
+ }else {
+ col=getSpecialColor(0);
+ }   
+ winner.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font color="+col+">"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].winner)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].winner)-1].flag+"'/></td></tr></table></div>");
+ 
+ 
  var scoring_team = $("#scoring_team");
- if(teams[parseInt(users[x].scoring_team)-1].id==111) {
-	//users[x].specials_total = users[x].specials_total+5;
+ if(teams[parseInt(users[x].scoring_team)-1].id==25) {
+	users[x].specials_total = users[x].specials_total+8;
+	col=getSpecialColor(8);
+ }else {
+ col=getSpecialColor(0);
  }  
- scoring_team.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font>"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].scoring_team)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].scoring_team)-1].flag+"'/></td></tr></table></div>");
+ scoring_team.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font color="+col+">"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].scoring_team)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].scoring_team)-1].flag+"'/></td></tr></table></div>");
+ 
+ 
+ 
  var aggressive = $("#aggressive");
  if(teams[parseInt(users[x].aggressive)-1].id==111) {
 	//users[x].specials_total = users[x].specials_total+5;
  }  
  aggressive.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font>"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].aggressive)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].aggressive)-1].flag+"'/></td></tr></table></div>");
+ 
+ 
+ 
  var fairest = $("#fairest");
- /*if(teams[parseInt(users[x].fairest)-1].id==111) {
-	users[x].specials_total = users[x].specials_total+5;
- }*/  
- fairest.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font>"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].fairest)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].fairest)-1].flag+"'/></td></tr></table></div>");
+ if(teams[parseInt(users[x].fairest)-1].id==17 || teams[parseInt(users[x].fairest)-1].id==24) {
+	users[x].specials_total = users[x].specials_total+7;
+	col=getSpecialColor(7);
+ }else {
+ col=getSpecialColor(0);
+ }   
+ 
+ fairest.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font color="+col+">"+users[x].user+"</font></td><td align='right' width='40%'>"+teams[parseInt(users[x].fairest)-1].name+"&nbsp;<img align='right' src='"+teams[parseInt(users[x].fairest)-1].flag+"'/></td></tr></table></div>");
+ 
+ 
+ 
  var top_scorer = $("#top_scorer");
- if(teams[parseInt(users[x].top_scorer)-1].id==111) {
-	//users[x].specials_total = users[x].specials_total+5;
- } 
- top_scorer.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font>"+users[x].user+"</font></td><td align='right' width='40%'>"+scorer[parseInt(users[x].top_scorer)-1].name+"&nbsp;<img width='15px' height='15px' align='right' src='"+scorer[parseInt(users[x].top_scorer)-1].photo+"'/></td></tr></table></div>");
+ if(scorer[parseInt(users[x].top_scorer)-1].id==61) {
+	users[x].specials_total = users[x].specials_total+12;
+	col=getSpecialColor(12);
+ }else {
+ col=getSpecialColor(0);
+ }  
+ top_scorer.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font color="+col+">"+users[x].user+"</font></td><td align='right' width='40%'>"+scorer[parseInt(users[x].top_scorer)-1].name+"&nbsp;<img width='15px' height='15px' align='right' src='"+scorer[parseInt(users[x].top_scorer)-1].photo+"'/></td></tr></table></div>");
+ 
  var top_assister = $("#top_assister");
-/* if(teams[parseInt(users[x].top_assister)-1].id==111) {
-	users[x].specials_total = users[x].specials_total+5;
- }*/  
- top_assister.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font>"+users[x].user+"</font></td><td align='right' width='40%'>"+assister[parseInt(users[x].top_assister)-1].name+"&nbsp;<img width='15px' height='15px' align='right' src='"+assister[parseInt(users[x].top_assister)-1].photo+"'/></td></tr></table></div>");
+ if(assister[parseInt(users[x].top_assister)-1].id==61) {
+	users[x].specials_total = users[x].specials_total+8;
+	col=getSpecialColor(8);
+ }else {
+ col=getSpecialColor(0);
+ } 
+ top_assister.append("<div style='background-color:"+bg+"'><table width='100%'><tr><td width='55%'><font color="+col+">"+users[x].user+"</font></td><td align='right' width='40%'>"+assister[parseInt(users[x].top_assister)-1].name+"&nbsp;<img width='15px' height='15px' align='right' src='"+assister[parseInt(users[x].top_assister)-1].photo+"'/></td></tr></table></div>");
+ 
  
  var tournament_surprise = $("#tournament_surprise");
-  var col;
+
  if(teams[parseInt(users[x].tournament_surprise)-1].id==-1) {
 	users[x].specials_total = users[x].specials_total+6;
 	col=getSpecialColor(6);
@@ -961,15 +1021,32 @@ var swapped;
  </br><div data-role="collapsible" data-collapsed="false" data-theme="a" data-content-theme="a" data-mini="true"><h3>Specials</h3>
 <form id="sheet">
 
-    <div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Champions</h3><div id="winner"></div></div>
-      <div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Highest Scoring Team</h3><div><fieldset id="scoring_team" data-role="controlgroup"></fieldset></div></div>
-<div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Most Aggressive Team</h3><div><fieldset id="aggressive" data-role="controlgroup"></fieldset></div></div>
-<div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Fairest Team</h3><div><fieldset id="fairest" data-role="controlgroup"></fieldset></div></div>
+    <div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Champions
+	  <img src="http://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/23px-Flag_of_Germany.svg.png"/>
+	</h3><div id="winner"></div></div>
+      
+	  <div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Highest Scoring Team
+	  <img src="http://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/23px-Flag_of_Germany.svg.png"/>
+	  </h3><div><fieldset id="scoring_team" data-role="controlgroup"></fieldset></div></div>
+	  
+	  
+<div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Most Aggressive Team
+<img   height="20" width="20" src="http://www.sudoku.name/pictures/x.gif"/>
+</h3><div><fieldset id="aggressive" data-role="controlgroup"></fieldset></div></div>
+
+<div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Fairest Team
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/16px-Flag_of_Switzerland.svg.png"/>
+<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/23px-Flag_of_Nigeria.svg.png"/>
+</h3><div><fieldset id="fairest" data-role="controlgroup"></fieldset></div></div>
 
 
-    <div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Top Scorer</h3><div><fieldset id="top_scorer" data-role="controlgroup"></fieldset></div></div>
+    <div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Top Scorer
+	<img  height="20" width="20" src="https://d22r54gnmuhwmk.cloudfront.net/app-assets/global/default_user_icon-0f83709782d4d6ab03c776297789ce69.jpg"/>
+	</h3><div><fieldset id="top_scorer" data-role="controlgroup"></fieldset></div></div>
 
-<div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Top Assister</h3><div><fieldset id="top_assister" data-role="controlgroup"></fieldset></div></div>
+<div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Top Assister
+<img   height="20" width="20" src="https://d22r54gnmuhwmk.cloudfront.net/app-assets/global/default_user_icon-0f83709782d4d6ab03c776297789ce69.jpg"/>
+</h3><div><fieldset id="top_assister" data-role="controlgroup"></fieldset></div></div>
 
 <div data-role="collapsible" class='game' data-theme="a" data-content-theme="a" data-mini="true"><h3>Tournament Surprise
 <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Costa_Rica.svg/23px-Flag_of_Costa_Rica.svg.png"/>
