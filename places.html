@@ -19,6 +19,11 @@ opacity:0.9;
   }
   </style>
 <script>
+
+
+
+
+
 </script>
 <script>
 var x = document.getElementById("demo");
@@ -83,12 +88,16 @@ function showPosition(position) {
 <tr>
 <td width='45%'><input type="text" data-mini="true" name="lat" id="lat" value="" placeholder="Latitude"/></td>
 <td width='45%'><input type="text" data-mini="true" name="lon" id="lon" value="" placeholder="Longitude"/></td>
-<td width='45%'><a href="#" onclick="getLocation()" data-mini="true" data-role="button" data-theme="b" data-content-theme="a">Auto</a></td>
+<td width='10%'><a href="#" onclick="getLocation()" data-mini="true" data-role="button" data-theme="b" data-content-theme="a">Auto</a></td>
 </tr>
 </table>
 </div>
+<div data-role="fieldcontain" data-mini="true" class="ui-hide-label" data-theme="b" data-content-theme="a">
+<input data-mini="true" class="ui-hide-label" data-theme="b" data-content-theme="a" name="image_file" id="imageInput" type="file" />
+</div>
 <br/>
 <br/>
+
 <div>
 <a href="#" onClick="window.location.reload();" data-mini="true" data-role="button" data-theme="b" data-content-theme="a">OK</a>
 </div>
