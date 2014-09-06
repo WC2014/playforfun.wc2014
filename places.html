@@ -38,16 +38,16 @@ function browesLogo() {
 $('#logoUrl').click();
 }
 
-function handleFile(evt) {
+function handleFile() {
  var reader = new FileReader();
- var files = this.files;
- //alert(FR.readAsDataURL(files[0]));
- alert(files[0]);
+ var file = document.querySelector('input[type=file]').files[0];
+ 
+   reader.readAsDataURL(file);
+ //alert(reader.result);
+
+ 
 }
 
-$( document ).ready(function() {
- document.getElementById('logoUrl').addEventListener('change', handleFile, false);
-});
 
 </script>
 <script>
@@ -66,7 +66,7 @@ function showPosition(position) {
 </script>
 </head>
 <body>
- <input id="logoUrl" class="hidden" type="file" name="image" accept="image/*">
+ <input id="logoUrl" class="hidden" type="file" name="image" onChange="handleFile();">
 <!--input class="hidden" size="35" id="logoUrl" type="file" onChange="showLogo();"/-->
 <div data-role="page" data-theme="b" data-mini="true" data-mini="true">
 
