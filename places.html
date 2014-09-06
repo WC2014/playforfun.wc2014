@@ -10,7 +10,13 @@
   
   <style>
         @media only screen and (min-width: 480px) { .ui-page { width: 480px !important; margin: 0 auto !important; position: relative !important; } }
+  .main {
+width: 98%;
+margin:0 auto;
+font-size:10px;
+opacity:0.9;
 
+  }
   </style>
 <script>
 </script>
@@ -31,11 +37,12 @@ function showPosition(position) {
 </head>
 <body>
 <div data-role="page" data-theme="a" data-mini="true" data-mini="true">
+
+<div class="main" id="main">
+
 <div data-role="fieldcontain" data-mini="true" class="ui-hide-label">
 	<input type="text" data-mini="true" name="name" id="name" value="" placeholder="Place name"/>
 </div>
-
-
 
 
 <div data-role="fieldcontain" data-mini="true" class="ui-hide-label">
@@ -78,9 +85,6 @@ function showPosition(position) {
 <a href="places.html" data-mini="true" data-role="button">OK</a>
 
 </div>
-
-<p id="demo">Click the button to get your coordinates:</p>
-
-<button onclick="getLocation()">Try It</button>
+</div>
 <body>
 </html>
