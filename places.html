@@ -29,6 +29,8 @@ opacity:0.9;
 function showLogo() {
 
 $('#logoImg').attr("src", $('#logoUrl').val());
+
+alert($('#logoUrl').val());
 }
 
 function browesLogo() {
@@ -36,7 +38,16 @@ function browesLogo() {
 $('#logoUrl').click();
 }
 
+function handleFile(evt) {
+ var reader = new FileReader();
+ var files = this.files;
+ //alert(FR.readAsDataURL(files[0]));
+ alert(reader.readAsBinaryString(files[0]));
+}
 
+$( document ).ready(function() {
+ document.getElementById('logoUrl').addEventListener('change', handleFile, false);
+});
 
 </script>
 <script>
@@ -55,7 +66,7 @@ function showPosition(position) {
 </script>
 </head>
 <body>
- <input id="logoUrl" class="hidden" type="file" name="image" accept="image/*" onChange="showLogo();">
+ <input id="logoUrl" class="hidden" type="file" name="image" accept="image/*">
 <!--input class="hidden" size="35" id="logoUrl" type="file" onChange="showLogo();"/-->
 <div data-role="page" data-theme="b" data-mini="true" data-mini="true">
 
@@ -116,7 +127,6 @@ function showPosition(position) {
 
 <br/>
 <br/>
- 
 <div>
 <a href="#" onClick="window.location.reload();" data-mini="true" data-role="button" data-theme="b" data-content-theme="a">OK</a>
 </div>
