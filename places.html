@@ -42,7 +42,7 @@ function handleFile(evt) {
  var reader = new FileReader();
  var files = this.files;
  //alert(FR.readAsDataURL(files[0]));
- alert(reader.readAsBinaryString(files[0]));
+ alert(files[0]);
 }
 
 $( document ).ready(function() {
