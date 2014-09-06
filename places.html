@@ -65,21 +65,9 @@ function showPosition(position) {
 }
 
 
-function hideAddressBar()
-{
-if(!window.location.hash)
-{
-if(document.height < window.outerHeight)
-{
-document.body.style.height = (window.outerHeight + 50) + 'px';
-}
- 
-setTimeout( function(){ window.scrollTo(0, 1); }, 50 );
-}
-}
- 
-window.addEventListener("load", function(){ if(!window.pageYOffset){ hideAddressBar(); } } );
-window.addEventListener("orientationchange", hideAddressBar );
+window.addEventListener("load",function() {
+    window.scrollTo(0, 0);
+});
 </script>
 </head>
 <body>
@@ -90,7 +78,7 @@ window.addEventListener("orientationchange", hideAddressBar );
 <div align="center" class="main" id="main">
 
 
-	<img height="15%" width="100%" src="http://wc2014.github.io/fizzer/512Logo_EW.png"/>
+	<img height="12%" width="90%" src="http://wc2014.github.io/fizzer/512Logo_EW.png"/>
 
 
 <div data-role="fieldcontain" data-mini="true" class="ui-hide-label" data-theme="b" data-content-theme="a">
