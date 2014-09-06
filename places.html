@@ -55,7 +55,8 @@ function showPosition(position) {
 </script>
 </head>
 <body>
-<input class="hidden" size="35" id="logoUrl" type="file" onChange="showLogo();"/>
+ <input id="logoUrl" class="hidden" type="file" name="image" accept="image/*" onChange="showLogo();" capture>
+<!--input class="hidden" size="35" id="logoUrl" type="file" onChange="showLogo();"/-->
 <div data-role="page" data-theme="b" data-mini="true" data-mini="true">
 
 <div align="center" class="main" id="main">
@@ -115,7 +116,7 @@ function showPosition(position) {
 
 <br/>
 <br/>
-
+ 
 <div>
 <a href="#" onClick="window.location.reload();" data-mini="true" data-role="button" data-theme="b" data-content-theme="a">OK</a>
 </div>
