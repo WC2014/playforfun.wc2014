@@ -17,10 +17,24 @@ font-size:18px;
 opacity:0.9;
 
   }
+  
+  .hidden {
+  width: 0%;
+  height: 0%;
+    visibility: hidden;
+}
   </style>
 <script>
 
+function showLogo() {
 
+$('#logoImg').attr("src", $('#logoUrl').val());
+}
+
+function browesLogo() {
+
+$('#logoUrl').click();
+}
 
 
 
@@ -41,6 +55,7 @@ function showPosition(position) {
 </script>
 </head>
 <body>
+<input class="hidden" size="35" id="logoUrl" type="file" onChange="showLogo();"/>
 <div data-role="page" data-theme="b" data-mini="true" data-mini="true">
 
 <div class="main" id="main">
@@ -51,7 +66,13 @@ function showPosition(position) {
 </div>
 
 <div data-role="fieldcontain" data-mini="true" class="ui-hide-label" data-theme="b" data-content-theme="a">
-	<input type="text" data-mini="true" name="name" id="name" value="" placeholder="Place name"/>
+<table>
+<tr>
+	<td width='90%'><input type="text" data-mini="true" name="name" id="name" value="" placeholder="Place name"/></td>
+	<td width='10%'><img src="" id="logoImg" height="42" width="42" onClick="browesLogo();"/></td>
+</tr>
+</table>
+	
 </div>
 
 
@@ -92,9 +113,7 @@ function showPosition(position) {
 </tr>
 </table>
 </div>
-<div data-role="fieldcontain" data-mini="true" class="ui-hide-label" data-theme="b" data-content-theme="a">
-<input data-mini="true" class="ui-hide-label" data-theme="b" data-content-theme="a" name="image_file" id="imageInput" type="file" />
-</div>
+
 <br/>
 <br/>
 
