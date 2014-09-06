@@ -9,12 +9,25 @@
 <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
   
   <style>
-        @media only screen and (min-width: 320px) { .ui-page { width: 320px !important; margin: 0 auto !important; position: relative !important; } }
+        @media only screen and (min-width: 480px) { .ui-page { width: 480px !important; margin: 0 auto !important; position: relative !important; } }
 
   </style>
 <script>
 </script>
-
+<script>
+var x = document.getElementById("demo");
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+function showPosition(position) {
+    $('#lat').val(position.coords.latitude);
+    $('#lon').val(position.coords.longitude);
+}
+</script>
 </head>
 <body>
 <div data-role="page" data-theme="a" data-mini="true" data-mini="true">
@@ -23,12 +36,16 @@
 </div>
 
 <div data-role="fieldcontain" data-mini="true" class="ui-hide-label">
-	<input type="text" data-mini="true" name="lat" id="lat" value="" placeholder="Latitude"/>
+<table>
+<tr>
+<td><input type="text" data-mini="true" name="lat" id="lat" value="" placeholder="Latitude"/></td>
+<td><input type="text" data-mini="true" name="lon" id="lon" value="" placeholder="Longitude"/></td>
+<td><button onclick="getLocation()">Auto</button></td>
+</tr>
+</table>
 </div>
 
-<div data-role="fieldcontain" data-mini="true" class="ui-hide-label">
-	<input type="text" data-mini="true" name="lon" id="lon" value="" placeholder="Longitude"/>
-</div>
+
 
 
 <div data-role="fieldcontain" data-mini="true" class="ui-hide-label">
@@ -45,7 +62,7 @@
 </div>
 
 <div data-role="fieldcontain" data-mini="true" class="ui-hide-label">
-	<input type="text" data-mini="true" name="houseNr" id="houseNr" value="" placeholder="House number"/>
+	<input type="text" data-mini="true" name="houseNr" id="houseNr" value="" placeholder="House Number"/>
 </div>
 
 <div data-role="fieldcontain" data-mini="true" class="ui-hide-label">
@@ -62,8 +79,12 @@
 </select>
 </div>
 
-<a href="index.html" data-mini="true" data-role="button">OK</a>
+<a href="places.html" data-mini="true" data-role="button">OK</a>
 
 </div>
+
+<p id="demo">Click the button to get your coordinates:</p>
+
+<button onclick="getLocation()">Try It</button>
 <body>
 </html>
